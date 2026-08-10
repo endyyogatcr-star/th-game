@@ -4,10 +4,10 @@ extends CharacterBody2D
 @export var gravity: float = 1200.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var dialogue_ui = get_parent().get_node("DialogueUI")
 
 func _physics_process(delta):
-	if dialogue_ui.is_dialogue_active:
+
+	if DialogueManager.dialogue_ui != null and DialogueManager.dialogue_ui.is_dialogue_active:
 		velocity.x = 0
 		animated_sprite.stop()
 		return

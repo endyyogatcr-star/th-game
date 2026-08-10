@@ -1,10 +1,10 @@
 extends CharacterBody2D
 
 
-@export var dialogue_id: String = "warga_01"
+@export var npc_type: String = ""
+@export var dialogue_id: String = ""
 
 var player_nearby := false
-
 
 func _on_interaction_area_body_entered(body):
 	if body.name == "Player":
@@ -15,6 +15,17 @@ func _on_interaction_area_body_exited(body):
 	if body.name == "Player":
 		player_nearby = false
 
+func get_dialogue_id() -> String:
+	match npc_type:
+		"asisten":
+			if not GameManager.talked_to_kades:				return "asisten_awal"
+			if not GameManager.has_all_equipment():
+				return "asisten_setelah_kades"
+			return "asisten_siap"
+		"kades":
+			return "kades_01"
+
+	return dialogue_id
 
 func _process(_delta):
 
@@ -28,4 +39,4 @@ func _process(_delta):
 		return
 
 	if Input.is_action_just_pressed("interact"):
-		DialogueManager.start_dialogue(dialogue_id)
+		DialogueManager.start_dialogue(get_dialogue_id())

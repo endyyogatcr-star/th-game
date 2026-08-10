@@ -1,5 +1,6 @@
 extends CanvasLayer
 
+signal dialogue_finished(dialogue_id)
 
 @onready var dialogue_box: Panel = $DialogueBox
 @onready var portrait: TextureRect = $DialogueBox/Portrait
@@ -13,6 +14,7 @@ extends CanvasLayer
 
 var dialogues: Array = []
 var current_dialogue := 0
+var current_dialogue_id := ""
 var is_dialogue_active := false
 
 var is_typing := false
@@ -208,3 +210,5 @@ func end_dialogue():
 
 	dialogues.clear()
 	current_dialogue = 0
+
+	dialogue_finished.emit()

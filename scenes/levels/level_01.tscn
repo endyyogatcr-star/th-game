@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://bfikmr0kpv3la"]
 
 [ext_resource type="Texture2D" uid="uid://bsyvk52rlp1yy" path="res://assets/environment/ground tileset.png" id="1_m802k"]
-[ext_resource type="Texture2D" uid="uid://cvm0eocp7dph2" path="res://assets/environment/ground-1.png" id="2_2djvx"]
+[ext_resource type="Texture2D" uid="uid://cvm0eocp7dph2" path="res://assets/tileset/ground-1.png" id="2_2djvx"]
 [ext_resource type="PackedScene" uid="uid://hcp0p6q4n5l1" path="res://scenes/player/player.tscn" id="2_i2aat"]
 [ext_resource type="Texture2D" uid="uid://r5lvfj1aar0d" path="res://assets/environment/bg_sky.png" id="4_uvc87"]
 [ext_resource type="Texture2D" uid="uid://bmm62j5n34tit" path="res://assets/environment/bg_land.png" id="5_qdh5e"]
@@ -22,8 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://d0be8ttawh81s" path="res://assets/environment/tenda1.png" id="19_mhiu8"]
 [ext_resource type="PackedScene" uid="uid://gwgklafg00o" path="res://scenes/npc/npc.tscn" id="20_cywot"]
 [ext_resource type="PackedScene" uid="uid://dkdf1fq35dswu" path="res://scenes/npc/npc2.tscn" id="21_1b0o8"]
-[ext_resource type="Script" uid="uid://b78hbmx6ptdxa" path="res://scipts/ui/dialogue_ui.gd" id="21_vrcmr"]
-[ext_resource type="Texture2D" uid="uid://dlgvujp80gw1a" path="res://assets/char/portrait/kades/def.png" id="22_svp4f"]
+[ext_resource type="PackedScene" uid="uid://dmfh8oisun0f4" path="res://scenes/ui/dialogue_ui.tscn" id="23_1b0o8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i2aat"]
 texture = ExtResource("1_m802k")
@@ -353,100 +352,14 @@ texture = ExtResource("7_iu1m7")
 flip_h = true
 
 [node name="Npc" parent="." unique_id=1305116040 instance=ExtResource("20_cywot")]
-position = Vector2(342, 313)
+position = Vector2(785, 313)
+npc_type = "kades"
 
 [node name="Npc2" parent="." unique_id=2098283526 instance=ExtResource("21_1b0o8")]
 position = Vector2(107, 313)
-dialogue_id = "tim_01"
+npc_type = "asisten"
 
 [node name="Foreground" type="Node2D" parent="." unique_id=1987422157]
 z_index = 20
 
-[node name="DialogueUI" type="CanvasLayer" parent="." unique_id=1915148614]
-script = ExtResource("21_vrcmr")
-
-[node name="DialogueBox" type="Panel" parent="DialogueUI" unique_id=1901018804]
-visible = false
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 68.0
-offset_top = -103.0
-offset_right = -64.0
-offset_bottom = -7.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="Portrait" type="TextureRect" parent="DialogueUI/DialogueBox" unique_id=345162484]
-texture_filter = 1
-custom_minimum_size = Vector2(96, 97)
-layout_mode = 0
-offset_left = -68.0
-offset_top = -187.0
-offset_right = 28.0
-offset_bottom = -90.0
-scale = Vector2(3, 3)
-texture = ExtResource("22_svp4f")
-stretch_mode = 5
-
-[node name="MarginContainer" type="MarginContainer" parent="DialogueUI/DialogueBox" unique_id=496489253]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Content" type="HBoxContainer" parent="DialogueUI/DialogueBox/MarginContainer" unique_id=530407501]
-layout_mode = 2
-
-[node name="portrait2" type="TextureRect" parent="DialogueUI/DialogueBox/MarginContainer/Content" unique_id=1968939222]
-texture_filter = 1
-custom_minimum_size = Vector2(177, 96)
-layout_mode = 2
-stretch_mode = 5
-
-[node name="VBoxContainer" type="VBoxContainer" parent="DialogueUI/DialogueBox/MarginContainer/Content" unique_id=1068938106]
-layout_mode = 2
-
-[node name="SpeakerName" type="Label" parent="DialogueUI/DialogueBox/MarginContainer/Content/VBoxContainer" unique_id=809787919]
-layout_mode = 2
-text = "Kades"
-
-[node name="DialogueText" type="Label" parent="DialogueUI/DialogueBox/MarginContainer/Content/VBoxContainer" unique_id=1373572079]
-layout_mode = 2
-text = "Terima kasih sudah datang"
-
-[node name="ContinueIndicator" type="Label" parent="DialogueUI/DialogueBox" unique_id=1149999343]
-visible = false
-layout_mode = 0
-offset_left = 792.0
-offset_top = 73.0
-offset_right = 832.0
-offset_bottom = 96.0
-text = "▼"
-
-[node name="ChoiceBox" type="Panel" parent="DialogueUI" unique_id=2055497503]
-visible = false
-offset_left = 682.0
-offset_top = 327.0
-offset_right = 682.0
-offset_bottom = 331.0
-
-[node name="Choices" type="VBoxContainer" parent="DialogueUI/ChoiceBox" unique_id=654319171]
-layout_mode = 0
-offset_right = 53.0
-offset_bottom = 51.0
-
-[node name="Choice1" type="Button" parent="DialogueUI/ChoiceBox/Choices" unique_id=1418023071]
-layout_mode = 2
-text = "Sudah siap"
-alignment = 0
-
-[node name="Choice2" type="Button" parent="DialogueUI/ChoiceBox/Choices" unique_id=637528293]
-layout_mode = 2
-text = "Sebentar lagi"
-alignment = 0
-
-[node name="Choice3" type="Button" parent="DialogueUI/ChoiceBox/Choices" unique_id=1433631573]
-layout_mode = 2
-text = "Apa yang perlu disiapkan?"
-alignment = 0
+[node name="DialogueUI" parent="." unique_id=356329378 instance=ExtResource("23_1b0o8")]

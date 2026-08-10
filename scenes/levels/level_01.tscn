@@ -17,8 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://cvejw700fe8ya" path="res://assets/environment/tiang1.png" id="12_3g50r"]
 [ext_resource type="Texture2D" uid="uid://ky622bqx8yx7" path="res://assets/environment/rumput2.png" id="12_gi8m4"]
 [ext_resource type="Texture2D" uid="uid://cqugryhksgni6" path="res://assets/environment/semak2.png" id="13_cwffn"]
-[ext_resource type="Texture2D" uid="uid://5w5dgujkpmv6" path="res://assets/environment/camp.png" id="14_07lms"]
 [ext_resource type="Texture2D" uid="uid://xarf27q1eya" path="res://assets/environment/rumah 3.png" id="15_gi8m4"]
+[ext_resource type="Texture2D" uid="uid://csde65nn5lsjb" path="res://assets/environment/tenda2.png" id="18_w4kkx"]
+[ext_resource type="Texture2D" uid="uid://d0be8ttawh81s" path="res://assets/environment/tenda1.png" id="19_mhiu8"]
 [ext_resource type="PackedScene" uid="uid://gwgklafg00o" path="res://scenes/npc/npc.tscn" id="20_cywot"]
 [ext_resource type="PackedScene" uid="uid://dkdf1fq35dswu" path="res://scenes/npc/npc2.tscn" id="21_1b0o8"]
 [ext_resource type="Script" uid="uid://b78hbmx6ptdxa" path="res://scipts/ui/dialogue_ui.gd" id="21_vrcmr"]
@@ -224,14 +225,15 @@ sources/1 = SubResource("TileSetAtlasSource_uvc87")
 
 [node name="Level01" type="Node2D" unique_id=1503305036]
 metadata/_edit_horizontal_guides_ = [367.0]
+metadata/_edit_vertical_guides_ = [-2.0]
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=1717910832]
-tile_map_data = PackedByteArray("AAD2/wIAAAAIAAkAAAD2/wEAAAAIAAkAAAAgAAIAAAAIAAkAAAAgAAEAAAAIAAkAAAAAAAcAAQAAAAEAAAABAAcAAQAAAAEAAAACAAcAAQAAAAEAAAADAAcAAQABAAEAAAAEAAcAAQAAAAEAAAAFAAcAAQABAAEAAAAGAAcAAQAAAAEAAAAHAAcAAQAAAAEAAAAIAAcAAQAAAAEAAAAJAAcAAQAAAAEAAAAKAAcAAQABAAEAAAALAAcAAQAAAAEAAAAMAAcAAQAAAAEAAAANAAcAAQAAAAEAAAAOAAcAAQACAAEAAAAPAAcAAQAAAAEAAAAQAAcAAQAAAAEAAAARAAcAAQAAAAEAAAASAAcAAQAAAAEAAAATAAcAAQACAAEAAAD//wcAAQAAAAEAAAD+/wcAAQABAAEAAADw/wcAAQAAAAEAAADx/wcAAQAAAAEAAADy/wcAAQAAAAEAAADz/wcAAQAAAAEAAAD0/wcAAQAAAAEAAAD1/wcAAQAAAAEAAAD2/wcAAQAAAAEAAAD3/wcAAQAAAAEAAAD4/wcAAQAAAAEAAAD5/wcAAQAAAAEAAAD6/wcAAQAAAAEAAAD7/wcAAQACAAEAAAD8/wcAAQAAAAEAAAD9/wcAAQAAAAEAAAAUAAcAAQAAAAEAAAAVAAcAAQAAAAEAAAAWAAcAAQAAAAEAAAAXAAcAAQADAAEAAAAYAAcAAQAAAAEAAAAZAAcAAQAAAAEAAAAaAAcAAQAAAAEAAAAbAAcAAQAAAAEAAAAcAAcAAQAAAAEAAAAdAAcAAQAAAAEAAAAeAAcAAQAAAAEAAAAfAAcAAQAAAAEAAAAgAAcAAQAAAAEAAAAhAAcAAQAAAAEAAAAiAAcAAQAAAAEAAAAjAAcAAQAAAAEAAAAkAAcAAQAAAAEAAAAlAAcAAQAAAAEAAAAmAAcAAQAAAAEAAAAnAAcAAQAAAAEAAADv/wcAAQAAAAIAAADu/wcAAQAAAAIAAADp/wcAAQAAAAIAAADq/wcAAQAEAAIAAADr/wcAAQAFAAIAAADs/wcAAQAGAAIAAADt/wcAAQAAAAIAAAAsAAcAAQABAAMAAAArAAcAAQAAAAMAAAAqAAcAAQADAAMAAAApAAcAAQADAAIAAAAoAAcAAQAAAAIAAAD1/wYAAAAIAAkAAAD0/wYAAAAIAAkAAAD0/wUAAAAIAAkAAAD0/wQAAAAIAAkAAAA=")
+tile_map_data = PackedByteArray("AAD2/wIAAAAIAAkAAAD2/wEAAAAIAAkAAAAgAAIAAAAIAAkAAAAgAAEAAAAIAAkAAAAAAAcAAQAAAAEAAAABAAcAAQADAAEAAAACAAcAAQAAAAEAAAADAAcAAQABAAEAAAAEAAcAAQAAAAEAAAAFAAcAAQABAAEAAAAGAAcAAQACAAEAAAAHAAcAAQAEAAEAAAAIAAcAAQAFAAEAAAAJAAcAAQAGAAEAAAAKAAcAAQABAAEAAAALAAcAAQADAAEAAAAMAAcAAQAAAAEAAAANAAcAAQAAAAEAAAAOAAcAAQAEAAEAAAAPAAcAAQAFAAEAAAAQAAcAAQAEAAEAAAARAAcAAQAFAAIAAAASAAcAAQAGAAIAAAATAAcAAQADAAIAAAD//wcAAQAAAAEAAAD+/wcAAQABAAEAAADw/wcAAQAAAAEAAADx/wcAAQAAAAEAAADy/wcAAQAAAAEAAADz/wcAAQAAAAEAAAD0/wcAAQAAAAEAAAD1/wcAAQAAAAEAAAD2/wcAAQAAAAEAAAD3/wcAAQAAAAEAAAD4/wcAAQAAAAEAAAD5/wcAAQAAAAEAAAD6/wcAAQAAAAEAAAD7/wcAAQACAAEAAAD8/wcAAQAAAAEAAAD9/wcAAQAAAAEAAAAUAAcAAQACAAIAAAAVAAcAAQAGAAIAAAAWAAcAAQAAAAIAAAAXAAcAAQADAAIAAADv/wcAAQAAAAIAAADu/wcAAQAAAAIAAADp/wcAAQAAAAIAAADq/wcAAQAEAAIAAADr/wcAAQAFAAIAAADs/wcAAQAGAAIAAADt/wcAAQAAAAIAAAD1/wYAAAAIAAkAAAD0/wYAAAAIAAkAAAD0/wUAAAAIAAkAAAD0/wQAAAAIAAkAAAAXAAYAAAAIAAkAAAAXAAUAAAAIAAkAAAAAAAYAAAAIAAkAAAAAAAUAAAAIAAkAAAA=")
 tile_set = SubResource("TileSet_f5ypv")
 
 [node name="Player" parent="." unique_id=1027270447 instance=ExtResource("2_i2aat")]
 z_index = 10
-position = Vector2(441, 310)
+position = Vector2(239, 310)
 
 [node name="Background" type="Node2D" parent="." unique_id=116228765]
 z_index = -20
@@ -240,12 +242,12 @@ z_index = -20
 scroll_scale = Vector2(0.1, 0)
 
 [node name="sky" type="Sprite2D" parent="Background/Parallax2D" unique_id=1252556074]
-position = Vector2(487.00003, 49)
+position = Vector2(465.00003, 88.5)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("4_uvc87")
 
 [node name="land" type="Sprite2D" parent="Background/Parallax2D" unique_id=1865586711]
-position = Vector2(487, 223.00002)
+position = Vector2(465, 262.5)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("5_qdh5e")
 
@@ -256,54 +258,55 @@ z_index = -10
 scroll_scale = Vector2(0.5, 0)
 
 [node name="pohon6" type="Sprite2D" parent="Midground/Parallax2D2" unique_id=1409572178]
-position = Vector2(1036, 330)
+position = Vector2(783, 327)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("12_3g50r")
 
 [node name="Parallax2D" type="Parallax2D" parent="Midground" unique_id=1471615686]
 scroll_scale = Vector2(0.6, 0)
 
+[node name="pohon7" type="Sprite2D" parent="Midground/Parallax2D" unique_id=1395295339]
+position = Vector2(210, 325)
+texture = ExtResource("12_3g50r")
+
 [node name="pohon4" type="Sprite2D" parent="Midground/Parallax2D" unique_id=2100133194]
-position = Vector2(17, 328)
+position = Vector2(923, 344)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("10_cwffn")
 
-[node name="ambulan" type="Sprite2D" parent="Midground/Parallax2D" unique_id=684658794]
-position = Vector2(1097, 330)
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("7_iu1m7")
-
 [node name="rumah" type="Sprite2D" parent="Midground/Parallax2D" unique_id=1895889129]
-position = Vector2(264, 299)
+position = Vector2(751, 335)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("6_50wog")
 
-[node name="pohon" type="Sprite2D" parent="Midground/Parallax2D" unique_id=561744562]
-position = Vector2(-30, 278)
-texture = ExtResource("7_1ey3t")
-
 [node name="pohon2" type="Sprite2D" parent="Midground/Parallax2D" unique_id=359740134]
-position = Vector2(578, 323)
+position = Vector2(476, 328)
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("8_kfebt")
 
 [node name="pohon3" type="Sprite2D" parent="Midground/Parallax2D" unique_id=1280120215]
-position = Vector2(455.00003, 294)
-scale = Vector2(0.75, 0.75)
+position = Vector2(169, 322)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("9_r72dd")
 
 [node name="pohon5" type="Sprite2D" parent="Midground/Parallax2D" unique_id=190400890]
-position = Vector2(1008.00006, 337)
+position = Vector2(677.00006, 339)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("11_e6lid")
 
 [node name="semak" type="Sprite2D" parent="Midground/Parallax2D" unique_id=364583725]
-position = Vector2(728, 342)
+position = Vector2(549, 354)
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("10_tyxjt")
 
 [node name="semak3" type="Sprite2D" parent="Midground/Parallax2D" unique_id=60282421]
-position = Vector2(780, 343)
+position = Vector2(594, 355)
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("10_tyxjt")
 
 [node name="rumput2" type="Sprite2D" parent="Midground/Parallax2D" unique_id=153360326]
-position = Vector2(956, 343)
+position = Vector2(425, 353)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("11_07lms")
 
 [node name="rumput3" type="Sprite2D" parent="Midground/Parallax2D" unique_id=496061986]
@@ -315,26 +318,45 @@ position = Vector2(1040, 342)
 texture = ExtResource("12_gi8m4")
 
 [node name="semak2" type="Sprite2D" parent="Midground/Parallax2D" unique_id=1660771119]
-position = Vector2(848, 343)
+position = Vector2(630, 356)
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("13_cwffn")
 
-[node name="camp" type="Sprite2D" parent="Midground/Parallax2D" unique_id=493865364]
-position = Vector2(810, 335)
-texture = ExtResource("14_07lms")
-
 [node name="rumput" type="Sprite2D" parent="Midground/Parallax2D" unique_id=1422126695]
-position = Vector2(918, 346)
+position = Vector2(387, 356)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("11_07lms")
 
 [node name="rumah2" type="Sprite2D" parent="Midground/Parallax2D" unique_id=945696730]
-position = Vector2(-151, 300)
+position = Vector2(869, 340)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("15_gi8m4")
 
+[node name="pohon" type="Sprite2D" parent="Midground/Parallax2D" unique_id=561744562]
+position = Vector2(917.00006, 311)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("7_1ey3t")
+
+[node name="camp2" type="Sprite2D" parent="Midground" unique_id=1223508743]
+position = Vector2(176, 302)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("18_w4kkx")
+
+[node name="camp" type="Sprite2D" parent="Midground" unique_id=493865364]
+position = Vector2(282, 289)
+texture = ExtResource("19_mhiu8")
+
+[node name="ambulan" type="Sprite2D" parent="Midground" unique_id=684658794]
+position = Vector2(36, 306)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("7_iu1m7")
+flip_h = true
+
 [node name="Npc" parent="." unique_id=1305116040 instance=ExtResource("20_cywot")]
-position = Vector2(850, 312)
+position = Vector2(342, 313)
 
 [node name="Npc2" parent="." unique_id=2098283526 instance=ExtResource("21_1b0o8")]
-position = Vector2(1359, 314)
+position = Vector2(107, 313)
 dialogue_id = "tim_01"
 
 [node name="Foreground" type="Node2D" parent="." unique_id=1987422157]

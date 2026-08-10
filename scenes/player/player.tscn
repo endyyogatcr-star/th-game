@@ -93,14 +93,12 @@ shape = SubResource("CapsuleShape2D_68buy")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1271634000]
 position = Vector2(-1, 6)
 sprite_frames = SubResource("SpriteFrames_68buy")
-animation = &"walk"
-frame = 7
-frame_progress = 0.39651626
+animation = &"idle"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=681890707]
 offset = Vector2(0, -64)
 zoom = Vector2(2, 2)
-limit_left = -500
+limit_left = 0
 limit_top = -253
-limit_right = 2882
+limit_right = 1130
 limit_bottom = 445

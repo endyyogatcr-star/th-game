@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
-var player_nearby := false
 
-@onready var dialogue_ui = get_parent().get_node("DialogueUI")
+@export var dialogue_id: String = "warga_01"
+
+var player_nearby := false
 
 
 func _on_interaction_area_body_entered(body):
@@ -16,10 +17,15 @@ func _on_interaction_area_body_exited(body):
 
 
 func _process(_delta):
-	if player_nearby and not dialogue_ui.is_dialogue_active:
-		if Input.is_action_just_pressed("interact"):
-			dialogue_ui.call_deferred("start_dialogue", "Kades", [
-			"Terimakasih sudah datang ke desa kami",
-			"Desa kami baru saja terkena banjir bandang",
-			"Banyak warga yang kehilangna nyawa juga persediaan pangan makin menipis"
-			])
+
+	if not player_nearby:
+		return
+
+	if DialogueManager.dialogue_ui == null:
+		return
+
+	if DialogueManager.dialogue_ui.is_dialogue_active:
+		return
+
+	if Input.is_action_just_pressed("interact"):
+		DialogueManager.start_dialogue(dialogue_id)

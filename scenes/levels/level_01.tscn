@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://5w5dgujkpmv6" path="res://assets/environment/camp.png" id="14_07lms"]
 [ext_resource type="Texture2D" uid="uid://xarf27q1eya" path="res://assets/environment/rumah 3.png" id="15_gi8m4"]
 [ext_resource type="PackedScene" uid="uid://gwgklafg00o" path="res://scenes/npc/npc.tscn" id="20_cywot"]
+[ext_resource type="PackedScene" uid="uid://dkdf1fq35dswu" path="res://scenes/npc/npc2.tscn" id="21_1b0o8"]
 [ext_resource type="Script" uid="uid://b78hbmx6ptdxa" path="res://scipts/ui/dialogue_ui.gd" id="21_vrcmr"]
 [ext_resource type="Texture2D" uid="uid://dlgvujp80gw1a" path="res://assets/char/portrait/kades/def.png" id="22_svp4f"]
 
@@ -239,7 +240,7 @@ z_index = -20
 scroll_scale = Vector2(0.1, 0)
 
 [node name="sky" type="Sprite2D" parent="Background/Parallax2D" unique_id=1252556074]
-position = Vector2(489.00003, 82)
+position = Vector2(487.00003, 49)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("4_uvc87")
 
@@ -332,6 +333,10 @@ texture = ExtResource("15_gi8m4")
 [node name="Npc" parent="." unique_id=1305116040 instance=ExtResource("20_cywot")]
 position = Vector2(850, 312)
 
+[node name="Npc2" parent="." unique_id=2098283526 instance=ExtResource("21_1b0o8")]
+position = Vector2(1359, 314)
+dialogue_id = "tim_01"
+
 [node name="Foreground" type="Node2D" parent="." unique_id=1987422157]
 z_index = 20
 
@@ -351,7 +356,7 @@ offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="portrait" type="TextureRect" parent="DialogueUI/DialogueBox" unique_id=345162484]
+[node name="Portrait" type="TextureRect" parent="DialogueUI/DialogueBox" unique_id=345162484]
 texture_filter = 1
 custom_minimum_size = Vector2(96, 97)
 layout_mode = 0
@@ -396,3 +401,30 @@ offset_top = 73.0
 offset_right = 832.0
 offset_bottom = 96.0
 text = "▼"
+
+[node name="ChoiceBox" type="Panel" parent="DialogueUI" unique_id=2055497503]
+visible = false
+offset_left = 682.0
+offset_top = 327.0
+offset_right = 682.0
+offset_bottom = 331.0
+
+[node name="Choices" type="VBoxContainer" parent="DialogueUI/ChoiceBox" unique_id=654319171]
+layout_mode = 0
+offset_right = 53.0
+offset_bottom = 51.0
+
+[node name="Choice1" type="Button" parent="DialogueUI/ChoiceBox/Choices" unique_id=1418023071]
+layout_mode = 2
+text = "Sudah siap"
+alignment = 0
+
+[node name="Choice2" type="Button" parent="DialogueUI/ChoiceBox/Choices" unique_id=637528293]
+layout_mode = 2
+text = "Sebentar lagi"
+alignment = 0
+
+[node name="Choice3" type="Button" parent="DialogueUI/ChoiceBox/Choices" unique_id=1433631573]
+layout_mode = 2
+text = "Apa yang perlu disiapkan?"
+alignment = 0

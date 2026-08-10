@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 @onready var dialogue_box: Panel = $DialogueBox
-@onready var portrait: TextureRect = $DialogueBox/MarginContainer/Content/Portrait
+@onready var portrait: TextureRect = $DialogueBox/portrait
 @onready var speaker_name: Label = $DialogueBox/MarginContainer/Content/VBoxContainer/SpeakerName
 @onready var dialogue_label: Label = $DialogueBox/MarginContainer/Content/VBoxContainer/DialogueText
 @onready var continue_indicator: Label = $DialogueBox/ContinueIndicator

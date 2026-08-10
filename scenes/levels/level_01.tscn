@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://xarf27q1eya" path="res://assets/environment/rumah 3.png" id="15_gi8m4"]
 [ext_resource type="PackedScene" uid="uid://gwgklafg00o" path="res://scenes/npc/npc.tscn" id="20_cywot"]
 [ext_resource type="Script" uid="uid://b78hbmx6ptdxa" path="res://scipts/ui/dialogue_ui.gd" id="21_vrcmr"]
+[ext_resource type="Texture2D" uid="uid://dlgvujp80gw1a" path="res://assets/char/portrait/kades/def.png" id="22_svp4f"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i2aat"]
 texture = ExtResource("1_m802k")
@@ -250,6 +251,14 @@ texture = ExtResource("5_qdh5e")
 [node name="Midground" type="Node2D" parent="." unique_id=599459817]
 z_index = -10
 
+[node name="Parallax2D2" type="Parallax2D" parent="Midground" unique_id=1725742688]
+scroll_scale = Vector2(0.5, 0)
+
+[node name="pohon6" type="Sprite2D" parent="Midground/Parallax2D2" unique_id=1409572178]
+position = Vector2(1036, 330)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("12_3g50r")
+
 [node name="Parallax2D" type="Parallax2D" parent="Midground" unique_id=1471615686]
 scroll_scale = Vector2(0.6, 0)
 
@@ -283,11 +292,6 @@ texture = ExtResource("9_r72dd")
 position = Vector2(1008.00006, 337)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("11_e6lid")
-
-[node name="pohon6" type="Sprite2D" parent="Midground/Parallax2D" unique_id=1409572178]
-position = Vector2(1263, 325)
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("12_3g50r")
 
 [node name="semak" type="Sprite2D" parent="Midground/Parallax2D" unique_id=364583725]
 position = Vector2(728, 342)
@@ -325,11 +329,11 @@ texture = ExtResource("11_07lms")
 position = Vector2(-151, 300)
 texture = ExtResource("15_gi8m4")
 
+[node name="Npc" parent="." unique_id=1305116040 instance=ExtResource("20_cywot")]
+position = Vector2(850, 312)
+
 [node name="Foreground" type="Node2D" parent="." unique_id=1987422157]
 z_index = 20
-
-[node name="Npc" parent="." unique_id=1305116040 instance=ExtResource("20_cywot")]
-position = Vector2(709, 311)
 
 [node name="DialogueUI" type="CanvasLayer" parent="." unique_id=1915148614]
 script = ExtResource("21_vrcmr")
@@ -340,19 +344,55 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 55.0
-offset_top = -86.0
-offset_right = -77.0
-offset_bottom = -4.0
+offset_left = 68.0
+offset_top = -103.0
+offset_right = -64.0
+offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="portrait" type="TextureRect" parent="DialogueUI/DialogueBox" unique_id=345162484]
+texture_filter = 1
+custom_minimum_size = Vector2(96, 97)
+layout_mode = 0
+offset_left = -68.0
+offset_top = -187.0
+offset_right = 28.0
+offset_bottom = -90.0
+scale = Vector2(3, 3)
+texture = ExtResource("22_svp4f")
+stretch_mode = 5
 
 [node name="MarginContainer" type="MarginContainer" parent="DialogueUI/DialogueBox" unique_id=496489253]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Label" type="Label" parent="DialogueUI/DialogueBox/MarginContainer" unique_id=1562260797]
+[node name="Content" type="HBoxContainer" parent="DialogueUI/DialogueBox/MarginContainer" unique_id=530407501]
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
-text = "Terimakasih sudah datang ke desa kami"
+
+[node name="portrait2" type="TextureRect" parent="DialogueUI/DialogueBox/MarginContainer/Content" unique_id=1968939222]
+texture_filter = 1
+custom_minimum_size = Vector2(177, 96)
+layout_mode = 2
+stretch_mode = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DialogueUI/DialogueBox/MarginContainer/Content" unique_id=1068938106]
+layout_mode = 2
+
+[node name="SpeakerName" type="Label" parent="DialogueUI/DialogueBox/MarginContainer/Content/VBoxContainer" unique_id=809787919]
+layout_mode = 2
+text = "Kades"
+
+[node name="DialogueText" type="Label" parent="DialogueUI/DialogueBox/MarginContainer/Content/VBoxContainer" unique_id=1373572079]
+layout_mode = 2
+text = "Terima kasih sudah datang"
+
+[node name="ContinueIndicator" type="Label" parent="DialogueUI/DialogueBox" unique_id=1149999343]
+visible = false
+layout_mode = 0
+offset_left = 792.0
+offset_top = 73.0
+offset_right = 832.0
+offset_bottom = 96.0
+text = "▼"

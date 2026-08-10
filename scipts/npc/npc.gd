@@ -18,7 +18,7 @@ func _on_interaction_area_body_exited(body):
 func _process(_delta):
 	if player_nearby and not dialogue_ui.is_dialogue_active:
 		if Input.is_action_just_pressed("interact"):
-			dialogue_ui.call_deferred("start_dialogue", [
+			dialogue_ui.call_deferred("start_dialogue", "Kades", [
 			"Terimakasih sudah datang ke desa kami",
 			"Desa kami baru saja terkena banjir bandang",
 			"Banyak warga yang kehilangna nyawa juga persediaan pangan makin menipis"

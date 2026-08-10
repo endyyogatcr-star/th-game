@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://5w5dgujkpmv6" path="res://assets/environment/camp.png" id="14_07lms"]
 [ext_resource type="Texture2D" uid="uid://xarf27q1eya" path="res://assets/environment/rumah 3.png" id="15_gi8m4"]
 [ext_resource type="PackedScene" uid="uid://gwgklafg00o" path="res://scenes/npc/npc.tscn" id="20_cywot"]
+[ext_resource type="Script" uid="uid://b78hbmx6ptdxa" path="res://scipts/ui/dialogue_ui.gd" id="21_vrcmr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i2aat"]
 texture = ExtResource("1_m802k")
@@ -329,3 +330,29 @@ z_index = 20
 
 [node name="Npc" parent="." unique_id=1305116040 instance=ExtResource("20_cywot")]
 position = Vector2(670, 313)
+
+[node name="DialogueUI" type="CanvasLayer" parent="." unique_id=1915148614]
+script = ExtResource("21_vrcmr")
+
+[node name="DialogueBox" type="Panel" parent="DialogueUI" unique_id=1901018804]
+visible = false
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 55.0
+offset_top = -86.0
+offset_right = -77.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="DialogueUI/DialogueBox" unique_id=496489253]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="DialogueUI/DialogueBox/MarginContainer" unique_id=1562260797]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Terimakasih sudah datang ke desa kami"

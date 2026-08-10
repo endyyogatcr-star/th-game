@@ -16,7 +16,7 @@ script = ExtResource("1_pcwmf")
 texture = ExtResource("2_dpyoa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2118347048]
-position = Vector2(0, 25)
+position = Vector2(0, 26)
 shape = SubResource("RectangleShape2D_68buy")
 
 [node name="InteractionArea" type="Area2D" parent="." unique_id=1439579057]

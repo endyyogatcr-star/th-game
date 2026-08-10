@@ -4,9 +4,14 @@ extends CharacterBody2D
 @export var gravity: float = 1200.0
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-
+@onready var dialogue_ui = get_parent().get_node("DialogueUI")
 
 func _physics_process(delta):
+	if dialogue_ui.is_dialogue_active:
+		velocity.x = 0
+		animated_sprite.stop()
+		return
+
 	var direction = Input.get_axis("move_left", "move_right")
 
 	velocity.x = direction * speed
@@ -19,5 +24,6 @@ func _physics_process(delta):
 		animated_sprite.flip_h = direction < 0
 	else:
 		animated_sprite.stop()
+		animated_sprite.play("idle")
 
 	move_and_slide()

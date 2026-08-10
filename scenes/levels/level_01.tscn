@@ -229,7 +229,7 @@ tile_set = SubResource("TileSet_f5ypv")
 
 [node name="Player" parent="." unique_id=1027270447 instance=ExtResource("2_i2aat")]
 z_index = 10
-position = Vector2(439, 316)
+position = Vector2(441, 310)
 
 [node name="Background" type="Node2D" parent="." unique_id=116228765]
 z_index = -20
@@ -254,38 +254,38 @@ z_index = -10
 scroll_scale = Vector2(0.6, 0)
 
 [node name="pohon4" type="Sprite2D" parent="Midground/Parallax2D" unique_id=2100133194]
-position = Vector2(15, 326)
+position = Vector2(17, 328)
 texture = ExtResource("10_cwffn")
 
 [node name="ambulan" type="Sprite2D" parent="Midground/Parallax2D" unique_id=684658794]
-position = Vector2(1092, 320)
+position = Vector2(1097, 330)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("7_iu1m7")
 
 [node name="rumah" type="Sprite2D" parent="Midground/Parallax2D" unique_id=1895889129]
-position = Vector2(262, 295)
+position = Vector2(264, 299)
 texture = ExtResource("6_50wog")
 
 [node name="pohon" type="Sprite2D" parent="Midground/Parallax2D" unique_id=561744562]
-position = Vector2(-29, 270)
+position = Vector2(-30, 278)
 texture = ExtResource("7_1ey3t")
 
 [node name="pohon2" type="Sprite2D" parent="Midground/Parallax2D" unique_id=359740134]
-position = Vector2(577, 306)
+position = Vector2(578, 323)
 texture = ExtResource("8_kfebt")
 
 [node name="pohon3" type="Sprite2D" parent="Midground/Parallax2D" unique_id=1280120215]
-position = Vector2(453, 291)
+position = Vector2(455.00003, 294)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("9_r72dd")
 
 [node name="pohon5" type="Sprite2D" parent="Midground/Parallax2D" unique_id=190400890]
-position = Vector2(1016, 319)
+position = Vector2(1008.00006, 337)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("11_e6lid")
 
 [node name="pohon6" type="Sprite2D" parent="Midground/Parallax2D" unique_id=1409572178]
-position = Vector2(1263, 316)
+position = Vector2(1263, 325)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("12_3g50r")
 
@@ -297,12 +297,8 @@ texture = ExtResource("10_tyxjt")
 position = Vector2(780, 343)
 texture = ExtResource("10_tyxjt")
 
-[node name="rumput" type="Sprite2D" parent="Midground/Parallax2D" unique_id=1422126695]
-position = Vector2(916, 342)
-texture = ExtResource("11_07lms")
-
 [node name="rumput2" type="Sprite2D" parent="Midground/Parallax2D" unique_id=153360326]
-position = Vector2(956, 342)
+position = Vector2(956, 343)
 texture = ExtResource("11_07lms")
 
 [node name="rumput3" type="Sprite2D" parent="Midground/Parallax2D" unique_id=496061986]
@@ -310,7 +306,7 @@ position = Vector2(1004, 343)
 texture = ExtResource("12_gi8m4")
 
 [node name="rumput4" type="Sprite2D" parent="Midground/Parallax2D" unique_id=83415645]
-position = Vector2(1037, 342)
+position = Vector2(1040, 342)
 texture = ExtResource("12_gi8m4")
 
 [node name="semak2" type="Sprite2D" parent="Midground/Parallax2D" unique_id=1660771119]
@@ -318,18 +314,22 @@ position = Vector2(848, 343)
 texture = ExtResource("13_cwffn")
 
 [node name="camp" type="Sprite2D" parent="Midground/Parallax2D" unique_id=493865364]
-position = Vector2(811, 329)
+position = Vector2(810, 335)
 texture = ExtResource("14_07lms")
 
+[node name="rumput" type="Sprite2D" parent="Midground/Parallax2D" unique_id=1422126695]
+position = Vector2(918, 346)
+texture = ExtResource("11_07lms")
+
 [node name="rumah2" type="Sprite2D" parent="Midground/Parallax2D" unique_id=945696730]
-position = Vector2(-150, 295)
+position = Vector2(-151, 300)
 texture = ExtResource("15_gi8m4")
 
 [node name="Foreground" type="Node2D" parent="." unique_id=1987422157]
 z_index = 20
 
 [node name="Npc" parent="." unique_id=1305116040 instance=ExtResource("20_cywot")]
-position = Vector2(670, 313)
+position = Vector2(709, 311)
 
 [node name="DialogueUI" type="CanvasLayer" parent="." unique_id=1915148614]
 script = ExtResource("21_vrcmr")

@@ -6,11 +6,15 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_68buy"]
 radius = 14.0
-height = 56.0
+height = 52.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_je7p5"]
 atlas = ExtResource("2_gmlin")
 region = Rect2(0, 0, 92, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h17s1"]
+atlas = ExtResource("2_dovo2")
+region = Rect2(644, 0, 92, 92)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gmlin"]
 atlas = ExtResource("2_dovo2")
@@ -40,15 +44,19 @@ region = Rect2(460, 0, 92, 92)
 atlas = ExtResource("2_dovo2")
 region = Rect2(552, 0, 92, 92)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_h17s1"]
-atlas = ExtResource("2_dovo2")
-region = Rect2(644, 0, 92, 92)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_68buy"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_je7p5")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h17s1")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gmlin")
@@ -70,9 +78,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5gtgg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h17s1")
 }],
 "loop": 1,
 "name": &"walk",
@@ -89,11 +94,11 @@ shape = SubResource("CapsuleShape2D_68buy")
 position = Vector2(-1, 6)
 sprite_frames = SubResource("SpriteFrames_68buy")
 animation = &"walk"
-frame = 5
-frame_progress = 0.37898332
+frame = 7
+frame_progress = 0.39651626
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=681890707]
-offset = Vector2(0, -48)
+offset = Vector2(0, -64)
 zoom = Vector2(2, 2)
 limit_left = -500
 limit_top = -253

@@ -1228,6 +1228,7 @@ size = Vector2(55, 91)
 [node name="DialogueUI" parent="." unique_id=356329378 instance=ExtResource("10_w3fv1")]
 
 [node name="invWall" type="TileMapLayer" parent="." unique_id=925065177]
+visible = false
 tile_map_data = PackedByteArray("AAALAP//AAAIAAkAAAAMAP//AAAIAAkAAAANAP//AAAIAAkAAAA=")
 tile_set = SubResource("TileSet_68buy")
 
@@ -1242,8 +1243,8 @@ scale = Vector2(0.75, 0.75)
 texture = ExtResource("3_noyr4")
 
 [node name="Crate" type="Sprite2D" parent="." unique_id=398632563]
-position = Vector2(697, -28)
-scale = Vector2(0.22407448, 0.20926835)
+position = Vector2(693, -26.000002)
+scale = Vector2(0.178, 0.16300002)
 texture = ExtResource("5_ewkmg")
 
 [node name="Crate2" type="Sprite2D" parent="Crate" unique_id=1226840315]
@@ -1268,15 +1269,16 @@ position = Vector2(353, -29)
 texture = ExtResource("3_v3doy")
 
 [node name="kasur" type="Sprite2D" parent="." unique_id=1620257174]
-position = Vector2(601, -17)
-scale = Vector2(0.6319011, 0.87579346)
+position = Vector2(608, -24.639376)
+scale = Vector2(0.69999987, 1.2232499)
 texture = ExtResource("5_v5q4n")
 
 [node name="NpcSakit" type="Sprite2D" parent="." unique_id=1896998314]
-position = Vector2(592.00006, -29.000002)
+position = Vector2(600.00006, -36.000004)
 rotation = -1.5707964
 scale = Vector2(1.4520147, 1.3286937)
 texture = ExtResource("10_cppba")
+flip_v = true
 
 [node name="Doctor" type="Sprite2D" parent="." unique_id=133631283]
 position = Vector2(487.00003, -31)
@@ -1341,6 +1343,14 @@ shape = SubResource("RectangleShape2D_f5ypv")
 [node name="Player" parent="." unique_id=1027270447 instance=ExtResource("2_4ijx4")]
 position = Vector2(104.00001, -39.000004)
 scale = Vector2(1.4999999, 1.4999999)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=579564759]
+offset = Vector2(0, -64)
+zoom = Vector2(2, 2)
+limit_left = 0
+limit_top = -252
+limit_right = 700
+limit_bottom = 446
 
 [node name="TentSpawnFromBase" type="Marker2D" parent="." unique_id=1244612536]
 position = Vector2(73, -2)

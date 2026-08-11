@@ -1,6 +1,7 @@
 extends CanvasLayer
 
-signal dialogue_finished(dialogue_id)
+signal dialogue_finished
+signal choice_selected(index, text)
 
 @onready var dialogue_box: Panel = $DialogueBox
 @onready var portrait: TextureRect = $DialogueBox/Portrait
@@ -13,6 +14,7 @@ signal dialogue_finished(dialogue_id)
 @onready var choice3: Button = $ChoiceBox/Choices/Choice3
 
 var dialogues: Array = []
+var pending_choices: Array = []
 var current_dialogue := 0
 var current_dialogue_id := ""
 var is_dialogue_active := false
@@ -31,7 +33,7 @@ func _ready():
 	continue_indicator.visible = false
 
 
-func start_dialogue(speaker: String, portrait_texture: Texture2D, lines: Array):
+func start_dialogue(speaker: String, portrait_texture: Texture2D, lines: Array, choice_list: Array = []):
 
 	if lines.is_empty():
 		print("Dialog kosong.")
@@ -43,6 +45,7 @@ func start_dialogue(speaker: String, portrait_texture: Texture2D, lines: Array):
 	dialogues = lines.duplicate()
 	current_dialogue = 0
 	is_dialogue_active = true
+	pending_choices = choice_list.duplicate()
 
 	speaker_name.text = speaker
 	portrait.texture = portrait_texture
@@ -111,9 +114,10 @@ func _process(_delta):
 		else:
 			next_dialogue()
 
+
 func handle_choice_input():
 
-	if Input.is_action_just_pressed("ui_up"):
+	if Input.is_action_just_pressed("choice_up"):
 		selected_choice -= 1
 
 		if selected_choice < 0:
@@ -121,8 +125,7 @@ func handle_choice_input():
 
 		update_choice_selection()
 
-
-	if Input.is_action_just_pressed("ui_down"):
+	if Input.is_action_just_pressed("choice_down"):
 		selected_choice += 1
 
 		if selected_choice >= choices.size():
@@ -130,11 +133,16 @@ func handle_choice_input():
 
 		update_choice_selection()
 
-
 	if Input.is_action_just_pressed("interact"):
 		select_choice()
 
 func select_choice():
+
+	if choices.is_empty():
+		return
+
+	if selected_choice < 0 or selected_choice >= choices.size():
+		return
 
 	var selected = choices[selected_choice]
 
@@ -143,10 +151,15 @@ func select_choice():
 	choosing = false
 	choice_box.visible = false
 
+	choices.clear()
+	pending_choices.clear()
+
+	is_dialogue_active = false
+
+	choice_selected.emit(selected_choice, selected)
 
 func next_dialogue():
 
-	# Pengaman
 	if not is_dialogue_active:
 		return
 
@@ -157,6 +170,12 @@ func next_dialogue():
 	current_dialogue += 1
 
 	if current_dialogue >= dialogues.size():
+
+		if not pending_choices.is_empty():
+			continue_indicator.visible = false
+			show_choices(pending_choices)
+			return
+
 		end_dialogue()
 		return
 
@@ -191,6 +210,11 @@ func show_choices(choice_list: Array):
 
 	update_choice_selection()
 
+func hide_choices():
+
+	choice_box.visible = false
+	choosing = false
+
 func update_choice_selection():
 
 	choice1.text = "> " + choices[0] if selected_choice == 0 else choices[0]
@@ -200,6 +224,7 @@ func update_choice_selection():
 
 	if choices.size() > 2:
 		choice3.text = "> " + choices[2] if selected_choice == 2 else choices[2]
+
 func end_dialogue():
 
 	is_dialogue_active = false
@@ -207,6 +232,9 @@ func end_dialogue():
 
 	dialogue_box.visible = false
 	continue_indicator.visible = false
+	choice_box.visible = false
+
+	choosing = false
 
 	dialogues.clear()
 	current_dialogue = 0

@@ -20,7 +20,6 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="Portrait" type="TextureRect" parent="DialogueBox" unique_id=711300514]
-visible = false
 texture_filter = 1
 custom_minimum_size = Vector2(96, 96)
 layout_mode = 0
@@ -75,8 +74,8 @@ offset_bottom = 331.0
 
 [node name="Choices" type="VBoxContainer" parent="ChoiceBox" unique_id=1753883967]
 layout_mode = 0
-offset_right = 53.0
-offset_bottom = 51.0
+offset_right = 210.0
+offset_bottom = 101.0
 
 [node name="Choice1" type="Button" parent="ChoiceBox/Choices" unique_id=345383353]
 layout_mode = 2

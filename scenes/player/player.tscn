@@ -5,7 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://bcf07thfsqw1u" path="res://assets/char/east.png" id="2_gmlin"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_68buy"]
-radius = 14.0
 height = 52.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_je7p5"]
@@ -99,6 +98,6 @@ animation = &"idle"
 offset = Vector2(0, -64)
 zoom = Vector2(2, 2)
 limit_left = 0
-limit_top = -253
+limit_top = -252
 limit_right = 1130
-limit_bottom = 445
+limit_bottom = 446

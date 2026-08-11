@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://gwgklafg00o" path="res://scenes/npc/npc.tscn" id="20_cywot"]
 [ext_resource type="PackedScene" uid="uid://dkdf1fq35dswu" path="res://scenes/npc/npc2.tscn" id="21_1b0o8"]
 [ext_resource type="PackedScene" uid="uid://dmfh8oisun0f4" path="res://scenes/ui/dialogue_ui.tscn" id="23_1b0o8"]
+[ext_resource type="Script" uid="uid://bol14sixclkmc" path="res://scipts/manager/SceneTransition.gd" id="24_w4kkx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i2aat"]
 texture = ExtResource("1_m802k")
@@ -222,7 +223,10 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_i2aat")
 sources/1 = SubResource("TileSetAtlasSource_uvc87")
 
-[node name="Level01" type="Node2D" unique_id=1503305036]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_68buy"]
+size = Vector2(23, 45)
+
+[node name="Base" type="Node2D" unique_id=1503305036]
 metadata/_edit_horizontal_guides_ = [367.0]
 metadata/_edit_vertical_guides_ = [-2.0]
 
@@ -232,7 +236,7 @@ tile_set = SubResource("TileSet_f5ypv")
 
 [node name="Player" parent="." unique_id=1027270447 instance=ExtResource("2_i2aat")]
 z_index = 10
-position = Vector2(239, 310)
+position = Vector2(214, 310)
 
 [node name="Background" type="Node2D" parent="." unique_id=116228765]
 z_index = -20
@@ -363,3 +367,15 @@ npc_type = "asisten"
 z_index = 20
 
 [node name="DialogueUI" parent="." unique_id=356329378 instance=ExtResource("23_1b0o8")]
+
+[node name="TentEntrance" type="Area2D" parent="." unique_id=430221447]
+script = ExtResource("24_w4kkx")
+target_scene = "uid://dnkhp20027paa"
+spawn_point_name = "TentSpawnFromBase"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TentEntrance" unique_id=1760205765]
+position = Vector2(283, 312)
+shape = SubResource("RectangleShape2D_68buy")
+
+[node name="BaseSpawnFromTent" type="Marker2D" parent="." unique_id=1106486286]
+position = Vector2(282, 335)

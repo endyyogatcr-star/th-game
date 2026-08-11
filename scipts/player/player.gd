@@ -27,3 +27,17 @@ func _physics_process(delta):
 		animated_sprite.play("idle")
 
 	move_and_slide()
+
+func _ready():
+
+	if SceneTransitionData.spawn_point_name == "":
+		return
+
+	var spawn_point = get_tree().current_scene.get_node_or_null(
+		SceneTransitionData.spawn_point_name
+	)
+
+	if spawn_point:
+		global_position = spawn_point.global_position
+
+	SceneTransitionData.spawn_point_name = ""

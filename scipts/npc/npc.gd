@@ -18,10 +18,11 @@ func _on_interaction_area_body_exited(body):
 func get_dialogue_id() -> String:
 	match npc_type:
 		"asisten":
-			if not GameManager.talked_to_kades:				return "asisten_awal"
+			if not GameManager.talked_to_kades:
+				return "asisten_awal"
 			if not GameManager.has_all_equipment():
 				return "asisten_setelah_kades"
-			return "asisten_siap"
+			return "asisten_setelah_kades"
 		"kades":
 			return "kades_01"
 

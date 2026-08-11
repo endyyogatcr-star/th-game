@@ -99,5 +99,5 @@ offset = Vector2(0, -64)
 zoom = Vector2(2, 2)
 limit_left = 0
 limit_top = -252
-limit_right = 1130
+limit_right = 700
 limit_bottom = 446

@@ -9,3 +9,4 @@
 position = Vector2(-80, 227)
 
 [node name="Tent" parent="." unique_id=2006571247 instance=ExtResource("2_iuonh")]
+position = Vector2(73, -1)

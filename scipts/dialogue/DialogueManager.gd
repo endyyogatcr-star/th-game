@@ -169,7 +169,6 @@ var dialogue_data := {
 			"Kalau begitu, mari kita berangkat ke lokasi bencana."
 		]
 	},
-<<<<<<< HEAD
 	
 	"ketua_tim_after_decision": {
 		"speaker": "Ketua Tim",
@@ -179,8 +178,6 @@ var dialogue_data := {
 			"Segera menuju lokasi yang sudah kita prioritaskan."
 		]
 	},
-=======
->>>>>>> a033c14c47f105df6dfa8fd1bf97efadadf18140
 
 	"ketua_tim_01": {
 		"speaker": "Ketua Tim",
@@ -346,17 +343,9 @@ func _on_dialogue_finished():
 
 	if current_dialogue_id == "custom_report":
 		call_deferred("_start_decision_phase")
-<<<<<<< HEAD
 		return
 		
 	call_deferred("_clear_interaction_lock")
-=======
-	else:
-		call_deferred("_clear_interaction_lock")
-
-func _go_to_disaster():
-	GameManager.go_to_disaster()
->>>>>>> a033c14c47f105df6dfa8fd1bf97efadadf18140
 
 func _go_to_disaster():
 	GameManager.go_to_disaster()
@@ -448,14 +437,9 @@ func _select_priority(priority: String):
 
 	print("Prioritas dipilih: ", priority)
 
-<<<<<<< HEAD
 	interaction_lock = false
 
 	match priority:
-=======
-	match priority:
-
->>>>>>> a033c14c47f105df6dfa8fd1bf97efadadf18140
 		"sd":
 			start_dialogue("ketua_tim_pilih_sd")
 

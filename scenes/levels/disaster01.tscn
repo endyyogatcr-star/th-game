@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://xarf27q1eya" path="res://assets/environment/rumah 3.png" id="17_yugle"]
 [ext_resource type="Texture2D" uid="uid://cc4qxw78u4mqu" path="res://assets/environment/pohon1.png" id="18_o6a2j"]
 [ext_resource type="Texture2D" uid="uid://dlvpl1sewubcu" path="res://assets/environment/genteng1.png" id="18_ocj03"]
+[ext_resource type="Texture2D" uid="uid://cv08gvf83l6up" path="res://assets/char/npc/npc0.png" id="23_1m0s5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_acylg"]
 texture = ExtResource("2_acylg")
@@ -405,6 +406,10 @@ texture = ExtResource("4_vdn5p")
 position = Vector2(552, 219.5)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("5_up65f")
+
+[node name="Npc0" type="Sprite2D" parent="." unique_id=50686940]
+position = Vector2(1130, -22)
+texture = ExtResource("23_1m0s5")
 
 [node name="Player" parent="." unique_id=1027270447 instance=ExtResource("3_0vmb1")]
 position = Vector2(41, -26)

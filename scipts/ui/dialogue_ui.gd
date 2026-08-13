@@ -235,8 +235,10 @@ func end_dialogue():
 	choice_box.visible = false
 
 	choosing = false
-
+	
 	dialogues.clear()
 	current_dialogue = 0
 
 	dialogue_finished.emit()
+	
+	print("Interview progress: ", GameManager.get_interview_count(), "/6")

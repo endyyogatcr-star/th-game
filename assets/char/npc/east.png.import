@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkbursdopmd1w"
-path="res://.godot/imported/def.png-c6ff8b9c9c36f5fe1cc4f1136ace9520.ctex"
+uid="uid://cootamsi184ap"
+path="res://.godot/imported/east.png-f2705be0e950a5fd2e6b5c0e4c52d8e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/char/portrait/tim1/def.png"
-dest_files=["res://.godot/imported/def.png-c6ff8b9c9c36f5fe1cc4f1136ace9520.ctex"]
+source_file="res://assets/char/npc/east.png"
+dest_files=["res://.godot/imported/east.png-f2705be0e950a5fd2e6b5c0e4c52d8e8.ctex"]
 
 [params]
 

@@ -20,10 +20,14 @@
 [ext_resource type="Texture2D" uid="uid://xarf27q1eya" path="res://assets/environment/rumah 3.png" id="15_gi8m4"]
 [ext_resource type="Texture2D" uid="uid://csde65nn5lsjb" path="res://assets/environment/tenda2.png" id="18_w4kkx"]
 [ext_resource type="Texture2D" uid="uid://d0be8ttawh81s" path="res://assets/environment/tenda1.png" id="19_mhiu8"]
-[ext_resource type="PackedScene" uid="uid://gwgklafg00o" path="res://scenes/npc/npc.tscn" id="20_cywot"]
-[ext_resource type="PackedScene" uid="uid://dkdf1fq35dswu" path="res://scenes/npc/npc2.tscn" id="21_1b0o8"]
+[ext_resource type="PackedScene" uid="uid://gwgklafg00o" path="res://scenes/npc/kades.tscn" id="20_cywot"]
+[ext_resource type="PackedScene" uid="uid://dkdf1fq35dswu" path="res://scenes/npc/asisten.tscn" id="21_1b0o8"]
+[ext_resource type="Texture2D" uid="uid://dbwn7bah2rd0n" path="res://assets/environment/rumah4.png" id="21_uujh0"]
 [ext_resource type="PackedScene" uid="uid://dmfh8oisun0f4" path="res://scenes/ui/dialogue_ui.tscn" id="23_1b0o8"]
 [ext_resource type="Script" uid="uid://bol14sixclkmc" path="res://scipts/manager/SceneTransition.gd" id="24_w4kkx"]
+[ext_resource type="PackedScene" uid="uid://cln175ig7g60x" path="res://scenes/npc/painah.tscn" id="25_mhiu8"]
+[ext_resource type="PackedScene" uid="uid://dwnewn0yu0dj" path="res://scenes/npc/slamet.tscn" id="26_lswbx"]
+[ext_resource type="PackedScene" uid="uid://cbwmshdd1p6fk" path="res://scenes/npc/yanto.tscn" id="28_3t34l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i2aat"]
 texture = ExtResource("1_m802k")
@@ -363,13 +367,23 @@ scale = Vector2(0.75, 0.75)
 texture = ExtResource("7_iu1m7")
 flip_h = true
 
-[node name="Npc" parent="." unique_id=1305116040 instance=ExtResource("20_cywot")]
+[node name="Rumah4" type="Sprite2D" parent="." unique_id=1409890641]
+z_index = -10
+position = Vector2(598, 265)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("21_uujh0")
+
+[node name="kades" parent="." unique_id=1305116040 instance=ExtResource("20_cywot")]
 position = Vector2(785, 313)
 npc_type = "kades"
 
-[node name="Npc2" parent="." unique_id=2098283526 instance=ExtResource("21_1b0o8")]
+[node name="asisten" parent="." unique_id=2098283526 instance=ExtResource("21_1b0o8")]
 position = Vector2(107, 313)
 npc_type = "asisten"
+
+[node name="painah" parent="." unique_id=2025280006 instance=ExtResource("25_mhiu8")]
+position = Vector2(355, 314)
+dialogue_id = "painah_01"
 
 [node name="Foreground" type="Node2D" parent="." unique_id=1987422157]
 z_index = 20
@@ -387,3 +401,11 @@ shape = SubResource("RectangleShape2D_68buy")
 
 [node name="BaseSpawnFromTent" type="Marker2D" parent="." unique_id=1106486286]
 position = Vector2(282, 335)
+
+[node name="Npc" parent="." unique_id=1302093578 instance=ExtResource("26_lswbx")]
+position = Vector2(493, 313)
+dialogue_id = "slamet_01"
+
+[node name="Npc2" parent="." unique_id=1757284128 instance=ExtResource("28_3t34l")]
+position = Vector2(145, 314)
+dialogue_id = "yanto_01"

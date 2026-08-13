@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dlgvujp80gw1a"
-path="res://.godot/imported/def.png-4d742fd64a100a5f7ad11a9895ab013d.ctex"
+uid="uid://i81d761g4jl"
+path="res://.godot/imported/npc9.png-55bdd6f332b2b7de2ce6baab84217533.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/char/portrait/kades/def.png"
-dest_files=["res://.godot/imported/def.png-4d742fd64a100a5f7ad11a9895ab013d.ctex"]
+source_file="res://assets/char/npc/npc9.png"
+dest_files=["res://.godot/imported/npc9.png-55bdd6f332b2b7de2ce6baab84217533.ctex"]
 
 [params]
 

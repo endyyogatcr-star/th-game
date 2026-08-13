@@ -10,14 +10,16 @@
 [ext_resource type="Texture2D" uid="uid://dieapuc7ix1au" path="res://assets/environment/kasur.png" id="5_v5q4n"]
 [ext_resource type="Texture2D" uid="uid://dkhdp8erynk8s" path="res://assets/environment/kursi.png" id="6_3tx5b"]
 [ext_resource type="Script" uid="uid://dnjqkxs1xfk40" path="res://scipts/interactables/Equipment.gd" id="10_bab2o"]
-[ext_resource type="Texture2D" uid="uid://c1n860bpyjnea" path="res://assets/char/npc/npc sakit.png" id="10_cppba"]
 [ext_resource type="Texture2D" uid="uid://dwogqw6sih05o" path="res://assets/environment/object/radio.png" id="10_endbx"]
+[ext_resource type="Texture2D" uid="uid://dv6qbnt0fycp6" path="res://assets/char/npc/sakit.png" id="10_r07wh"]
 [ext_resource type="PackedScene" uid="uid://dmfh8oisun0f4" path="res://scenes/ui/dialogue_ui.tscn" id="10_w3fv1"]
 [ext_resource type="Texture2D" uid="uid://b6hf1m2ph72eb" path="res://assets/environment/medbox.png" id="11_bab2o"]
-[ext_resource type="Texture2D" uid="uid://cr1h7kjlj46et" path="res://assets/char/doctor.png" id="11_mv3gd"]
 [ext_resource type="Texture2D" uid="uid://77vp67wujuos" path="res://assets/environment/tasSup.png" id="12_80te0"]
 [ext_resource type="Texture2D" uid="uid://dlun51nl04ufc" path="res://assets/environment/gorden.png" id="12_dgiiw"]
 [ext_resource type="Script" uid="uid://bol14sixclkmc" path="res://scipts/manager/SceneTransition.gd" id="13_80te0"]
+[ext_resource type="PackedScene" uid="uid://jydh22ryw4bs" path="res://scenes/npc/ujang.tscn" id="18_r07wh"]
+[ext_resource type="PackedScene" uid="uid://cf1cwvqky6ibm" path="res://scenes/npc/wati.tscn" id="19_dgiiw"]
+[ext_resource type="PackedScene" uid="uid://dsbhl5mb6bgk6" path="res://scenes/npc/dokter.tscn" id="20_di7xb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_noyr4"]
 texture = ExtResource("2_v5q4n")
@@ -1237,55 +1239,52 @@ scale = Vector2(1.0861883, 1.0064582)
 tile_map_data = PackedByteArray("AAD///7/AQAIAAkAAAD/////AQAIAAkAAAACAAAAAgAAAAIAAAAAAAAAAgAAAAIAAAABAAAAAgAAAAIAAAADAAAAAgAAAAIAAAAEAAAAAgAAAAIAAAAFAAAAAgAAAAIAAAAGAAAAAgAAAAIAAAAHAAAAAgAAAAIAAAAIAAAAAgAAAAIAAAAJAAAAAgAAAAIAAAAKAAAAAgAAAAIAAAALAAAAAgAAAAIAAAAMAAAAAgAAAAIAAAANAAAAAgAAAAIAAAABAP7/AgAAAAAAAAABAP//AgAAAAEAAAAAAP//AgABAAEAABANAP//AgABAAEAABANAPz/AgABAAEAABACAP//AgABAAEAAAADAP//AgACAAEAAAAEAP//AgACAAEAAAAFAP//AgACAAEAAAAGAP//AgACAAEAAAAHAP//AgACAAEAAAAIAP//AgACAAEAAAAJAP//AgACAAEAAAAKAP//AgACAAEAAAALAP//AgACAAEAAAAMAP//AgACAAEAAAAMAPz/AgACAAEAAAALAPz/AgACAAEAAAAKAPz/AgACAAEAAAAJAPz/AgACAAEAAAAIAPz/AgACAAEAAAAHAPz/AgACAAEAAAAGAPz/AgACAAEAAAAFAPz/AgACAAEAAAAEAPz/AgACAAEAAAADAPz/AgACAAEAAAACAPz/AgACAAEAAAABAPz/AgACAAEAAAAAAPz/AgABAAEAAAAAAP3/AgABAAAAAAABAP3/AgACAAAAAAACAP3/AgACAAAAAAADAP3/AgACAAAAAAAEAP3/AgACAAAAAAAFAP3/AgACAAAAAAAGAP3/AgACAAAAAAAHAP3/AgACAAAAAAAIAP3/AgACAAAAAAAJAP3/AgACAAAAAAAKAP3/AgACAAAAAAALAP3/AgACAAAAAAAMAP3/AgACAAAAAAANAP3/AgACAAAAAAAAAP7/AgABAAIAAAACAP7/AgABAAIAAAADAP7/AgACAAIAAAAEAP7/AgABAAIAAAAFAP7/AgABAAIAAAAGAP7/AgABAAIAAAAHAP7/AgABAAIAAAAIAP7/AgABAAIAAAAJAP7/AgABAAIAAAAKAP7/AgACAAIAAAALAP7/AgABAAIAAAAMAP7/AgABAAIAAAANAP7/AgABAAIAAAABAPv/AgACAAAAAAACAPv/AgACAAAAAAADAPv/AgACAAAAAAAEAPv/AgACAAAAAAAFAPv/AgACAAAAAAAGAPv/AgACAAAAAAAHAPv/AgACAAAAAAAIAPv/AgACAAAAAAAJAPv/AgACAAAAAAAKAPv/AgACAAAAAAALAPv/AgACAAAAAAAMAPv/AgACAAAAAAAAAPv/AgABAAAAAAANAPv/AgABAAAAABA=")
 tile_set = SubResource("TileSet_f5ypv")
 
-[node name="meja" type="Sprite2D" parent="." unique_id=1096239722]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=819659885]
+
+[node name="meja" type="Sprite2D" parent="Sprite2D" unique_id=1096239722]
 position = Vector2(148, -21)
 scale = Vector2(0.75, 0.75)
 texture = ExtResource("3_noyr4")
 
-[node name="Crate" type="Sprite2D" parent="." unique_id=398632563]
+[node name="Crate" type="Sprite2D" parent="Sprite2D" unique_id=398632563]
 position = Vector2(693, -26.000002)
 scale = Vector2(0.178, 0.16300002)
 texture = ExtResource("5_ewkmg")
 
-[node name="Crate2" type="Sprite2D" parent="Crate" unique_id=1226840315]
+[node name="Crate2" type="Sprite2D" parent="Sprite2D/Crate" unique_id=1226840315]
 position = Vector2(49.090622, -272.37756)
 texture = ExtResource("5_ewkmg")
 
-[node name="lampu" type="Sprite2D" parent="." unique_id=1109406844]
+[node name="lampu" type="Sprite2D" parent="Sprite2D" unique_id=1109406844]
 position = Vector2(22, -27)
 texture = ExtResource("4_rvxlo")
 
-[node name="kursi" type="Sprite2D" parent="." unique_id=670279289]
+[node name="kursi" type="Sprite2D" parent="Sprite2D" unique_id=670279289]
 position = Vector2(199, -26)
 texture = ExtResource("6_3tx5b")
 flip_h = true
 
-[node name="kursi2" type="Sprite2D" parent="." unique_id=1769044506]
+[node name="kursi2" type="Sprite2D" parent="Sprite2D" unique_id=1769044506]
 position = Vector2(436, -26)
 texture = ExtResource("6_3tx5b")
 
-[node name="box" type="Sprite2D" parent="." unique_id=1159057914]
+[node name="box" type="Sprite2D" parent="Sprite2D" unique_id=1159057914]
 position = Vector2(353, -29)
 texture = ExtResource("3_v3doy")
 
-[node name="kasur" type="Sprite2D" parent="." unique_id=1620257174]
+[node name="kasur" type="Sprite2D" parent="Sprite2D" unique_id=1620257174]
 position = Vector2(608, -24.639376)
 scale = Vector2(0.69999987, 1.2232499)
 texture = ExtResource("5_v5q4n")
 
-[node name="NpcSakit" type="Sprite2D" parent="." unique_id=1896998314]
-position = Vector2(600.00006, -36.000004)
+[node name="NpcSakit" type="Sprite2D" parent="Sprite2D" unique_id=1896998314]
+position = Vector2(606, -33.000004)
 rotation = -1.5707964
 scale = Vector2(1.4520147, 1.3286937)
-texture = ExtResource("10_cppba")
+texture = ExtResource("10_r07wh")
 flip_v = true
 
-[node name="Doctor" type="Sprite2D" parent="." unique_id=133631283]
-position = Vector2(487.00003, -31)
-scale = Vector2(1.480093, 1.6061746)
-texture = ExtResource("11_mv3gd")
-
-[node name="Gorden" type="Sprite2D" parent="." unique_id=991119228]
+[node name="Gorden" type="Sprite2D" parent="Sprite2D" unique_id=991119228]
 position = Vector2(519, -41.000004)
 scale = Vector2(0.3269509, 0.22443885)
 texture = ExtResource("12_dgiiw")
@@ -1303,7 +1302,7 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("10_endbx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Object/Radio" unique_id=825655128]
-position = Vector2(168, -44)
+position = Vector2(168, 86)
 shape = SubResource("RectangleShape2D_68buy")
 
 [node name="MedicalSupply" type="Area2D" parent="Object" unique_id=1854520915]
@@ -1314,7 +1313,7 @@ position = Vector2(293, -15)
 texture = ExtResource("11_bab2o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Object/MedicalSupply" unique_id=1962398581]
-position = Vector2(292.875, -15.25)
+position = Vector2(296, 80)
 shape = SubResource("RectangleShape2D_68buy")
 
 [node name="SupplyBag" type="Area2D" parent="Object" unique_id=1667905354]
@@ -1328,7 +1327,7 @@ position = Vector2(344, -19)
 texture = ExtResource("12_80te0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Object/SupplyBag" unique_id=690628664]
-position = Vector2(345.5, -14.5)
+position = Vector2(353, 110)
 shape = SubResource("RectangleShape2D_68buy")
 
 [node name="ExitTent" type="Area2D" parent="." unique_id=1053191041]
@@ -1339,6 +1338,21 @@ spawn_point_name = "BaseSpawnFromTent"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitTent" unique_id=884046648]
 position = Vector2(77.5, -47.5)
 shape = SubResource("RectangleShape2D_f5ypv")
+
+[node name="Npc2" parent="." unique_id=1305116040 instance=ExtResource("18_r07wh")]
+position = Vector2(427, -35)
+scale = Vector2(1.5, 1.5)
+dialogue_id = "ujang_01"
+
+[node name="Npc" parent="." unique_id=1800890609 instance=ExtResource("19_dgiiw")]
+position = Vector2(200, -36)
+scale = Vector2(1.5, 1.5)
+dialogue_id = "wati_01"
+
+[node name="Npc3" parent="." unique_id=729070067 instance=ExtResource("20_di7xb")]
+position = Vector2(491.00003, -36)
+scale = Vector2(1.5, 1.5)
+dialogue_id = "doctor_surti_01"
 
 [node name="Player" parent="." unique_id=1027270447 instance=ExtResource("2_4ijx4")]
 position = Vector2(104.00001, -39.000004)

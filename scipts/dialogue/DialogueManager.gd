@@ -169,6 +169,81 @@ var dialogue_data := {
 			"Kalau begitu, mari kita berangkat ke lokasi bencana."
 		]
 	},
+	
+	"ketua_tim_after_decision": {
+		"speaker": "Ketua Tim",
+			"portrait": "res://assets/char/portrait/ketua_tim.png",
+			"lines": [
+			"Keputusan sudah dibuat.",
+			"Segera menuju lokasi yang sudah kita prioritaskan."
+		]
+	},
+
+	"ketua_tim_01": {
+		"speaker": "Ketua Tim",
+		"portrait": "res://assets/char/portrait/ketua_tim.png",
+		"lines": [
+			"Kalian akhirnya sampai.",
+			"Saya ingin mendengar laporan dari kalian.",
+			"Apa yang berhasil kalian ketahui dari warga di camp?"
+		]
+	},
+
+	"ketua_tim_no_report": {
+		"speaker": "Ketua Tim",
+		"portrait": "res://assets/char/portrait/ketua_tim.png",
+		"lines": [
+			"Kalian belum memiliki laporan yang cukup.",
+			"Pastikan kalian sudah berbicara dengan warga sebelum datang ke sini."
+		]
+	},
+	
+	"ketua_tim_decision": {
+		"speaker": "Ketua Tim",
+		"portrait": "res://assets/char/portrait/ketua_tim.png",
+		"lines": [
+			"Baik. Saya sudah mendengar laporan kalian.",
+			"Beberapa lokasi membutuhkan perhatian kita.",
+			"Kita tidak mungkin menangani semuanya sekaligus.",
+			"Kita harus menentukan prioritas."
+		],
+		"choices": [
+			"Prioritaskan SD Karang Anyar",
+			"Prioritaskan RT 03",
+			"Prioritaskan Rumah Pak Darto"
+		]
+	},
+	
+	"ketua_tim_pilih_sd": {
+		"speaker": "Ketua Tim",
+		"portrait": "res://assets/char/portrait/ketua_tim.png",
+		"lines": [
+			"Baik.",
+			"Kita prioritaskan SD Karang Anyar.",
+			"Menurut laporan Bu Painah, masih ada kemungkinan anak-anak berada di sekitar sekolah.",
+			"Tim bersiap menuju sekolah."
+		]
+	},
+	"ketua_tim_pilih_rt03": {
+		"speaker": "Ketua Tim",
+		"portrait": "res://assets/char/portrait/ketua_tim.png",
+		"lines": [
+			"Baik.",
+			"Kita prioritaskan RT 03.",
+			"Informasi mengenai jumlah warga memang masih berbeda, tetapi kondisi air terus memburuk.",
+			"Tim bersiap menuju RT 03."
+		]
+	},
+	"ketua_tim_pilih_pak_darto": {
+		"speaker": "Ketua Tim",
+		"portrait": "res://assets/char/portrait/ketua_tim.png",
+		"lines": [
+			"Baik.",
+			"Kita prioritaskan rumah Pak Darto.",
+			"Jalur menuju rumahnya tertutup longsor dan kita tidak tahu apakah masih ada orang di dalam.",
+			"Tim bersiap menuju lokasi."
+		]
+	}
 }
 
 func register_dialogue_ui(ui: CanvasLayer):
@@ -238,7 +313,6 @@ func _on_dialogue_finished():
 		GameManager.first_talk_asisten = true
 		print("GameManager: first_talk_asisten = true")
 
-
 	if current_dialogue_id == "painah_01":
 		GameManager.interviewed_painah = true
 		print("GameManager: Bu Painah sudah diwawancarai")
@@ -263,8 +337,18 @@ func _on_dialogue_finished():
 		GameManager.interviewed_yanto = true
 		print("GameManager: Pak Yanto sudah diwawancarai")
 
+	if current_dialogue_id == "asisten_semua_siap":
+		print("Player siap berangkat ke lokasi bencana.")
+		call_deferred("_go_to_disaster")
 
+	if current_dialogue_id == "custom_report":
+		call_deferred("_start_decision_phase")
+		return
+		
 	call_deferred("_clear_interaction_lock")
+
+func _go_to_disaster():
+	GameManager.go_to_disaster()
 
 func _on_choice_selected(index, text):
 	print("Pilihan player: ", index, " - ", text)
@@ -274,6 +358,93 @@ func _on_choice_selected(index, text):
 			1:start_dialogue("asisten_pilihan_belum")
 			2:start_dialogue("asisten_pilihan_bertanya")
 
+	elif current_dialogue_id == "ketua_tim_decision":
+		match index:
+			0:_select_priority("sd")
+			1:_select_priority("rt03")
+			2:_select_priority("pak_darto")
+
 func _handle_pilihan_siap():
 	GameManager.departure_ready = true
 	start_dialogue("asisten_semua_siap")
+
+func start_custom_dialogue(
+	speaker: String,
+	portrait_path: String,
+	lines: Array
+):
+
+	if interaction_lock:
+		return
+
+	if dialogue_ui == null:
+		print("DialogueUI belum terdaftar.")
+		return
+
+	if dialogue_ui.is_dialogue_active:
+		return
+
+	var portrait_texture = load(portrait_path)
+
+	if portrait_texture == null:
+		print("Portrait tidak ditemukan: ", portrait_path)
+		return
+
+	current_dialogue_id = "custom_report"
+
+	dialogue_ui.call_deferred(
+		"start_dialogue",
+		speaker,
+		portrait_texture,
+		lines,
+		[]
+	)
+
+func start_report_dialogue():
+
+	var report := GameManager.get_report_summary()
+
+	if report.is_empty():
+		start_dialogue("ketua_tim_no_report")
+		return
+
+	var lines: Array[String] = []
+
+	lines.append("Baik. Sampaikan apa yang kalian temukan.")
+
+	for information in report:
+		lines.append("- " + information)
+
+	lines.append("Informasi ini akan menjadi dasar untuk menentukan prioritas penyelamatan.")
+
+	start_custom_dialogue(
+		"Ketua Tim",
+		"res://assets/char/portrait/ketua_tim.png",
+		lines
+	)
+
+func _start_decision_phase():
+	interaction_lock = false
+	start_dialogue("ketua_tim_decision")
+
+func _select_priority(priority: String):
+
+	if GameManager.decision_made:
+		return
+
+	GameManager.selected_priority = priority
+	GameManager.decision_made = true
+
+	print("Prioritas dipilih: ", priority)
+
+	interaction_lock = false
+
+	match priority:
+		"sd":
+			start_dialogue("ketua_tim_pilih_sd")
+
+		"rt03":
+			start_dialogue("ketua_tim_pilih_rt03")
+
+		"pak_darto":
+			start_dialogue("ketua_tim_pilih_pak_darto")

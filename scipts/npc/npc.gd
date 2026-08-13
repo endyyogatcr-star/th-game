@@ -6,6 +6,7 @@ extends CharacterBody2D
 
 var player_nearby := false
 
+
 func _on_interaction_area_body_entered(body):
 	if body.name == "Player":
 		player_nearby = true
@@ -15,20 +16,35 @@ func _on_interaction_area_body_exited(body):
 	if body.name == "Player":
 		player_nearby = false
 
+
 func get_dialogue_id() -> String:
+
 	match npc_type:
+
 		"asisten":
 			if not GameManager.first_talk_asisten:
 				return "asisten_awal"
+
 			if not GameManager.has_interviewed_all():
 				return "asisten_not_ready"
+
 			if not GameManager.talked_to_kades:
 				return "asisten_need_kades"
+
 			return "asisten_ready"
+
+
 		"kades":
 			return "kades_01"
 
+
+		"ketua_tim":
+			# Ketua Tim ditangani khusus di _process().
+			return ""
+
+
 	return dialogue_id
+
 
 func _process(_delta):
 
@@ -41,5 +57,29 @@ func _process(_delta):
 	if DialogueManager.dialogue_ui.is_dialogue_active:
 		return
 
-	if Input.is_action_just_pressed("interact"):
-		DialogueManager.start_dialogue(get_dialogue_id())
+	if not Input.is_action_just_pressed("interact"):
+		return
+
+	if npc_type == "ketua_tim":
+
+		if GameManager.decision_made:
+
+			# Keputusan sudah dibuat.
+			# Tidak membuka laporan/choice lagi.
+			print("Keputusan sudah dibuat.")
+			return
+
+		else:
+
+			# Belum membuat keputusan.
+			# Buka laporan dinamis.
+			DialogueManager.start_report_dialogue()
+			return
+
+	var id := get_dialogue_id()
+
+	if id == "":
+		print("NPC tidak memiliki Dialogue ID.")
+		return
+
+	DialogueManager.start_dialogue(id)

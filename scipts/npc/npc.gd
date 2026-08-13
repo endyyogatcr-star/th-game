@@ -27,6 +27,8 @@ func get_dialogue_id() -> String:
 			return "asisten_ready"
 		"kades":
 			return "kades_01"
+		"ketua_tim":
+			DialogueManager.start_report_dialogue()
 
 	return dialogue_id
 

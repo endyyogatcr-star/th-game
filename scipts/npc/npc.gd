@@ -36,6 +36,8 @@ func get_dialogue_id() -> String:
 
 		"kades":
 			return "kades_01"
+		"ketua_tim":
+			DialogueManager.start_report_dialogue()
 
 
 		"ketua_tim":

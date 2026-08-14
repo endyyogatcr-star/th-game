@@ -40,10 +40,9 @@ var dialogue_data := {
 		"speaker": "Bu Painah",
 		"portrait": "res://assets/char/portrait/painah.png",
 		"lines": [
-			"Syukurlah kalian datang.",
-			"Saya dengar beberapa anak masih berada di sekitar sekolah.",
-			"Saya tidak tahu pasti berapa orang yang masih di sana.",
-			"Tapi sepertinya kondisinya cukup parah."
+			"Ada anak-anak yang tadi masih di kelas belakang pas longsor...",
+			"Saya nggak yakin semua sempat keluar.",
+			"Saya sangat cemas dan merasa bersalah karena tidak sempat mengecek ulang."
 		]
 	},
 
@@ -51,11 +50,9 @@ var dialogue_data := {
 		"speaker": "Pak Slamet",
 		"portrait": "res://assets/char/portrait/slamet.png",
 		"lines": [
-			"Syukurlah kalian datang.",
-			"Air di RT 03 sudah semakin tinggi.",
-			"Masih banyak warga yang terjebak di sana.",
-			"Beberapa bahkan sudah naik ke atap rumah.",
-			"Saya khawatir kalau air terus naik, keadaan akan semakin buruk."
+			"Rumah kami mulai kemasukan air, banyak yang masih di atap!",
+			"Ada belasan orang yang terjebak di sana!",
+			"Tolong cepat!"
 		]
 	},
 
@@ -63,11 +60,9 @@ var dialogue_data := {
 		"speaker": "Pak Yanto",
 		"portrait": "res://assets/char/portrait/yanto.png",
 		"lines": [
-			"Saya melihat keadaan dari arah timur sebelum kembali ke camp.",
-			"Beberapa rumah di sana sudah rusak cukup parah.",
-			"Air juga membuat jalan menuju bagian timur sulit dilewati.",
-			"Kalau tim kalian hendak masuk ke sana, sebaiknya berhati-hati.",
-			"Saya tidak tahu kondisi warga yang masih berada di dalam rumah."
+			"Alat kita cuma satu tali carmantel sama dua pelampung,",
+			"sisanya di posko kecamatan yang aksesnya juga keputus.",
+			"Dipakai sekarang atau ditahan buat yang lebih parah, saya serahkan ke tim."
 		]
 	},
 
@@ -78,8 +73,8 @@ var dialogue_data := {
 			"Saya baru saja dari arah RT 03.",
 			"Memang airnya cukup tinggi.",
 			"Tapi sepertinya tidak sebanyak yang dikatakan Pak Slamet.",
-			"Saya kira warga yang terjebak tidak lebih dari beberapa orang.",
-			"Meski begitu, saya juga tidak berani memastikan."
+			"Gak sebanyak itu kok, paling cuma 5-6 orang.",
+			"Sebagian udah naik ke rumah tetangga yang lebih tinggi."
 		]
 	},
 	
@@ -87,11 +82,9 @@ var dialogue_data := {
 		"speaker": "Kang Ujang",
 		"portrait": "res://assets/char/portrait/ujang.png",
 		"lines": [
-			"Kalau kalian mau ke arah rumah Pak Darto, hati-hati.",
-			"Jalan di sana tertutup longsoran.",
-			"Saya sempat melihat bagian rumahnya sebelum tanah turun.",
-			"Saya tidak tahu apakah masih ada orang di dalam.",
-			"Tapi sebaiknya jangan terlalu lama menunggu."
+			"Saya lihat longsornya ke arah rumah Pak Darto,",
+			"tapi abis itu saya lari, gak sempat lihat lebih jauh.",
+			"Aksesnya sekarang ketutup reruntuhan."
 		]
 	},
 	
@@ -102,10 +95,8 @@ var dialogue_data := {
 			"Bapak Surti belum bisa diajak bicara.",
 			"Kondisinya masih cukup lemah setelah dievakuasi.",
 			"Tapi sebelum kondisinya memburuk, beliau sempat memberi saya informasi.",
-			"Beliau mengatakan masih ada beberapa warga yang terjebak di sekitar 
-			rumah-rumah di bagian timur, tepatnya tetangga Pak Surti.",
-			"Beliau juga meminta agar tim penyelamat berhati-hati karena beberapa 
-			jalan sudah tidak bisa dilewati."
+			"Dia bisa keluar, tapi Mbah Karto di sebelah rumahnya gak bisa jalan, masih di dalam.",
+			"Anak-anak kecil juga masih banyak yang digendong orang tuanya, susah gerak cepat."
 		]
 	},
 	
@@ -313,6 +304,10 @@ func _on_dialogue_finished():
 		GameManager.first_talk_asisten = true
 		print("GameManager: first_talk_asisten = true")
 
+	if current_dialogue_id == "ketua_tim_01":
+		GameManager.first_talk_ketua = true
+		print("GameManager: first_talk_ketua = true")
+
 	if current_dialogue_id == "painah_01":
 		GameManager.interviewed_painah = true
 		print("GameManager: Bu Painah sudah diwawancarai")
@@ -434,6 +429,7 @@ func _select_priority(priority: String):
 
 	GameManager.selected_priority = priority
 	GameManager.decision_made = true
+	GameManager.mission_started = true
 
 	print("Prioritas dipilih: ", priority)
 

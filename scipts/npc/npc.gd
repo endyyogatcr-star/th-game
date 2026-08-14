@@ -39,9 +39,8 @@ func get_dialogue_id() -> String:
 
 
 		"ketua_tim":
-			# Ketua Tim ditangani khusus di _process().
-			return ""
-
+			if not GameManager.first_talk_ketua:
+				return "ketua_tim_01"
 
 	return dialogue_id
 
@@ -60,21 +59,19 @@ func _process(_delta):
 	if not Input.is_action_just_pressed("interact"):
 		return
 
-	if npc_type == "ketua_tim":
+	if GameManager.first_talk_ketua:
 
-		if GameManager.decision_made:
+		if npc_type == "ketua_tim":
 
-			# Keputusan sudah dibuat.
-			# Tidak membuka laporan/choice lagi.
-			print("Keputusan sudah dibuat.")
-			return
+			if GameManager.decision_made:
 
-		else:
+				print("Keputusan sudah dibuat.")
+				return
 
-			# Belum membuat keputusan.
-			# Buka laporan dinamis.
-			DialogueManager.start_report_dialogue()
-			return
+			else:
+
+				DialogueManager.start_report_dialogue()
+				return
 
 	var id := get_dialogue_id()
 

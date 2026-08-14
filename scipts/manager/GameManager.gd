@@ -10,13 +10,20 @@ var interviewed_surti := true
 var interviewed_yanto := true
 var report_ready := false
 var first_talk_asisten :=false
+var first_talk_ketua :=false
 var departure_ready := false
 var selected_priority := ""
 var has_medical_supply := false
 var has_radio := false
 var has_supply_box := false
 var decision_made := false
-
+var completed_sd := false
+var completed_rt03 := false
+var completed_pak_darto := false
+var medical_supply := 3
+var carmantel_rope := 1
+var lifebuoy := 2
+var rescue_score := 0
 
 func has_all_equipment() -> bool:
 	return (
@@ -49,26 +56,31 @@ func go_to_disaster():
 	
 func _ready():
 	print("Interview progress: ", get_interview_count(), "/6")
+	print("=== RESCUE RESOURCE ===")
+	print("Medical Supply: ", GameManager.medical_supply)
+	print("Tali Carmantel: ", GameManager.carmantel_rope)
+	print("Pelampung: ", GameManager.lifebuoy)
+	print("Rescue Score: ", GameManager.rescue_score)
 
 func get_report_summary() -> Array[String]:
 	var report: Array[String] = []
 
 	if interviewed_painah:
-		report.append("Ada kemungkinan korban masih berada di sekitar SD Karang Anyar.")
+		report.append("Bu Painah mencemaskan anak-anak yang mungkin belum sempat \nkeluar dari kelas belakang SD Karang Anyar saat longsor.")
 
 	if interviewed_slamet:
-		report.append("Pak Slamet melaporkan banyak warga terjebak di RT 03.")
+		report.append("Pak Slamet dengan panik melaporkan belasan warga RT 03 terjebak \ndi atap rumah karena air naik.")
 
 	if interviewed_wati:
-		report.append("Bu Wati memberikan laporan berbeda mengenai jumlah warga di RT 03.")
+		report.append("Bu Wati mengklarifikasi laporan Pak Slamet, menyatakan bahwa \nkorban di RT 03 hanya sekitar 5-6 orang.")
 
 	if interviewed_ujang:
-		report.append("Akses menuju rumah Pak Darto tertutup longsor.")
+		report.append("Kang Ujang melihat longsor mengarah ke rumah Pak Darto, akses ke \nsana kini tertutup reruntuhan.")
 
 	if interviewed_surti:
-		report.append("Ada informasi mengenai warga yang masih terjebak di bagian timur.")
+		report.append("Ada kelompok rentan, Mbah Karto yang tak bisa berjalan dan anak kecil \nyang sulit dievakuasi di RT 03.")
 
 	if interviewed_yanto:
-		report.append("Beberapa rumah di bagian timur mengalami kerusakan dan akses jalan sulit dilewati.")
+		report.append("Pak Yanto menginformasikan alat evakuasi sangat terbatas \nhanya 1 tali carmantel & 2 pelampung.")
 
 	return report

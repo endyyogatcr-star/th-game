@@ -24,6 +24,7 @@ var medical_supply := 3
 var carmantel_rope := 1
 var lifebuoy := 2
 var rescue_score := 0
+var mission_started := false
 
 func has_all_equipment() -> bool:
 	return (

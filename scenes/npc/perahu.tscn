@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dpapnljb8gwy6"]
+
+[ext_resource type="Texture2D" uid="uid://bqb1gei3qox53" path="res://assets/environment/boa.png" id="1_dca1g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ay0x5"]
+size = Vector2(20, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5riut"]
+size = Vector2(130.25, 61)
+
+[node name="Perahu" type="CharacterBody2D" unique_id=690461945]
+
+[node name="Boa" type="Sprite2D" parent="." unique_id=2117926967]
+scale = Vector2(0.7270408, 0.7395834)
+texture = ExtResource("1_dca1g")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1791618889]
+position = Vector2(0, 68)
+shape = SubResource("RectangleShape2D_ay0x5")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=159901108]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=937241896]
+position = Vector2(-0.875, 35.5)
+shape = SubResource("RectangleShape2D_5riut")

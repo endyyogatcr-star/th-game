@@ -234,7 +234,16 @@ var dialogue_data := {
 			"Jalur menuju rumahnya tertutup longsor dan kita tidak tahu apakah masih ada orang di dalam.",
 			"Tim bersiap menuju lokasi."
 		]
-	}
+	},
+	"sd_arrival": {
+		"speaker": "Ketua Tim",
+		"portrait": "res://assets/char/portrait/ketua_tim.png",
+		"lines": [
+			"Akhirnya kita sampai di sekolah.",
+			"Menurut laporan warga, masih ada beberapa anak yang belum berhasil dievakuasi.",
+			"Kita harus menentukan tindakan dengan cepat."
+		]
+	},
 }
 
 func register_dialogue_ui(ui: CanvasLayer):
@@ -410,7 +419,7 @@ func start_report_dialogue():
 	for information in report:
 		lines.append("- " + information)
 
-	lines.append("Informasi ini akan menjadi dasar untuk menentukan prioritas penyelamatan.")
+	lines.append("Informasi ini akan menjadi dasar untuk \nmenentukan prioritas penyelamatan.")
 
 	start_custom_dialogue(
 		"Ketua Tim",

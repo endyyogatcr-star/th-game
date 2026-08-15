@@ -5,7 +5,12 @@ extends CharacterBody2D
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
+var can_control := true
+
 func _physics_process(delta):
+	
+	if not can_control:
+		return
 
 	if DialogueManager.dialogue_ui != null and DialogueManager.dialogue_ui.is_dialogue_active:
 		velocity.x = 0

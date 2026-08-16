@@ -194,9 +194,12 @@ var dialogue_data := {
 		"portrait": "res://assets/char/portrait/ketua_tim.png",
 		"lines": [
 			"Baik. Saya sudah mendengar laporan kalian.",
-			"Beberapa lokasi membutuhkan perhatian kita.",
-			"Kita tidak mungkin menangani semuanya sekaligus.",
-			"Kita harus menentukan prioritas."
+			"Beberapa lokasi membutuhkan perhatian kita secara bersamaan.",
+			"Kita harus menentukan urutan prioritas dengan sangat hati-hati.",
+			"Waktu sangat berharga. Semakin lama korban menunggu, semakin buruk kondisi mereka.",
+			"Selain itu, gunakan alat keselamatan (Pelampung & Tali Carmantel) dengan tepat.",
+			"Kesalahan dalam penggunaan alat atau evakuasi tanpa alat akan membuat korban terluka.",
+			"Jika terlalu banyak yang terluka dan persediaan medis kita habis, korban bisa tidak terselamatkan."
 		],
 		"choices": [
 			"Prioritaskan SD Karang Anyar",
@@ -478,6 +481,9 @@ func start_dialogue(dialogue_id: String):
 		print("DialogueUI belum terdaftar.")
 		return
 
+	if dialogue_id == "doctor_evaluation":
+		_setup_doctor_evaluation()
+
 	if not dialogue_data.has(dialogue_id):
 		print("Dialogue ID tidak ditemukan: ", dialogue_id)
 		return
@@ -574,6 +580,8 @@ func _on_dialogue_finished():
 		start_dialogue("sd_rescue_decision")
 	
 	if current_dialogue_id == "sd_rescue_decision" or current_dialogue_id == "sd_use_lifebuoy" or current_dialogue_id == "sd_use_rope" or current_dialogue_id == "sd_no_resource":
+		if not GameManager.mission_order.has("sd"):
+			GameManager.mission_order.append("sd")
 		GameManager.completed_sd = true
 		print("SD selesai ", GameManager.completed_sd)
 		interaction_lock = false
@@ -584,6 +592,8 @@ func _on_dialogue_finished():
 		start_dialogue("rt03_rescue_decision")
 	
 	if current_dialogue_id == "rt03_rescue_decision" or current_dialogue_id == "rt03_use_lifebuoy" or current_dialogue_id == "rt03_use_rope" or current_dialogue_id == "rt03_no_resource":
+		if not GameManager.mission_order.has("rt03"):
+			GameManager.mission_order.append("rt03")
 		GameManager.completed_rt03 = true
 		print("RT03 selesai ", GameManager.completed_rt03)
 		interaction_lock = false
@@ -594,6 +604,8 @@ func _on_dialogue_finished():
 		start_dialogue("darto_rescue_decision")
 	
 	if current_dialogue_id == "darto_rescue_decision" or current_dialogue_id == "darto_use_lifebuoy" or current_dialogue_id == "darto_use_rope" or current_dialogue_id == "darto_no_resource":
+		if not GameManager.mission_order.has("pak_darto"):
+			GameManager.mission_order.append("pak_darto")
 		GameManager.completed_pak_darto = true
 		print("Pak Darto selesai ", GameManager.completed_pak_darto)
 		interaction_lock = false
@@ -645,57 +657,69 @@ func _on_choice_selected(index, text):
 			GlobalTransition.change_scene("res://scenes/levels/MissionPakDarto.tscn", "Menuju ke Rumah Pak Darto...")
 
 	elif current_dialogue_id == "sd_rescue_decision":
+		interaction_lock = false
 		match index:
 			0:
 				if GameManager.use_lifebuoy():
+					GameManager.sd_rescue_method = "sd_use_lifebuoy"
 					start_dialogue("sd_use_lifebuoy")
 				else:
 					start_dialogue("sd_empty")
 					print("Pelampung sudah habis.")
 			1:
 				if GameManager.use_carmantel_rope():
+					GameManager.sd_rescue_method = "sd_use_rope"
 					start_dialogue("sd_use_rope")
 				else:
 					start_dialogue("sd_empty")
 					print("Tali Carmantel sudah habis.")
 			2:
 				print("Player memilih evakuasi tanpa resource.")
+				GameManager.sd_rescue_method = "sd_no_resource"
 				start_dialogue("sd_no_resource")
 
 	elif current_dialogue_id == "rt03_rescue_decision":
+		interaction_lock = false
 		match index:
 			0:
 				if GameManager.use_lifebuoy():
+					GameManager.rt03_rescue_method = "rt03_use_lifebuoy"
 					start_dialogue("rt03_use_lifebuoy")
 				else:
 					start_dialogue("rt03_empty")
 					print("Pelampung sudah habis.")
 			1:
 				if GameManager.use_carmantel_rope():
+					GameManager.rt03_rescue_method = "rt03_use_rope"
 					start_dialogue("rt03_use_rope")
 				else:
 					start_dialogue("rt03_empty")
 					print("Tali Carmantel sudah habis.")
 			2:
 				print("Player memilih evakuasi tanpa resource.")
+				GameManager.rt03_rescue_method = "rt03_no_resource"
 				start_dialogue("rt03_no_resource")
 
 	elif current_dialogue_id == "darto_rescue_decision":
+		interaction_lock = false
 		match index:
 			0:
 				if GameManager.use_lifebuoy():
+					GameManager.darto_rescue_method = "darto_use_lifebuoy"
 					start_dialogue("darto_use_lifebuoy")
 				else:
 					start_dialogue("darto_empty")
 					print("Pelampung sudah habis.")
 			1:
 				if GameManager.use_carmantel_rope():
+					GameManager.darto_rescue_method = "darto_use_rope"
 					start_dialogue("darto_use_rope")
 				else:
 					start_dialogue("darto_empty")
 					print("Tali Carmantel sudah habis.")
 			2:
 				print("Player memilih evakuasi tanpa resource.")
+				GameManager.darto_rescue_method = "darto_no_resource"
 				start_dialogue("darto_no_resource")
 		
 func _handle_pilihan_siap():
@@ -822,3 +846,43 @@ func _select_priority(priority: String):
 
 		"pak_darto":
 			start_dialogue("ketua_tim_pilih_pak_darto")
+
+func _setup_doctor_evaluation():
+	var lines = []
+	var total_injured = 0
+	
+	lines.append("Selamat datang kembali. Tim medis sudah memeriksa semua korban evakuasi Anda.")
+	
+	# Pak Darto injured if last
+	if GameManager.mission_order.size() >= 3 and GameManager.mission_order[2] == "pak_darto":
+		lines.append("Pak Darto diselamatkan terakhir. Kondisinya kritis karena terlalu lama tertimbun longsor. Beliau butuh 1 Medical Supply.")
+		total_injured += 1
+		
+	# SD injured if no resource
+	if GameManager.sd_rescue_method == "sd_no_resource":
+		lines.append("Anak-anak dari SD terluka akibat proses evakuasi tanpa menggunakan alat yang aman. Mereka butuh 2 Medical Supply.")
+		total_injured += 2
+		
+	# RT03 injured if wrong tool (not rope)
+	if GameManager.rt03_rescue_method != "rt03_use_rope":
+		lines.append("Warga RT 03 mengalami cedera karena alat evakuasi yang digunakan tidak sesuai. Ada 3 orang terluka dan butuh 3 Medical Supply.")
+		total_injured += 3
+		
+	if total_injured == 0:
+		lines.append("Luar biasa! Tidak ada warga yang terluka parah berkat keputusan cepat dan penggunaan alat yang tepat.")
+	else:
+		lines.append("Total kebutuhan saat ini: " + str(total_injured) + " Medical Supply. Kita punya " + str(GameManager.medical_supply) + " persediaan.")
+		
+		if GameManager.medical_supply >= total_injured:
+			GameManager.medical_supply -= total_injured
+			lines.append("Syukurlah persediaan kita cukup untuk merawat mereka semua.")
+		else:
+			GameManager.unsaved_civilians = total_injured - GameManager.medical_supply
+			GameManager.medical_supply = 0
+			lines.append("Persediaan kita tidak cukup... Ada " + str(GameManager.unsaved_civilians) + " warga yang terluka parah tidak bisa tertangani...")
+
+	dialogue_data["doctor_evaluation"] = {
+		"speaker": "Dokter",
+		"portrait": "res://assets/char/portrait/dokter.png",
+		"lines": lines
+	}

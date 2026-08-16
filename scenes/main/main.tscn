@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://iyb0nnvn86qh"]
 
 [ext_resource type="PackedScene" uid="uid://bfikmr0kpv3la" path="res://scenes/levels/level_01.tscn" id="1_hyk8p"]
-[ext_resource type="PackedScene" uid="uid://dnkhp20027paa" path="res://scenes/Tent/Tent.tscn" id="2_iuonh"]
+[ext_resource type="PackedScene" uid="uid://dnkhp20027paa" path="res://scenes/Tent/Tent02.tscn" id="2_iuonh"]
 [ext_resource type="PackedScene" uid="uid://nbcflq1202yg" path="res://scenes/levels/disaster2.tscn" id="3_k2fmo"]
 [ext_resource type="PackedScene" uid="uid://dc2p2srr6gy1l" path="res://scenes/levels/disaster01.tscn" id="4_a8run"]
 [ext_resource type="PackedScene" uid="uid://dsb6hck0ntqgn" path="res://scenes/levels/MissionPakDarto.tscn" id="5_ouso4"]
@@ -37,3 +37,5 @@ script = null
 [node name="MissionSD3" parent="." unique_id=440478926 instance=ExtResource("9_raeie")]
 
 [node name="MissionSD4" parent="." unique_id=1705585642 instance=ExtResource("10_hxu8e")]
+
+[node name="Tent2" parent="." unique_id=1814224468 instance=ExtResource("2_iuonh")]

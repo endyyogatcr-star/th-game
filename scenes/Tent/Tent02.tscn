@@ -1,28 +1,25 @@
-[gd_scene format=4 uid="uid://cuwfyvv54rg47"]
+[gd_scene format=4 uid="uid://dnkhp20027paa"]
 
-[ext_resource type="PackedScene" uid="uid://dmfh8oisun0f4" path="res://scenes/ui/dialogue_ui.tscn" id="1_qgipb"]
-[ext_resource type="Texture2D" uid="uid://bsyvk52rlp1yy" path="res://assets/environment/ground tileset.png" id="2_xqr0a"]
-[ext_resource type="Texture2D" uid="uid://b6x5h40wetucw" path="res://assets/tileset/tilecamp.png" id="3_7vtgg"]
-[ext_resource type="Texture2D" uid="uid://cjkdn3yefuo1i" path="res://assets/environment/meja1.png" id="4_ia3en"]
-[ext_resource type="Texture2D" uid="uid://b3733ikvcbu83" path="res://assets/environment/crate.png" id="5_c7ltf"]
-[ext_resource type="Texture2D" uid="uid://2tr235bls25s" path="res://assets/environment/lampu.png" id="6_ixhyh"]
-[ext_resource type="Texture2D" uid="uid://dkhdp8erynk8s" path="res://assets/environment/kursi.png" id="7_2mn3j"]
-[ext_resource type="Texture2D" uid="uid://d38grcxyj3cdw" path="res://assets/environment/box.png" id="8_248jn"]
-[ext_resource type="Texture2D" uid="uid://dieapuc7ix1au" path="res://assets/environment/kasur.png" id="9_ph8xe"]
-[ext_resource type="Texture2D" uid="uid://dv6qbnt0fycp6" path="res://assets/char/npc/sakit.png" id="10_1nq06"]
-[ext_resource type="Texture2D" uid="uid://dlun51nl04ufc" path="res://assets/environment/gorden.png" id="11_p5cmu"]
-[ext_resource type="Script" uid="uid://dnjqkxs1xfk40" path="res://scipts/interactables/Equipment.gd" id="12_oaua4"]
-[ext_resource type="Texture2D" uid="uid://dwogqw6sih05o" path="res://assets/environment/object/radio.png" id="13_qxb3v"]
-[ext_resource type="Texture2D" uid="uid://b6hf1m2ph72eb" path="res://assets/environment/medbox.png" id="14_ctq4f"]
-[ext_resource type="Texture2D" uid="uid://77vp67wujuos" path="res://assets/environment/tasSup.png" id="15_0pw4v"]
-[ext_resource type="Script" uid="uid://bol14sixclkmc" path="res://scipts/manager/SceneTransition.gd" id="16_cqo8i"]
-[ext_resource type="PackedScene" uid="uid://jydh22ryw4bs" path="res://scenes/npc/ujang.tscn" id="17_y88pf"]
-[ext_resource type="PackedScene" uid="uid://cf1cwvqky6ibm" path="res://scenes/npc/wati.tscn" id="18_mi11f"]
-[ext_resource type="PackedScene" uid="uid://dsbhl5mb6bgk6" path="res://scenes/npc/dokter.tscn" id="19_6d2p0"]
-[ext_resource type="PackedScene" uid="uid://hcp0p6q4n5l1" path="res://scenes/player/player.tscn" id="20_iq80p"]
+[ext_resource type="Texture2D" uid="uid://b6x5h40wetucw" path="res://assets/tileset/tilecamp.png" id="1_6bkdg"]
+[ext_resource type="PackedScene" uid="uid://hcp0p6q4n5l1" path="res://scenes/player/player.tscn" id="2_4ijx4"]
+[ext_resource type="Texture2D" uid="uid://bsyvk52rlp1yy" path="res://assets/environment/ground tileset.png" id="2_v5q4n"]
+[ext_resource type="Texture2D" uid="uid://cjkdn3yefuo1i" path="res://assets/environment/meja1.png" id="3_noyr4"]
+[ext_resource type="Texture2D" uid="uid://d38grcxyj3cdw" path="res://assets/environment/box.png" id="3_v3doy"]
+[ext_resource type="Texture2D" uid="uid://2tr235bls25s" path="res://assets/environment/lampu.png" id="4_rvxlo"]
+[ext_resource type="Texture2D" uid="uid://b3733ikvcbu83" path="res://assets/environment/crate.png" id="5_ewkmg"]
+[ext_resource type="Texture2D" uid="uid://dieapuc7ix1au" path="res://assets/environment/kasur.png" id="5_v5q4n"]
+[ext_resource type="Texture2D" uid="uid://dkhdp8erynk8s" path="res://assets/environment/kursi.png" id="6_3tx5b"]
+[ext_resource type="Script" uid="uid://dnjqkxs1xfk40" path="res://scipts/interactables/Equipment.gd" id="10_bab2o"]
+[ext_resource type="Texture2D" uid="uid://dwogqw6sih05o" path="res://assets/environment/object/radio.png" id="10_endbx"]
+[ext_resource type="Texture2D" uid="uid://dv6qbnt0fycp6" path="res://assets/char/npc/sakit.png" id="10_r07wh"]
+[ext_resource type="PackedScene" uid="uid://dmfh8oisun0f4" path="res://scenes/ui/dialogue_ui.tscn" id="10_w3fv1"]
+[ext_resource type="Texture2D" uid="uid://b6hf1m2ph72eb" path="res://assets/environment/medbox.png" id="11_bab2o"]
+[ext_resource type="Texture2D" uid="uid://77vp67wujuos" path="res://assets/environment/tasSup.png" id="12_80te0"]
+[ext_resource type="Texture2D" uid="uid://dlun51nl04ufc" path="res://assets/environment/gorden.png" id="12_dgiiw"]
+[ext_resource type="PackedScene" uid="uid://dsbhl5mb6bgk6" path="res://scenes/npc/dokter.tscn" id="20_di7xb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_noyr4"]
-texture = ExtResource("2_xqr0a")
+texture = ExtResource("2_v5q4n")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1075,7 +1072,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_noyr4")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w3fv1"]
-texture = ExtResource("2_xqr0a")
+texture = ExtResource("2_v5q4n")
 texture_region_size = Vector2i(48, 48)
 0:0/0 = 0
 1:0/0 = 0
@@ -1197,7 +1194,7 @@ texture_region_size = Vector2i(48, 48)
 8:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v5q4n"]
-texture = ExtResource("3_7vtgg")
+texture = ExtResource("1_6bkdg")
 texture_region_size = Vector2i(48, 48)
 0:0/0 = 0
 1:0/0 = 0
@@ -1222,12 +1219,9 @@ sources/2 = SubResource("TileSetAtlasSource_v5q4n")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_68buy"]
 size = Vector2(19.75, 19.5)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5ypv"]
-size = Vector2(55, 91)
-
 [node name="Tent" type="Node2D" unique_id=2006571247]
 
-[node name="DialogueUI" parent="." unique_id=356329378 instance=ExtResource("1_qgipb")]
+[node name="DialogueUI" parent="." unique_id=356329378 instance=ExtResource("10_w3fv1")]
 
 [node name="invWall" type="TileMapLayer" parent="." unique_id=925065177]
 visible = false
@@ -1244,73 +1238,73 @@ tile_set = SubResource("TileSet_f5ypv")
 [node name="meja" type="Sprite2D" parent="Sprite2D" unique_id=1096239722]
 position = Vector2(148, -21)
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("4_ia3en")
+texture = ExtResource("3_noyr4")
 
 [node name="Crate" type="Sprite2D" parent="Sprite2D" unique_id=398632563]
 position = Vector2(693, -26.000002)
 scale = Vector2(0.178, 0.16300002)
-texture = ExtResource("5_c7ltf")
+texture = ExtResource("5_ewkmg")
 
 [node name="Crate2" type="Sprite2D" parent="Sprite2D/Crate" unique_id=1226840315]
 position = Vector2(49.090622, -272.37756)
-texture = ExtResource("5_c7ltf")
+texture = ExtResource("5_ewkmg")
 
 [node name="lampu" type="Sprite2D" parent="Sprite2D" unique_id=1109406844]
 position = Vector2(22, -27)
-texture = ExtResource("6_ixhyh")
+texture = ExtResource("4_rvxlo")
 
 [node name="kursi" type="Sprite2D" parent="Sprite2D" unique_id=670279289]
 position = Vector2(199, -26)
-texture = ExtResource("7_2mn3j")
+texture = ExtResource("6_3tx5b")
 flip_h = true
 
 [node name="kursi2" type="Sprite2D" parent="Sprite2D" unique_id=1769044506]
 position = Vector2(436, -26)
-texture = ExtResource("7_2mn3j")
+texture = ExtResource("6_3tx5b")
 
 [node name="box" type="Sprite2D" parent="Sprite2D" unique_id=1159057914]
 position = Vector2(353, -29)
-texture = ExtResource("8_248jn")
+texture = ExtResource("3_v3doy")
 
 [node name="kasur" type="Sprite2D" parent="Sprite2D" unique_id=1620257174]
 position = Vector2(608, -24.639376)
 scale = Vector2(0.69999987, 1.2232499)
-texture = ExtResource("9_ph8xe")
+texture = ExtResource("5_v5q4n")
 
 [node name="NpcSakit" type="Sprite2D" parent="Sprite2D" unique_id=1896998314]
 position = Vector2(606, -33.000004)
 rotation = -1.5707964
 scale = Vector2(1.4520147, 1.3286937)
-texture = ExtResource("10_1nq06")
+texture = ExtResource("10_r07wh")
 flip_v = true
 
 [node name="Gorden" type="Sprite2D" parent="Sprite2D" unique_id=991119228]
 position = Vector2(519, -41.000004)
 scale = Vector2(0.3269509, 0.22443885)
-texture = ExtResource("11_p5cmu")
+texture = ExtResource("12_dgiiw")
 
 [node name="Object" type="Node2D" parent="." unique_id=927481465]
 
 [node name="Radio" type="Area2D" parent="Object" unique_id=2006829560]
-script = ExtResource("12_oaua4")
+script = ExtResource("10_bab2o")
 equipment_type = "radio"
 equipment_name = "Radio Komunikasi"
 
 [node name="Sprite2D" type="Sprite2D" parent="Object/Radio" unique_id=2109847374]
 position = Vector2(168, -46)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("13_qxb3v")
+texture = ExtResource("10_endbx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Object/Radio" unique_id=825655128]
 position = Vector2(168, 86)
 shape = SubResource("RectangleShape2D_68buy")
 
 [node name="MedicalSupply" type="Area2D" parent="Object" unique_id=1854520915]
-script = ExtResource("12_oaua4")
+script = ExtResource("10_bab2o")
 
 [node name="Sprite2D" type="Sprite2D" parent="Object/MedicalSupply" unique_id=915649731]
 position = Vector2(293, -15)
-texture = ExtResource("14_ctq4f")
+texture = ExtResource("11_bab2o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Object/MedicalSupply" unique_id=1962398581]
 position = Vector2(296, 80)
@@ -1318,43 +1312,24 @@ shape = SubResource("RectangleShape2D_68buy")
 
 [node name="SupplyBag" type="Area2D" parent="Object" unique_id=1667905354]
 position = Vector2(10, -29)
-script = ExtResource("12_oaua4")
+script = ExtResource("10_bab2o")
 equipment_type = "supply_box"
 equipment_name = "Supply Box"
 
 [node name="Sprite2D" type="Sprite2D" parent="Object/SupplyBag" unique_id=201475922]
 position = Vector2(344, -19)
-texture = ExtResource("15_0pw4v")
+texture = ExtResource("12_80te0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Object/SupplyBag" unique_id=690628664]
 position = Vector2(353, 110)
 shape = SubResource("RectangleShape2D_68buy")
 
-[node name="ExitTent" type="Area2D" parent="." unique_id=1053191041]
-script = ExtResource("16_cqo8i")
-target_scene = "uid://bfikmr0kpv3la"
-spawn_point_name = "BaseSpawnFromTent"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitTent" unique_id=884046648]
-position = Vector2(77.5, -47.5)
-shape = SubResource("RectangleShape2D_f5ypv")
-
-[node name="Npc2" parent="." unique_id=1305116040 instance=ExtResource("17_y88pf")]
-position = Vector2(427, -35)
-scale = Vector2(1.5, 1.5)
-dialogue_id = "ujang_01"
-
-[node name="Npc" parent="." unique_id=1800890609 instance=ExtResource("18_mi11f")]
-position = Vector2(200, -36)
-scale = Vector2(1.5, 1.5)
-dialogue_id = "wati_01"
-
-[node name="Npc3" parent="." unique_id=729070067 instance=ExtResource("19_6d2p0")]
-position = Vector2(491.00003, -36)
+[node name="Npc3" parent="." unique_id=729070067 instance=ExtResource("20_di7xb")]
+position = Vector2(436.00003, -37)
 scale = Vector2(1.5, 1.5)
 dialogue_id = "doctor_surti_01"
 
-[node name="Player" parent="." unique_id=1027270447 instance=ExtResource("20_iq80p")]
+[node name="Player" parent="." unique_id=1027270447 instance=ExtResource("2_4ijx4")]
 position = Vector2(104.00001, -39.000004)
 scale = Vector2(1.4999999, 1.4999999)
 
@@ -1365,6 +1340,3 @@ limit_left = 0
 limit_top = -252
 limit_right = 700
 limit_bottom = 446
-
-[node name="TentSpawnFromBase" type="Marker2D" parent="." unique_id=1244612536]
-position = Vector2(73, -2)

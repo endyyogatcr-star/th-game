@@ -49,6 +49,9 @@ func end_arrival_cutscene():
 	# Hentikan gerakan
 	player.velocity.x = 0
 
-	print("Kembali ke Disaster.")
-
-	GlobalTransition.change_scene("res://scenes/levels/disaster2.tscn", "Kembali ke Posko Bencana...")
+	if GameManager.all_locations_completed():
+		print("Semua lokasi selesai, kembali ke Tenda Medis.")
+		GlobalTransition.change_scene("res://scenes/Tent/Tent02.tscn", "Misi evakuasi selesai.\nKembali ke Tenda Medis...")
+	else:
+		print("Kembali ke Disaster.")
+		GlobalTransition.change_scene("res://scenes/levels/disaster2.tscn", "Kembali ke Posko Bencana...")

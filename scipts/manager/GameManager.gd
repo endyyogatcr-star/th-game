@@ -30,6 +30,12 @@ var talked_to_budi :=false
 var talked_to_Darto = false
 var sd_result := ""
 
+var mission_order: Array[String] = []
+var sd_rescue_method: String = ""
+var rt03_rescue_method: String = ""
+var darto_rescue_method: String = ""
+var unsaved_civilians: int = 0
+
 func has_all_equipment() -> bool:
 	return (
 		has_medical_supply

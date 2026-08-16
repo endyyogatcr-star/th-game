@@ -11,6 +11,7 @@ size = Vector2(20, 47)
 
 [node name="Npc" type="CharacterBody2D" unique_id=1305116040]
 script = ExtResource("1_6s0ub")
+npc_type = "dokter"
 
 [node name="npcSprite" type="Sprite2D" parent="." unique_id=1515289984]
 texture = ExtResource("2_wh86v")

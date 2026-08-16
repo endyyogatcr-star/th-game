@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 DialogueManager="*uid://c5mx3t675dlt3"
 GameManager="*uid://y3rd7a5xllux"
 SceneTransitionData="*uid://ugeps8sca5m3"
+GlobalTransition="*res://scipts/manager/GlobalTransition.gd"
 
 [display]
 

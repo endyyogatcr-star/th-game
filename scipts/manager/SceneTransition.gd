@@ -33,4 +33,4 @@ func _process(_delta):
 
 		if target_scene != "":
 			SceneTransitionData.spawn_point_name = spawn_point_name
-			get_tree().change_scene_to_file(target_scene)
+			GlobalTransition.change_scene(target_scene)

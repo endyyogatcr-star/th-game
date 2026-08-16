@@ -52,5 +52,4 @@ func end_arrival_cutscene():
 
 	print("Kembali ke Disaster.")
 
-	get_tree().change_scene_to_file(
-		"res://scenes/levels/disaster2.tscn")
+	GlobalTransition.change_scene("res://scenes/levels/disaster2.tscn", "Kembali ke Posko Bencana...")

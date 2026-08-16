@@ -387,12 +387,12 @@ scale = Vector2(0.75, 0.75)
 texture = ExtResource("17_4ivp8")
 
 [node name="Sd2" type="Sprite2D" parent="." unique_id=813151514]
-position = Vector2(1209, -62.000004)
+position = Vector2(1209, -24)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("13_8hfgm")
 
 [node name="Sd3" type="Sprite2D" parent="." unique_id=1206198279]
-position = Vector2(936, -62)
+position = Vector2(936, -24)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("13_8hfgm")
 

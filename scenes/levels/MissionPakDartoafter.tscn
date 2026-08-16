@@ -22,7 +22,6 @@
 [ext_resource type="Texture2D" uid="uid://dke7sq5qrwc8v" path="res://assets/tileset/banjirtile.png" id="20_41fsx"]
 [ext_resource type="Texture2D" uid="uid://6sj7fkblm6j8" path="res://assets/environment/longsor.png" id="22_b32yu"]
 [ext_resource type="PackedScene" uid="uid://dmiteeqjo6jim" path="res://scenes/player/playerBoatAPD.tscn" id="23_doytt"]
-[ext_resource type="PackedScene" uid="uid://cq67ftj4x8pss" path="res://scenes/npc/wargaDanto.tscn" id="23_txugn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w6eue"]
 texture = ExtResource("18_oxj3v")
@@ -413,10 +412,6 @@ position = Vector2(1166.0001, -40)
 scale = Vector2(1.2708334, 1.2708334)
 texture = ExtResource("8_syp3r")
 flip_h = true
-
-[node name="Npc" parent="." unique_id=1305116040 instance=ExtResource("23_txugn")]
-position = Vector2(1163, -12)
-npc_type = "darto"
 
 [node name="Player" parent="." unique_id=1027270447 instance=ExtResource("23_doytt")]
 position = Vector2(1037, -13)

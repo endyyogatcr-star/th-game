@@ -64,7 +64,7 @@ func all_locations_completed() -> bool:
 		and completed_pak_darto
 	)
 func go_to_disaster():
-	get_tree().change_scene_to_file("res://scenes/levels/disaster01.tscn")
+	GlobalTransition.change_scene("res://scenes/levels/disaster01.tscn", "Menuju ke posko bencana...")
 	
 func _ready():
 	print("Interview progress: ", get_interview_count(), "/6")

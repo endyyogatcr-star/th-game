@@ -576,8 +576,8 @@ func _on_dialogue_finished():
 	if current_dialogue_id == "sd_rescue_decision" or current_dialogue_id == "sd_use_lifebuoy" or current_dialogue_id == "sd_use_rope" or current_dialogue_id == "sd_no_resource":
 		GameManager.completed_sd = true
 		print("SD selesai ", GameManager.completed_sd)
-		get_tree().change_scene_to_file(
-		"res://scenes/levels/MissionSDafter.tscn")
+		interaction_lock = false
+		GlobalTransition.change_scene("res://scenes/levels/MissionSDafter.tscn", _get_rescue_narration(current_dialogue_id))
 		return
 
 	if current_dialogue_id == "rt03_empty":
@@ -586,8 +586,8 @@ func _on_dialogue_finished():
 	if current_dialogue_id == "rt03_rescue_decision" or current_dialogue_id == "rt03_use_lifebuoy" or current_dialogue_id == "rt03_use_rope" or current_dialogue_id == "rt03_no_resource":
 		GameManager.completed_rt03 = true
 		print("RT03 selesai ", GameManager.completed_rt03)
-		get_tree().change_scene_to_file(
-		"res://scenes/levels/MissionRT03after.tscn")
+		interaction_lock = false
+		GlobalTransition.change_scene("res://scenes/levels/MissionRT03after.tscn", _get_rescue_narration(current_dialogue_id))
 		return
 
 	if current_dialogue_id == "darto_empty":
@@ -596,8 +596,8 @@ func _on_dialogue_finished():
 	if current_dialogue_id == "darto_rescue_decision" or current_dialogue_id == "darto_use_lifebuoy" or current_dialogue_id == "darto_use_rope" or current_dialogue_id == "darto_no_resource":
 		GameManager.completed_pak_darto = true
 		print("Pak Darto selesai ", GameManager.completed_pak_darto)
-		get_tree().change_scene_to_file(
-		"res://scenes/levels/MissionPakDartoafter.tscn")
+		interaction_lock = false
+		GlobalTransition.change_scene("res://scenes/levels/MissionPakDartoafter.tscn", _get_rescue_narration(current_dialogue_id))
 		return
 	
 	if current_dialogue_id == "darto_warga_01":
@@ -605,8 +605,17 @@ func _on_dialogue_finished():
 	
 	call_deferred("_clear_interaction_lock")
 
+func _get_rescue_narration(dialogue_id: String) -> String:
+	if "use_lifebuoy" in dialogue_id:
+		return "Tim penyelamat mengevakuasi korban menggunakan pelampung dengan aman..."
+	elif "use_rope" in dialogue_id:
+		return "Tim penyelamat memasang tali Carmantel dan memandu warga ke tempat yang aman..."
+	elif "no_resource" in dialogue_id or "rescue_decision" in dialogue_id:
+		return "Tim penyelamat memapah warga satu per satu melintasi reruntuhan dan arus air dengan penuh kehati-hatian..."
+	return "Tim penyelamat berhasil mengevakuasi korban..."
+
 func _go_to_disaster():
-	GameManager.go_to_disaster()
+	GlobalTransition.change_scene("res://scenes/levels/disaster01.tscn", "Menuju ke area terdampak bencana...")
 
 func _on_choice_selected(index, text):
 	print("Pilihan player: ", index, " - ", text)
@@ -621,6 +630,19 @@ func _on_choice_selected(index, text):
 			0:_select_priority("sd")
 			1:_select_priority("rt03")
 			2:_select_priority("pak_darto")
+
+	elif current_dialogue_id == "ketua_tim_decision_2":
+		interaction_lock = false
+		current_dialogue_id = ""
+		if text == "Prioritaskan SD Karang Anyar":
+			GameManager.selected_priority = "sd"
+			GlobalTransition.change_scene("res://scenes/levels/MissionSD.tscn", "Menuju ke SD Karang Anyar...")
+		elif text == "Prioritaskan RT 03":
+			GameManager.selected_priority = "rt03"
+			GlobalTransition.change_scene("res://scenes/levels/MissionRT03.tscn", "Menuju ke RT 03...")
+		elif text == "Prioritaskan Rumah Pak Darto":
+			GameManager.selected_priority = "pak_darto"
+			GlobalTransition.change_scene("res://scenes/levels/MissionPakDarto.tscn", "Menuju ke Rumah Pak Darto...")
 
 	elif current_dialogue_id == "sd_rescue_decision":
 		match index:
@@ -733,6 +755,45 @@ func start_report_dialogue():
 		"Ketua Tim",
 		"res://assets/char/portrait/ketua_tim.png",
 		lines
+	)
+
+func start_decision_2_dialogue():
+	interaction_lock = false
+	
+	var choices: Array = []
+	if not GameManager.completed_sd:
+		choices.append("Prioritaskan SD Karang Anyar")
+	if not GameManager.completed_rt03:
+		choices.append("Prioritaskan RT 03")
+	if not GameManager.completed_pak_darto:
+		choices.append("Prioritaskan Rumah Pak Darto")
+		
+	var lines: Array = []
+	if choices.size() == 2:
+		lines = [
+			"Kerja bagus di lokasi pertama.",
+			"Kita harus segera menuju lokasi prioritas kedua."
+		]
+	elif choices.size() == 1:
+		lines = [
+			"Kerja bagus, kita sudah menyelesaikan dua lokasi.",
+			"Hanya tersisa satu lokasi terakhir yang harus kita tangani.",
+			"Mari kita segera menuju ke sana sebelum terlambat!"
+		]
+	else:
+		lines = [
+			"Semua lokasi sudah tertangani.",
+			"Kerja yang sangat luar biasa!"
+		]
+		
+	current_dialogue_id = "ketua_tim_decision_2"
+	
+	dialogue_ui.call_deferred(
+		"start_dialogue",
+		"Ketua Tim",
+		load("res://assets/char/portrait/ketua_tim.png"),
+		lines,
+		choices
 	)
 
 func _start_decision_phase():

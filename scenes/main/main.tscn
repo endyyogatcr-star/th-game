@@ -3,6 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://bfikmr0kpv3la" path="res://scenes/levels/level_01.tscn" id="1_hyk8p"]
 [ext_resource type="PackedScene" uid="uid://dnkhp20027paa" path="res://scenes/Tent/Tent.tscn" id="2_iuonh"]
 [ext_resource type="PackedScene" uid="uid://nbcflq1202yg" path="res://scenes/levels/disaster2.tscn" id="3_k2fmo"]
+[ext_resource type="PackedScene" uid="uid://dc2p2srr6gy1l" path="res://scenes/levels/disaster01.tscn" id="4_a8run"]
+[ext_resource type="PackedScene" uid="uid://dsb6hck0ntqgn" path="res://scenes/levels/MissionPakDarto.tscn" id="5_ouso4"]
+[ext_resource type="PackedScene" uid="uid://cln8bqdnytrfn" path="res://scenes/levels/MissionPakDartoafter.tscn" id="6_blune"]
+[ext_resource type="PackedScene" uid="uid://cmeu2g7fjoqy1" path="res://scenes/levels/MissionRT03.tscn" id="7_th5th"]
+[ext_resource type="PackedScene" uid="uid://cwqr1ktny6um8" path="res://scenes/levels/MissionRT03after.tscn" id="8_7smn1"]
+[ext_resource type="PackedScene" uid="uid://b4l7artbapfg4" path="res://scenes/levels/MissionSD.tscn" id="9_raeie"]
+[ext_resource type="PackedScene" uid="uid://bfp153miegv6s" path="res://scenes/levels/MissionSDafter.tscn" id="10_hxu8e"]
 
 [node name="Main" type="Node2D" unique_id=224652050]
 
@@ -15,3 +22,18 @@ visible = false
 position = Vector2(73, -1)
 
 [node name="Disaster01" parent="." unique_id=1328093719 instance=ExtResource("3_k2fmo")]
+script = null
+
+[node name="Disaster02" parent="." unique_id=1011148061 instance=ExtResource("4_a8run")]
+
+[node name="MissionDarto" parent="." unique_id=43512210 instance=ExtResource("5_ouso4")]
+
+[node name="MissionDarto2" parent="." unique_id=1167735864 instance=ExtResource("6_blune")]
+
+[node name="MissionSD" parent="." unique_id=1205417445 instance=ExtResource("7_th5th")]
+
+[node name="MissionSD2" parent="." unique_id=538888971 instance=ExtResource("8_7smn1")]
+
+[node name="MissionSD3" parent="." unique_id=440478926 instance=ExtResource("9_raeie")]
+
+[node name="MissionSD4" parent="." unique_id=1705585642 instance=ExtResource("10_hxu8e")]

@@ -41,21 +41,15 @@ func enter_selected_mission():
 
 		"sd":
 			print("Berangkat menuju SD Karang Anyar.")
-			get_tree().change_scene_to_file(
-				"res://scenes/levels/MissionSD.tscn"
-			)
+			GlobalTransition.change_scene("res://scenes/levels/MissionSD.tscn", "Menuju ke SD Karang Anyar...")
 
 		"rt03":
 			print("Berangkat menuju RT 03.")
-			get_tree().change_scene_to_file(
-				"res://scenes/levels/MissionRT03.tscn"
-			)
+			GlobalTransition.change_scene("res://scenes/levels/MissionRT03.tscn", "Menuju ke RT 03...")
 
 		"pak_darto":
 			print("Berangkat menuju rumah Pak Darto.")
-			get_tree().change_scene_to_file(
-				"res://scenes/levels/MissionPakDarto.tscn"
-			)
+			GlobalTransition.change_scene("res://scenes/levels/MissionPakDarto.tscn", "Menuju ke Rumah Pak Darto...")
 
 		_:
 			print("Belum ada lokasi yang dipilih.")

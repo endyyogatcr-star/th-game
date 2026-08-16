@@ -569,7 +569,11 @@ func _on_dialogue_finished():
 	if current_dialogue_id == "custom_report":
 		call_deferred("_start_decision_phase")
 		return
-		
+	
+	if current_dialogue_id == "doctor_evaluation":
+		interaction_lock = false
+		GlobalTransition.change_scene("res://scenes/ui/DebriefScreen.tscn", "Evaluasi selesai...")
+		return
 	
 	if current_dialogue_id == "ani_01":
 		GameManager.talked_to_ani = true
@@ -855,7 +859,7 @@ func _setup_doctor_evaluation():
 	
 	# Pak Darto injured if last
 	if GameManager.mission_order.size() >= 3 and GameManager.mission_order[2] == "pak_darto":
-		lines.append("Pak Darto diselamatkan terakhir. Kondisinya kritis karena terlalu lama tertimbun longsor. Beliau butuh 1 Medical Supply.")
+		lines.append("Pak Darto diselamatkan terakhir. Kondisi MbahKarto kritis karena terlalu lama tertimbun longsor. Beliau butuh 1 Medical Supply.")
 		total_injured += 1
 		
 	# SD injured if no resource

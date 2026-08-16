@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bvdnuotrq7rsy"]
+
+[ext_resource type="Script" uid="uid://cf76pssptgspk" path="res://scipts/npc/npc.gd" id="1_u76iq"]
+[ext_resource type="Texture2D" uid="uid://dikix8jy88nvn" path="res://assets/char/npc/npc10.png" id="2_u76iq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_68buy"]
+size = Vector2(20, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f5ypv"]
+size = Vector2(129.5, 32)
+
+[node name="Npc" type="CharacterBody2D" unique_id=1305116040]
+script = ExtResource("1_u76iq")
+dialogue_id = "ani_01"
+
+[node name="npcSprite" type="Sprite2D" parent="." unique_id=1515289984]
+position = Vector2(0, 7.9999995)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_u76iq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2118347048]
+position = Vector2(0, 26)
+shape = SubResource("RectangleShape2D_68buy")
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=1439579057]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=1447801948]
+position = Vector2(0, 150)
+shape = SubResource("RectangleShape2D_f5ypv")
+
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]

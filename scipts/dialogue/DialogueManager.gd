@@ -241,7 +241,83 @@ var dialogue_data := {
 		"lines": [
 			"Akhirnya kita sampai di sekolah.",
 			"Menurut laporan warga, masih ada beberapa anak yang belum berhasil dievakuasi.",
-			"Kita harus menentukan tindakan dengan cepat."
+			"Kita harus menentukan tindakan dengan cepat.",
+			"Di sana! Ada dua anak di atas atap.",
+			"Sepertinya mereka belum berhasil dievakuasi.",
+			"Kita harus segera membantu mereka."
+		]
+	},
+	"ani_01": {
+		"speaker": "Anak 1",
+		"portrait": "res://assets/char/portrait/ani.png",
+		"lines": [
+			"Pak! Tolong kami!",
+			"Airnya terus naik!",
+			"Kami sudah tidak bisa turun dari sini."
+		]
+	},
+	"budi_01": {
+		"speaker": "Anak 2",
+		"portrait": "res://assets/char/portrait/Budi.png",
+		"lines": [
+			"Teman-teman yang lain sudah pergi.",
+			"Tapi kami tertinggal karena tidak sempat turun.",
+			"Tolong bawa kami keluar dari sini."
+		]
+	},
+	"sd_rescue_decision": {
+		"speaker": "Ketua Tim",
+		"portrait": "res://assets/char/portrait/ketua_tim.png",
+		"lines": [
+			"Anak-anak itu masih terjebak di atas atap.",
+			"Air di sekitar sekolah cukup deras.",
+			"Kita harus menentukan cara untuk mengevakuasi mereka."
+		],
+		"choices":[
+			"Gunakan 1 pelampung",
+			"Gunakan tali Carmantel",
+			"Evakuasi tanpa resource"
+		]
+	},
+	"sd_use_lifebuoy": {
+		"speaker": "Ketua Tim",
+		"portrait": "res://assets/char/portrait/ketua_tim.png",
+		"lines": [
+			"Gunakan pelampung.",
+			"Kita akan membantu mereka turun satu per satu.",
+			"Pastikan anak-anak tetap tenang."
+		]
+	},
+	"sd_use_rope": {
+		"speaker": "Ketua Tim",
+		"portrait": "res://assets/char/portrait/ketua_tim.png",
+		"lines": [
+			"Kita gunakan tali Carmantel.",
+			"Amankan jalur terlebih dahulu.",
+			"Setelah itu kita evakuasi anak-anak."
+		]
+	},
+	"sd_no_resource": {
+		"speaker": "Ketua Tim",
+		"portrait": "res://assets/char/portrait/ketua_tim.png",
+		"lines": [
+			"Kita coba lakukan tanpa menggunakan perlengkapan.",
+			"Semua harus bergerak dengan sangat hati-hati.",
+			"Kesalahan sedikit saja bisa membahayakan anak-anak."
+		]
+	},
+	"sd_empty": {
+		"speaker": "Ketua Tim",
+		"portrait": "res://assets/char/portrait/ketua_tim.png",
+		"lines": [
+			"Perlengkapan kita sudah habis"
+		]
+	},
+	"sd_finish":{
+		"speaker": "Ketua Tim",
+		"portrait": "res://assets/char/portrait/ketua_tim.png",
+		"lines": [
+			"Ayo kita kembali"
 		]
 	},
 }
@@ -349,6 +425,23 @@ func _on_dialogue_finished():
 		call_deferred("_start_decision_phase")
 		return
 		
+	
+	if current_dialogue_id == "ani_01":
+		GameManager.talked_to_ani = true
+	if current_dialogue_id == "budi_01":
+		GameManager.talked_to_budi = true
+	
+	if current_dialogue_id == ("sd_empty"):
+		start_dialogue("sd_rescue_decision")
+	
+	if current_dialogue_id == "sd_rescue_decision":
+		GameManager.completed_sd = true
+		print("SD selesai ", GameManager.completed_sd)
+		get_tree().change_scene_to_file(
+		"res://scenes/levels/MissionSDafter.tscn")
+		return
+	
+	
 	call_deferred("_clear_interaction_lock")
 
 func _go_to_disaster():
@@ -368,6 +461,24 @@ func _on_choice_selected(index, text):
 			1:_select_priority("rt03")
 			2:_select_priority("pak_darto")
 
+	elif current_dialogue_id == "sd_rescue_decision":
+		match index:
+			0:
+				if GameManager.use_lifebuoy():
+					start_dialogue("sd_use_lifebuoy")
+				else:
+					start_dialogue("sd_empty")
+					print("Pelampung sudah habis.")
+			1:
+				if GameManager.use_carmantel_rope():
+					start_dialogue("sd_use_rope")
+				else:
+					start_dialogue("sd_empty")
+					print("Tali Carmantel sudah habis.")
+			2:
+				print("Player memilih evakuasi tanpa resource.")
+				start_dialogue("sd_no_resource")
+		
 func _handle_pilihan_siap():
 	GameManager.departure_ready = true
 	start_dialogue("asisten_semua_siap")

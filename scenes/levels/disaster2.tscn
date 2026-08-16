@@ -1,31 +1,33 @@
-[gd_scene format=4 uid="uid://b4l7artbapfg4"]
+[gd_scene format=4 uid="uid://nbcflq1202yg"]
 
-[ext_resource type="Script" uid="uid://c5mw6n3754c2s" path="res://scipts/manager/mission_sd.gd" id="1_54aa3"]
-[ext_resource type="PackedScene" uid="uid://dmfh8oisun0f4" path="res://scenes/ui/dialogue_ui.tscn" id="1_n665j"]
-[ext_resource type="Texture2D" uid="uid://cm5fbb42bcjfw" path="res://assets/environment/toko.png" id="2_y88f0"]
-[ext_resource type="Texture2D" uid="uid://dum1tvrkove8s" path="res://assets/environment/pohon4.png" id="4_35jnn"]
-[ext_resource type="Texture2D" uid="uid://ci6rnfalysrme" path="res://assets/environment/atap.png" id="6_bhspa"]
-[ext_resource type="Texture2D" uid="uid://disd5rbauyktr" path="res://assets/environment/pohon3.png" id="7_crmih"]
-[ext_resource type="Texture2D" uid="uid://gaq8ob24py5w" path="res://assets/environment/pohon5.png" id="8_qdp43"]
-[ext_resource type="Texture2D" uid="uid://q18e4pikw7r7" path="res://assets/environment/kayu4.png" id="9_jmy2q"]
-[ext_resource type="Texture2D" uid="uid://dtjhypkc1c3f" path="res://assets/environment/kayu2.png" id="10_2gg07"]
-[ext_resource type="Texture2D" uid="uid://dlvpl1sewubcu" path="res://assets/environment/genteng1.png" id="12_oe81e"]
-[ext_resource type="Texture2D" uid="uid://ky622bqx8yx7" path="res://assets/environment/rumput2.png" id="13_v6xb3"]
-[ext_resource type="Texture2D" uid="uid://cetlxqups0vnq" path="res://assets/environment/rumah 1.png" id="14_1blgt"]
-[ext_resource type="Texture2D" uid="uid://xarf27q1eya" path="res://assets/environment/rumah 3.png" id="14_l8jy7"]
-[ext_resource type="Texture2D" uid="uid://dgmtsfg84mgdm" path="res://assets/environment/sd.png" id="14_yef4n"]
-[ext_resource type="Texture2D" uid="uid://cc4qxw78u4mqu" path="res://assets/environment/pohon1.png" id="15_ihgsi"]
-[ext_resource type="Texture2D" uid="uid://r5lvfj1aar0d" path="res://assets/environment/bg_sky.png" id="19_2jmoa"]
-[ext_resource type="PackedScene" uid="uid://b7a77vacest4" path="res://scenes/npc/Budi.tscn" id="19_sclpr"]
-[ext_resource type="Texture2D" uid="uid://bmm62j5n34tit" path="res://assets/environment/bg_land.png" id="20_2cigd"]
-[ext_resource type="PackedScene" uid="uid://dausddsflld6" path="res://scenes/player/playerBoat.tscn" id="21_1blgt"]
-[ext_resource type="Texture2D" uid="uid://bsyvk52rlp1yy" path="res://assets/environment/ground tileset.png" id="21_tcymm"]
-[ext_resource type="PackedScene" uid="uid://bvdnuotrq7rsy" path="res://scenes/npc/Ani.tscn" id="22_54aa3"]
-[ext_resource type="Texture2D" uid="uid://cvm0eocp7dph2" path="res://assets/tileset/ground-1.png" id="22_hgopj"]
-[ext_resource type="Texture2D" uid="uid://dke7sq5qrwc8v" path="res://assets/tileset/banjirtile.png" id="23_skj1m"]
+[ext_resource type="Texture2D" uid="uid://cjbmm4ucprfrb" path="res://assets/environment/pagar.png" id="1_44ak5"]
+[ext_resource type="Texture2D" uid="uid://cvm0eocp7dph2" path="res://assets/tileset/ground-1.png" id="1_caefu"]
+[ext_resource type="Texture2D" uid="uid://byua7wvcuvb2k" path="res://assets/environment/pagar2.png" id="2_2gs7d"]
+[ext_resource type="Texture2D" uid="uid://bsyvk52rlp1yy" path="res://assets/environment/ground tileset.png" id="2_acylg"]
+[ext_resource type="Texture2D" uid="uid://ci6rnfalysrme" path="res://assets/environment/atap.png" id="3_gf601"]
+[ext_resource type="Texture2D" uid="uid://cbgfrwpci6mg2" path="res://assets/environment/ambulansamping.png" id="3_up65f"]
+[ext_resource type="Texture2D" uid="uid://r5lvfj1aar0d" path="res://assets/environment/bg_sky.png" id="4_vdn5p"]
+[ext_resource type="Texture2D" uid="uid://bmm62j5n34tit" path="res://assets/environment/bg_land.png" id="5_up65f"]
+[ext_resource type="Texture2D" uid="uid://cvejw700fe8ya" path="res://assets/environment/tiang1.png" id="7_0o4yc"]
+[ext_resource type="Texture2D" uid="uid://dtjhypkc1c3f" path="res://assets/environment/kayu2.png" id="8_1m0s5"]
+[ext_resource type="Texture2D" uid="uid://q18e4pikw7r7" path="res://assets/environment/kayu4.png" id="8_d3ijc"]
+[ext_resource type="Texture2D" uid="uid://dum1tvrkove8s" path="res://assets/environment/pohon4.png" id="8_ocj03"]
+[ext_resource type="Texture2D" uid="uid://cm5fbb42bcjfw" path="res://assets/environment/toko.png" id="9_2qfi0"]
+[ext_resource type="Texture2D" uid="uid://dwp0mfagl5bve" path="res://assets/environment/rumah 2.png" id="9_bh44j"]
+[ext_resource type="Texture2D" uid="uid://disd5rbauyktr" path="res://assets/environment/pohon3.png" id="11_2gs7d"]
+[ext_resource type="Texture2D" uid="uid://gaq8ob24py5w" path="res://assets/environment/pohon5.png" id="12_d3ijc"]
+[ext_resource type="Texture2D" uid="uid://ky622bqx8yx7" path="res://assets/environment/rumput2.png" id="15_w6eue"]
+[ext_resource type="Texture2D" uid="uid://bytbekbeistqc" path="res://assets/environment/beton.png" id="17_c7ar8"]
+[ext_resource type="Texture2D" uid="uid://xarf27q1eya" path="res://assets/environment/rumah 3.png" id="17_yugle"]
+[ext_resource type="Texture2D" uid="uid://cc4qxw78u4mqu" path="res://assets/environment/pohon1.png" id="18_o6a2j"]
+[ext_resource type="Texture2D" uid="uid://dlvpl1sewubcu" path="res://assets/environment/genteng1.png" id="18_ocj03"]
+[ext_resource type="Texture2D" uid="uid://dke7sq5qrwc8v" path="res://assets/tileset/banjirtile.png" id="23_2qfi0"]
+[ext_resource type="PackedScene" uid="uid://dausddsflld6" path="res://scenes/player/playerBoat.tscn" id="24_2qfi0"]
+[ext_resource type="PackedScene" uid="uid://dmfh8oisun0f4" path="res://scenes/ui/dialogue_ui.tscn" id="25_2qfi0"]
+[ext_resource type="PackedScene" uid="uid://dkdf1fq35dswu" path="res://scenes/npc/asisten.tscn" id="25_w6eue"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w6eue"]
-texture = ExtResource("21_tcymm")
+texture = ExtResource("2_acylg")
 texture_region_size = Vector2i(48, 48)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
@@ -157,7 +159,7 @@ texture_region_size = Vector2i(48, 48)
 10:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dqd3n"]
-texture = ExtResource("22_hgopj")
+texture = ExtResource("1_caefu")
 texture_region_size = Vector2i(48, 48)
 0:0/0 = 0
 1:0/0 = 0
@@ -217,7 +219,7 @@ texture_region_size = Vector2i(48, 48)
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yugle"]
-texture = ExtResource("23_skj1m")
+texture = ExtResource("23_2qfi0")
 texture_region_size = Vector2i(48, 48)
 0:0/0 = 0
 1:0/0 = 0
@@ -275,102 +277,105 @@ sources/0 = SubResource("TileSetAtlasSource_w6eue")
 sources/1 = SubResource("TileSetAtlasSource_dqd3n")
 sources/2 = SubResource("TileSetAtlasSource_yugle")
 
-[node name="MissionSD" type="Node2D" unique_id=1328093719]
-script = ExtResource("1_54aa3")
+[node name="Disaster01" type="Node2D" unique_id=1328093719]
 metadata/_edit_horizontal_guides_ = [366.0]
 
-[node name="DialogueUI" parent="." unique_id=356329378 instance=ExtResource("1_n665j")]
+[node name="DialogueUI" parent="." unique_id=356329378 instance=ExtResource("25_2qfi0")]
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=486327577]
 scroll_scale = Vector2(0.5, 0)
 
-[node name="pohon3" type="Sprite2D" parent="Parallax2D2" unique_id=1213759154]
-position = Vector2(251.5, 347.75)
-scale = Vector2(0.20138898, 0.19791669)
-texture = ExtResource("7_crmih")
+[node name="toko" type="Sprite2D" parent="Parallax2D2" unique_id=1631410592]
+position = Vector2(607, 351.99997)
+scale = Vector2(0.75, 0.66824996)
+texture = ExtResource("9_2qfi0")
 
-[node name="pohon4" type="Sprite2D" parent="Parallax2D2" unique_id=441706184]
-position = Vector2(345, 348)
-scale = Vector2(0.20138898, 0.19791669)
-texture = ExtResource("7_crmih")
-
-[node name="pohon5" type="Sprite2D" parent="Parallax2D2" unique_id=1714967169]
-position = Vector2(649, 347.00003)
-scale = Vector2(0.20138898, 0.19791669)
-texture = ExtResource("7_crmih")
-
-[node name="rumah3" type="Sprite2D" parent="Parallax2D2" unique_id=721088325]
-position = Vector2(469.99994, 360)
-scale = Vector2(0.75000006, 0.74999994)
-texture = ExtResource("6_bhspa")
-
-[node name="pohon2" type="Sprite2D" parent="." unique_id=1373218153]
-position = Vector2(754, 322)
-scale = Vector2(0.5625, 0.5625)
-texture = ExtResource("15_ihgsi")
+[node name="pohon6" type="Sprite2D" parent="Parallax2D2" unique_id=1511417185]
+position = Vector2(244, 330)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("7_0o4yc")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=107973522]
 scale = Vector2(0.75, 0.75)
 scroll_scale = Vector2(0.6, 0)
 
-[node name="toko" type="Sprite2D" parent="Parallax2D" unique_id=1631410592]
-position = Vector2(1384, 465.3333)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("2_y88f0")
-
 [node name="pohon4" type="Sprite2D" parent="Parallax2D" unique_id=1653006362]
-position = Vector2(1448, 474.6667)
+position = Vector2(1241.3334, 468.6667)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("4_35jnn")
+texture = ExtResource("8_ocj03")
 flip_h = true
 
+[node name="rumah" type="Sprite2D" parent="Parallax2D" unique_id=666414265]
+position = Vector2(1306.6667, 467.33334)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_bh44j")
+
+[node name="rumah3" type="Sprite2D" parent="Parallax2D" unique_id=721088325]
+position = Vector2(1006.667, 471.667)
+texture = ExtResource("3_gf601")
+
+[node name="pohon3" type="Sprite2D" parent="Parallax2D" unique_id=1213759154]
+position = Vector2(352, 435.3333)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("11_2gs7d")
+
 [node name="pohon5" type="Sprite2D" parent="Parallax2D" unique_id=2006900097]
-position = Vector2(514.66675, 479.99997)
+position = Vector2(526.6667, 450.00003)
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("8_qdp43")
+texture = ExtResource("12_d3ijc")
 
 [node name="pohon6" type="Sprite2D" parent="Parallax2D" unique_id=1973219850]
-position = Vector2(1284.0001, 481.3333)
+position = Vector2(606.3334, 471)
 scale = Vector2(0.6083324, 0.541667)
-texture = ExtResource("9_jmy2q")
+texture = ExtResource("8_d3ijc")
 
 [node name="pohon7" type="Sprite2D" parent="Parallax2D" unique_id=1649147020]
-position = Vector2(720, 465.33334)
+position = Vector2(748, 462.00006)
 scale = Vector2(0.6083324, 0.541667)
-texture = ExtResource("10_2gg07")
+texture = ExtResource("8_1m0s5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1005100353]
+position = Vector2(1068.0002, 475.33344)
+scale = Vector2(0.3263886, 0.30555558)
+texture = ExtResource("17_c7ar8")
 
 [node name="Genteng1" type="Sprite2D" parent="Parallax2D" unique_id=911373830]
-position = Vector2(928, 479.667)
+position = Vector2(916, 472.66687)
 scale = Vector2(0.6527778, 0.5833334)
-texture = ExtResource("12_oe81e")
+texture = ExtResource("18_ocj03")
 
 [node name="rumput3" type="Sprite2D" parent="Parallax2D" unique_id=1679999585]
-position = Vector2(1248, 472)
-texture = ExtResource("13_v6xb3")
+position = Vector2(1102.6666, 458)
+texture = ExtResource("15_w6eue")
 
 [node name="rumput4" type="Sprite2D" parent="Parallax2D" unique_id=1725453336]
-position = Vector2(1306.6666, 468.00003)
-texture = ExtResource("13_v6xb3")
+position = Vector2(1134.6666, 456.6667)
+texture = ExtResource("15_w6eue")
+
+[node name="rumah2" type="Sprite2D" parent="Parallax2D" unique_id=342299634]
+position = Vector2(1445.3334, 466)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("17_yugle")
 
 [node name="pohon" type="Sprite2D" parent="Parallax2D" unique_id=173279503]
 position = Vector2(1478.6669, 426)
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("15_ihgsi")
+texture = ExtResource("18_o6a2j")
 
-[node name="Sd" type="Sprite2D" parent="Parallax2D" unique_id=2035190811]
-position = Vector2(1574.6665, 437.33334)
-scale = Vector2(1.0076923, 0.9722222)
-texture = ExtResource("14_yef4n")
+[node name="Pagar2" type="Sprite2D" parent="." unique_id=1626700359]
+position = Vector2(375, -8)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_2gs7d")
 
-[node name="Rumah1" type="Sprite2D" parent="Parallax2D" unique_id=558980016]
-position = Vector2(832, 500)
-scale = Vector2(0.20377603, 0.1973763)
-texture = ExtResource("14_1blgt")
+[node name="ambulan" type="Sprite2D" parent="." unique_id=358864241]
+position = Vector2(877, -32)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("3_up65f")
 
-[node name="Rumah3" type="Sprite2D" parent="Parallax2D/Rumah1" unique_id=1776246196]
-position = Vector2(-2061.0864, -54.04248)
-scale = Vector2(2.791736, 2.5332322)
-texture = ExtResource("14_l8jy7")
+[node name="Pagar" type="Sprite2D" parent="." unique_id=1453688978]
+position = Vector2(155, -12)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_44ak5")
 
 [node name="Background" type="Node2D" parent="." unique_id=1720399705]
 z_index = -20
@@ -381,42 +386,25 @@ scroll_scale = Vector2(0.1, 0)
 [node name="sky" type="Sprite2D" parent="Background/Parallax2D" unique_id=714553432]
 position = Vector2(552, 45.5)
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("19_2jmoa")
+texture = ExtResource("4_vdn5p")
 
 [node name="land" type="Sprite2D" parent="Background/Parallax2D" unique_id=718914975]
 position = Vector2(552, 219.5)
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("20_2cigd")
-
-[node name="Npc" parent="." unique_id=1305116040 instance=ExtResource("22_54aa3")]
-position = Vector2(1219, -168)
-npc_type = "ani"
-dialogue_id = ""
-
-[node name="Sd2" type="Sprite2D" parent="." unique_id=813151514]
-position = Vector2(1209, -62.000004)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("14_yef4n")
-
-[node name="Sd3" type="Sprite2D" parent="." unique_id=1206198279]
-position = Vector2(936, -62)
-scale = Vector2(1.5, 1.5)
-texture = ExtResource("14_yef4n")
-
-[node name="Npc2" parent="." unique_id=642070990 instance=ExtResource("19_sclpr")]
-z_index = -5
-position = Vector2(1301, -168)
-npc_type = "budi"
-dialogue_id = ""
+texture = ExtResource("5_up65f")
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=507182114]
-tile_map_data = PackedByteArray("AAD2/wIAAAAIAAkAAAD2/wEAAAAIAAkAAAAgAAIAAAAIAAkAAAAgAAEAAgAAAAIAAAD1/wYAAAAIAAkAAAD0/wYAAAAIAAkAAAD0/wUAAAAIAAkAAAD0/wQAAAAIAAkAAAAXAAYAAAAIAAkAAAAXAAUAAAAIAAkAAAAAAAYAAAAIAAkAAAAAAAUAAAAIAAkAAAAAAAAAAgABAAMAAAABAAAAAgABAAMAAAACAAAAAgABAAMAAAADAAAAAgACAAMAAAAEAAAAAgAIAAMAAAAFAAAAAgAIAAMAAAAGAAAAAgAIAAMAAAAHAAAAAgACAAMAABAIAAAAAgACAAMAAAAJAAAAAgAIAAMAAAAKAAAAAgAIAAMAAAALAAAAAgAIAAMAAAAMAAAAAgAIAAMAAAARAAAAAgACAAMAABASAAAAAgABAAMAAAATAAAAAgABAAMAAAANAAAAAgAIAAMAAAAOAAAAAgAIAAMAAAAPAAAAAgAIAAMAAAAQAAAAAgAIAAMAAAAUAAAAAgABAAMAAAAVAAAAAgABAAMAAAAWAAAAAgABAAMAAAAXAAAAAgACAAMAAAAYAAAAAgAIAAMAAAAZAAAAAgAIAAMAAAAaAAAAAgAIAAMAAAAbAAAAAgAIAAMAAAAcAAAAAgAIAAMAAAAdAAAAAgAIAAMAAAAAAAEAAgAAAAIAAAABAAEAAgAAAAIAAAACAAEAAgAAAAIAAAADAAEAAgAAAAIAAAAEAAEAAgAAAAIAAAAFAAEAAgAAAAIAAAAGAAEAAgAAAAIAAAAHAAEAAgAAAAIAAAAIAAEAAgAAAAIAAAAJAAEAAgAAAAIAAAAKAAEAAgAAAAIAAAALAAEAAgAAAAIAAAAMAAEAAgAAAAIAAAANAAEAAgAAAAIAAAAOAAEAAgAAAAIAAAAPAAEAAgAAAAIAAAAQAAEAAgAAAAIAAAARAAEAAgAAAAIAAAASAAEAAgAAAAIAAAATAAEAAgAAAAIAAAAUAAEAAgAAAAIAAAAVAAEAAgAAAAIAAAAWAAEAAgAAAAIAAAAXAAEAAgAAAAIAAAAZAAEAAgAAAAIAAAAaAAEAAgAAAAIAAAAbAAEAAgAAAAIAAAAcAAEAAgAAAAIAAAAdAAEAAgAAAAIAAAAeAAEAAgAAAAIAAAAYAAEAAgAAAAIAAAD//wAAAAAIAAkAAAD/////AAAIAAkAAAAeAAAAAgAIAAMAAAAfAAAAAgAIAAMAAAAgAAAAAgAIAAMAAAAhAAAAAgAIAAMAAAAiAAAAAgAIAAMAAAAjAAAAAgAIAAMAAAAkAAAAAgAIAAMAAAAlAAAAAgAIAAMAAAAfAAEAAgAAAAIAAAAhAAEAAgAAAAIAAAAiAAEAAgAAAAIAAAAjAAEAAgAAAAIAAAAkAAEAAgAAAAIAAAAlAAEAAgAAAAIAAAAlAP//AAAIAAkAAAA=")
+tile_map_data = PackedByteArray("AAD2/wIAAAAIAAkAAAD2/wEAAAAIAAkAAAAgAAIAAAAIAAkAAAAgAAEAAAAIAAkAAAD1/wYAAAAIAAkAAAD0/wYAAAAIAAkAAAD0/wUAAAAIAAkAAAD0/wQAAAAIAAkAAAAXAAYAAAAIAAkAAAAXAAUAAAAIAAkAAAAAAAYAAAAIAAkAAAAAAAUAAAAIAAkAAAAAAAAAAgAAAAIAAAABAAAAAgABAAIAAAACAAAAAgAAAAIAAAADAAAAAgAAAAIAAAAEAAAAAgACAAIAAAAFAAAAAgAAAAIAAAAGAAAAAgADAAIAAAAHAAAAAgAHAAIAAAAIAAAAAgAAAAIAAAAJAAAAAgAAAAIAAAAKAAAAAgAEAAIAAAALAAAAAgAFAAIAAAAMAAAAAgAGAAIAAAARAAAAAgAEAAIAAAASAAAAAgAFAAIAAAATAAAAAgAGAAIAAAA=")
 tile_set = SubResource("TileSet_o6a2j")
 
-[node name="Player" parent="." unique_id=1027270447 instance=ExtResource("21_1blgt")]
-position = Vector2(67, -13)
+[node name="Ground2" type="TileMapLayer" parent="." unique_id=1660304144]
+tile_map_data = PackedByteArray("AAD2/wIAAAAIAAkAAAD2/wEAAAAIAAkAAAAgAAIAAAAIAAkAAAAgAAEAAgAAAAIAAAD1/wYAAAAIAAkAAAD0/wYAAAAIAAkAAAD0/wUAAAAIAAkAAAD0/wQAAAAIAAkAAAAXAAYAAAAIAAkAAAAXAAUAAAAIAAkAAAAAAAYAAAAIAAkAAAAAAAUAAAAIAAkAAAANAAAAAgADAAMAAAAOAAAAAgAFAAMAAAAPAAAAAgAFAAMAAAAQAAAAAgADAAMAABAUAAAAAgAAAAMAAAAVAAAAAgABAAMAAAAWAAAAAgABAAMAAAAXAAAAAgABAAMAAAAYAAAAAgAEAAMAABAZAAAAAgAFAAMAAAAaAAAAAgAFAAMAAAAbAAAAAgAEAAMAAAAcAAAAAgACAAMAAAAdAAAAAgAIAAMAAAAeAAAAAgAIAAMAAAAfAAAAAgAIAAMAAAAgAAAAAgAIAAMAAAAhAAAAAgAIAAMAAAAiAAAAAgAIAAMAAAAjAAAAAgAIAAMAAAAUAAEAAgAAAAIAAAAVAAEAAgAAAAIAAAAWAAEAAgAAAAIAAAAXAAEAAgAAAAIAAAAYAAEAAgAAAAIAAAAZAAEAAgAAAAIAAAAaAAEAAgAAAAIAAAAbAAEAAgAAAAIAAAAcAAEAAgAAAAIAAAAdAAEAAgAAAAIAAAAeAAEAAgAAAAIAAAAfAAEAAgAAAAIAAAAhAAEAAgAAAAIAAAAiAAEAAgAAAAIAAAAjAAEAAgAAAAIAAAA=")
+tile_set = SubResource("TileSet_o6a2j")
 
-[node name="Camera2D2" type="Camera2D" parent="Player" unique_id=1285762505]
+[node name="Player" parent="." unique_id=1027270447 instance=ExtResource("24_2qfi0")]
+position = Vector2(1030, -20)
+
+[node name="Camera2D2" type="Camera2D" parent="Player" unique_id=593055536]
 position = Vector2(41, -26)
 offset = Vector2(0, -223)
 zoom = Vector2(2, 2)
@@ -424,3 +412,6 @@ limit_left = 0
 limit_top = 0
 limit_right = 1800
 limit_bottom = 446
+
+[node name="Npc" parent="." unique_id=1305116040 instance=ExtResource("25_w6eue")]
+position = Vector2(936, -23)

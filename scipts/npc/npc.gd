@@ -41,6 +41,19 @@ func get_dialogue_id() -> String:
 		"ketua_tim":
 			if not GameManager.first_talk_ketua:
 				return "ketua_tim_01"
+		
+		"ani":
+			if not GameManager.talked_to_ani:
+				return "ani_01"
+			if GameManager.talked_to_ani and GameManager.talked_to_budi:
+				return "sd_rescue_decision"
+				
+		"budi":
+			if not GameManager.talked_to_budi:
+				return "budi_01"
+			if GameManager.talked_to_ani and GameManager.talked_to_budi:
+				return "sd_rescue_decision"
+
 
 	return dialogue_id
 

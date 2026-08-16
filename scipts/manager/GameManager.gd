@@ -25,6 +25,9 @@ var carmantel_rope := 1
 var lifebuoy := 2
 var rescue_score := 0
 var mission_started := false
+var talked_to_ani :=false
+var talked_to_budi :=false
+var sd_result := ""
 
 func has_all_equipment() -> bool:
 	return (
@@ -51,7 +54,14 @@ func get_interview_count() -> int:
 
 func has_interviewed_all() -> bool:
 	return get_interview_count() >= 6
+	
+func all_locations_completed() -> bool:
 
+	return (
+		completed_sd
+		and completed_rt03
+		and completed_pak_darto
+	)
 func go_to_disaster():
 	get_tree().change_scene_to_file("res://scenes/levels/disaster01.tscn")
 	
@@ -85,3 +95,39 @@ func get_report_summary() -> Array[String]:
 		report.append("Pak Yanto menginformasikan alat evakuasi sangat terbatas \nhanya 1 tali carmantel & 2 pelampung.")
 
 	return report
+
+func use_lifebuoy() -> bool:
+
+	if lifebuoy <= 0:
+		return false
+
+	lifebuoy -= 1
+
+	print("Pelampung digunakan.")
+	print("Sisa pelampung: ", lifebuoy)
+
+	return true
+
+func use_carmantel_rope() -> bool:
+
+	if carmantel_rope <= 0:
+		return false
+
+	carmantel_rope -= 1
+
+	print("Tali Carmantel digunakan.")
+	print("Sisa tali Carmantel: ", carmantel_rope)
+
+	return true
+
+func use_medical_supply() -> bool:
+
+	if medical_supply <= 0:
+		return false
+
+	medical_supply -= 1
+
+	print("Medical Supply digunakan.")
+	print("Sisa Medical Supply: ", medical_supply)
+
+	return true

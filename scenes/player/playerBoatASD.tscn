@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://dausddsflld6"]
+[gd_scene format=3 uid="uid://cat2o3jxmjxt8"]
 
-[ext_resource type="Script" uid="uid://dfr73re4ifnxp" path="res://scipts/player/player.gd" id="1_ck7jd"]
-[ext_resource type="Texture2D" uid="uid://w2galu77wgc5" path="res://assets/char/playerBoat.png" id="2_wdia0"]
+[ext_resource type="Script" uid="uid://dfr73re4ifnxp" path="res://scipts/player/player.gd" id="1_e58pl"]
+[ext_resource type="Texture2D" uid="uid://7uk6pef5ek1l" path="res://assets/char/playerBoatafter.png" id="2_i4sn5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kxt1r"]
 size = Vector2(13, 85)
@@ -10,7 +10,7 @@ size = Vector2(13, 85)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_wdia0")
+"texture": ExtResource("2_i4sn5")
 }],
 "loop": 1,
 "name": &"idle",
@@ -18,10 +18,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_wdia0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_wdia0")
+"texture": ExtResource("2_i4sn5")
 }],
 "loop": 1,
 "name": &"walk",
@@ -29,7 +26,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=1027270447]
-script = ExtResource("1_ck7jd")
+script = ExtResource("1_e58pl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1076196613]
 position = Vector2(66.5, 18.5)
@@ -39,4 +36,5 @@ shape = SubResource("RectangleShape2D_kxt1r")
 position = Vector2(5, -8)
 scale = Vector2(0.75, 0.75)
 sprite_frames = SubResource("SpriteFrames_68buy")
-animation = &"idle"
+animation = &"walk"
+flip_h = true

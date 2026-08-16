@@ -1,35 +1,35 @@
-[gd_scene format=4 uid="uid://nbcflq1202yg"]
+[gd_scene format=4 uid="uid://dc2p2srr6gy1l"]
 
-[ext_resource type="Texture2D" uid="uid://cjbmm4ucprfrb" path="res://assets/environment/pagar.png" id="1_44ak5"]
-[ext_resource type="Texture2D" uid="uid://cvm0eocp7dph2" path="res://assets/tileset/ground-1.png" id="1_caefu"]
-[ext_resource type="Texture2D" uid="uid://byua7wvcuvb2k" path="res://assets/environment/pagar2.png" id="2_2gs7d"]
-[ext_resource type="Texture2D" uid="uid://bsyvk52rlp1yy" path="res://assets/environment/ground tileset.png" id="2_acylg"]
-[ext_resource type="PackedScene" uid="uid://hcp0p6q4n5l1" path="res://scenes/player/player.tscn" id="3_0vmb1"]
-[ext_resource type="Texture2D" uid="uid://ci6rnfalysrme" path="res://assets/environment/atap.png" id="3_gf601"]
-[ext_resource type="Texture2D" uid="uid://cbgfrwpci6mg2" path="res://assets/environment/ambulansamping.png" id="3_up65f"]
-[ext_resource type="Texture2D" uid="uid://r5lvfj1aar0d" path="res://assets/environment/bg_sky.png" id="4_vdn5p"]
-[ext_resource type="Texture2D" uid="uid://bmm62j5n34tit" path="res://assets/environment/bg_land.png" id="5_up65f"]
-[ext_resource type="Texture2D" uid="uid://cvejw700fe8ya" path="res://assets/environment/tiang1.png" id="7_0o4yc"]
-[ext_resource type="Texture2D" uid="uid://dtjhypkc1c3f" path="res://assets/environment/kayu2.png" id="8_1m0s5"]
-[ext_resource type="Texture2D" uid="uid://q18e4pikw7r7" path="res://assets/environment/kayu4.png" id="8_d3ijc"]
-[ext_resource type="Texture2D" uid="uid://dum1tvrkove8s" path="res://assets/environment/pohon4.png" id="8_ocj03"]
-[ext_resource type="Texture2D" uid="uid://cm5fbb42bcjfw" path="res://assets/environment/toko.png" id="9_2qfi0"]
-[ext_resource type="Texture2D" uid="uid://dwp0mfagl5bve" path="res://assets/environment/rumah 2.png" id="9_bh44j"]
-[ext_resource type="Texture2D" uid="uid://disd5rbauyktr" path="res://assets/environment/pohon3.png" id="11_2gs7d"]
-[ext_resource type="Texture2D" uid="uid://gaq8ob24py5w" path="res://assets/environment/pohon5.png" id="12_d3ijc"]
-[ext_resource type="Texture2D" uid="uid://ky622bqx8yx7" path="res://assets/environment/rumput2.png" id="15_w6eue"]
-[ext_resource type="Texture2D" uid="uid://bytbekbeistqc" path="res://assets/environment/beton.png" id="17_c7ar8"]
-[ext_resource type="Texture2D" uid="uid://xarf27q1eya" path="res://assets/environment/rumah 3.png" id="17_yugle"]
-[ext_resource type="Texture2D" uid="uid://cc4qxw78u4mqu" path="res://assets/environment/pohon1.png" id="18_o6a2j"]
-[ext_resource type="Texture2D" uid="uid://dlvpl1sewubcu" path="res://assets/environment/genteng1.png" id="18_ocj03"]
-[ext_resource type="Texture2D" uid="uid://dke7sq5qrwc8v" path="res://assets/tileset/banjirtile.png" id="23_2qfi0"]
-[ext_resource type="PackedScene" uid="uid://q3irxavvq4hi" path="res://scenes/npc/ketuaTim.tscn" id="24_1m0s5"]
-[ext_resource type="PackedScene" uid="uid://dmfh8oisun0f4" path="res://scenes/ui/dialogue_ui.tscn" id="25_2qfi0"]
-[ext_resource type="Texture2D" uid="uid://bqb1gei3qox53" path="res://assets/environment/boa.png" id="26_w6eue"]
-[ext_resource type="Script" uid="uid://ct7bbying84w8" path="res://scipts/interactables/boat.gd" id="27_dqd3n"]
+[ext_resource type="PackedScene" uid="uid://dmfh8oisun0f4" path="res://scenes/ui/dialogue_ui.tscn" id="1_hwlu2"]
+[ext_resource type="Texture2D" uid="uid://cm5fbb42bcjfw" path="res://assets/environment/toko.png" id="2_3pxwi"]
+[ext_resource type="Texture2D" uid="uid://cvejw700fe8ya" path="res://assets/environment/tiang1.png" id="3_uidkf"]
+[ext_resource type="Texture2D" uid="uid://dum1tvrkove8s" path="res://assets/environment/pohon4.png" id="4_rvfu5"]
+[ext_resource type="Texture2D" uid="uid://dwp0mfagl5bve" path="res://assets/environment/rumah 2.png" id="5_ygvl5"]
+[ext_resource type="Texture2D" uid="uid://ci6rnfalysrme" path="res://assets/environment/atap.png" id="6_j51fe"]
+[ext_resource type="Texture2D" uid="uid://disd5rbauyktr" path="res://assets/environment/pohon3.png" id="7_qpj6c"]
+[ext_resource type="Texture2D" uid="uid://gaq8ob24py5w" path="res://assets/environment/pohon5.png" id="8_m6hiw"]
+[ext_resource type="Texture2D" uid="uid://q18e4pikw7r7" path="res://assets/environment/kayu4.png" id="9_6g5lv"]
+[ext_resource type="Texture2D" uid="uid://dtjhypkc1c3f" path="res://assets/environment/kayu2.png" id="10_svu1r"]
+[ext_resource type="Texture2D" uid="uid://bytbekbeistqc" path="res://assets/environment/beton.png" id="11_chk3e"]
+[ext_resource type="Texture2D" uid="uid://dlvpl1sewubcu" path="res://assets/environment/genteng1.png" id="12_lt011"]
+[ext_resource type="Texture2D" uid="uid://ky622bqx8yx7" path="res://assets/environment/rumput2.png" id="13_4q52i"]
+[ext_resource type="Texture2D" uid="uid://xarf27q1eya" path="res://assets/environment/rumah 3.png" id="14_6n7pj"]
+[ext_resource type="Texture2D" uid="uid://cc4qxw78u4mqu" path="res://assets/environment/pohon1.png" id="15_c0bbx"]
+[ext_resource type="Texture2D" uid="uid://byua7wvcuvb2k" path="res://assets/environment/pagar2.png" id="16_iewtb"]
+[ext_resource type="Texture2D" uid="uid://cjbmm4ucprfrb" path="res://assets/environment/pagar.png" id="17_bc12p"]
+[ext_resource type="Texture2D" uid="uid://cbgfrwpci6mg2" path="res://assets/environment/ambulansamping.png" id="18_ownon"]
+[ext_resource type="Texture2D" uid="uid://r5lvfj1aar0d" path="res://assets/environment/bg_sky.png" id="19_bu8xx"]
+[ext_resource type="Texture2D" uid="uid://bmm62j5n34tit" path="res://assets/environment/bg_land.png" id="20_570ts"]
+[ext_resource type="Texture2D" uid="uid://bsyvk52rlp1yy" path="res://assets/environment/ground tileset.png" id="21_r3alf"]
+[ext_resource type="Texture2D" uid="uid://cvm0eocp7dph2" path="res://assets/tileset/ground-1.png" id="22_sqnjo"]
+[ext_resource type="Texture2D" uid="uid://dke7sq5qrwc8v" path="res://assets/tileset/banjirtile.png" id="23_mxqy6"]
+[ext_resource type="PackedScene" uid="uid://q3irxavvq4hi" path="res://scenes/npc/ketuaTim.tscn" id="24_yxfal"]
+[ext_resource type="PackedScene" uid="uid://hcp0p6q4n5l1" path="res://scenes/player/player.tscn" id="25_7a6ym"]
+[ext_resource type="Script" uid="uid://ct7bbying84w8" path="res://scipts/interactables/boat.gd" id="26_qs4ro"]
+[ext_resource type="Texture2D" uid="uid://bqb1gei3qox53" path="res://assets/environment/boa.png" id="27_5iyn4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w6eue"]
-texture = ExtResource("2_acylg")
+texture = ExtResource("21_r3alf")
 texture_region_size = Vector2i(48, 48)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
@@ -161,7 +161,7 @@ texture_region_size = Vector2i(48, 48)
 10:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dqd3n"]
-texture = ExtResource("1_caefu")
+texture = ExtResource("22_sqnjo")
 texture_region_size = Vector2i(48, 48)
 0:0/0 = 0
 1:0/0 = 0
@@ -221,7 +221,7 @@ texture_region_size = Vector2i(48, 48)
 7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yugle"]
-texture = ExtResource("23_2qfi0")
+texture = ExtResource("23_mxqy6")
 texture_region_size = Vector2i(48, 48)
 0:0/0 = 0
 1:0/0 = 0
@@ -291,7 +291,7 @@ size = Vector2(109, 46.5)
 [node name="Disaster01" type="Node2D" unique_id=1328093719]
 metadata/_edit_horizontal_guides_ = [366.0]
 
-[node name="DialogueUI" parent="." unique_id=356329378 instance=ExtResource("25_2qfi0")]
+[node name="DialogueUI" parent="." unique_id=356329378 instance=ExtResource("1_hwlu2")]
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=486327577]
 scroll_scale = Vector2(0.5, 0)
@@ -299,12 +299,12 @@ scroll_scale = Vector2(0.5, 0)
 [node name="toko" type="Sprite2D" parent="Parallax2D2" unique_id=1631410592]
 position = Vector2(607, 351.99997)
 scale = Vector2(0.75, 0.66824996)
-texture = ExtResource("9_2qfi0")
+texture = ExtResource("2_3pxwi")
 
 [node name="pohon6" type="Sprite2D" parent="Parallax2D2" unique_id=1511417185]
 position = Vector2(244, 330)
 scale = Vector2(0.7, 0.7)
-texture = ExtResource("7_0o4yc")
+texture = ExtResource("3_uidkf")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=107973522]
 scale = Vector2(0.75, 0.75)
@@ -313,80 +313,80 @@ scroll_scale = Vector2(0.6, 0)
 [node name="pohon4" type="Sprite2D" parent="Parallax2D" unique_id=1653006362]
 position = Vector2(1241.3334, 468.6667)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("8_ocj03")
+texture = ExtResource("4_rvfu5")
 flip_h = true
 
 [node name="rumah" type="Sprite2D" parent="Parallax2D" unique_id=666414265]
 position = Vector2(1306.6667, 467.33334)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("9_bh44j")
+texture = ExtResource("5_ygvl5")
 
 [node name="rumah3" type="Sprite2D" parent="Parallax2D" unique_id=721088325]
 position = Vector2(1006.667, 471.667)
-texture = ExtResource("3_gf601")
+texture = ExtResource("6_j51fe")
 
 [node name="pohon3" type="Sprite2D" parent="Parallax2D" unique_id=1213759154]
 position = Vector2(352, 435.3333)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("11_2gs7d")
+texture = ExtResource("7_qpj6c")
 
 [node name="pohon5" type="Sprite2D" parent="Parallax2D" unique_id=2006900097]
 position = Vector2(526.6667, 450.00003)
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("12_d3ijc")
+texture = ExtResource("8_m6hiw")
 
 [node name="pohon6" type="Sprite2D" parent="Parallax2D" unique_id=1973219850]
 position = Vector2(606.3334, 471)
 scale = Vector2(0.6083324, 0.541667)
-texture = ExtResource("8_d3ijc")
+texture = ExtResource("9_6g5lv")
 
 [node name="pohon7" type="Sprite2D" parent="Parallax2D" unique_id=1649147020]
 position = Vector2(748, 462.00006)
 scale = Vector2(0.6083324, 0.541667)
-texture = ExtResource("8_1m0s5")
+texture = ExtResource("10_svu1r")
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=1005100353]
 position = Vector2(1068.0002, 475.33344)
 scale = Vector2(0.3263886, 0.30555558)
-texture = ExtResource("17_c7ar8")
+texture = ExtResource("11_chk3e")
 
 [node name="Genteng1" type="Sprite2D" parent="Parallax2D" unique_id=911373830]
 position = Vector2(916, 472.66687)
 scale = Vector2(0.6527778, 0.5833334)
-texture = ExtResource("18_ocj03")
+texture = ExtResource("12_lt011")
 
 [node name="rumput3" type="Sprite2D" parent="Parallax2D" unique_id=1679999585]
 position = Vector2(1102.6666, 458)
-texture = ExtResource("15_w6eue")
+texture = ExtResource("13_4q52i")
 
 [node name="rumput4" type="Sprite2D" parent="Parallax2D" unique_id=1725453336]
 position = Vector2(1134.6666, 456.6667)
-texture = ExtResource("15_w6eue")
+texture = ExtResource("13_4q52i")
 
 [node name="rumah2" type="Sprite2D" parent="Parallax2D" unique_id=342299634]
 position = Vector2(1445.3334, 466)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("17_yugle")
+texture = ExtResource("14_6n7pj")
 
 [node name="pohon" type="Sprite2D" parent="Parallax2D" unique_id=173279503]
 position = Vector2(1478.6669, 426)
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("18_o6a2j")
+texture = ExtResource("15_c0bbx")
 
 [node name="Pagar2" type="Sprite2D" parent="." unique_id=1626700359]
 position = Vector2(375, -8)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_2gs7d")
+texture = ExtResource("16_iewtb")
 
 [node name="Pagar" type="Sprite2D" parent="." unique_id=1453688978]
 position = Vector2(155, -12)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_44ak5")
+texture = ExtResource("17_bc12p")
 
 [node name="ambulan" type="Sprite2D" parent="." unique_id=358864241]
 position = Vector2(55, -32)
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("3_up65f")
+texture = ExtResource("18_ownon")
 
 [node name="Background" type="Node2D" parent="." unique_id=1720399705]
 z_index = -20
@@ -397,22 +397,22 @@ scroll_scale = Vector2(0.1, 0)
 [node name="sky" type="Sprite2D" parent="Background/Parallax2D" unique_id=714553432]
 position = Vector2(552, 45.5)
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("4_vdn5p")
+texture = ExtResource("19_bu8xx")
 
 [node name="land" type="Sprite2D" parent="Background/Parallax2D" unique_id=718914975]
 position = Vector2(552, 219.5)
 scale = Vector2(0.75, 0.75)
-texture = ExtResource("5_up65f")
+texture = ExtResource("20_570ts")
 
 [node name="Ground" type="TileMapLayer" parent="." unique_id=507182114]
 tile_map_data = PackedByteArray("AAD2/wIAAAAIAAkAAAD2/wEAAAAIAAkAAAAgAAIAAAAIAAkAAAAgAAEAAAAIAAkAAAD1/wYAAAAIAAkAAAD0/wYAAAAIAAkAAAD0/wUAAAAIAAkAAAD0/wQAAAAIAAkAAAAXAAYAAAAIAAkAAAAXAAUAAAAIAAkAAAAAAAYAAAAIAAkAAAAAAAUAAAAIAAkAAAAAAAAAAgAAAAIAAAABAAAAAgABAAIAAAACAAAAAgAAAAIAAAADAAAAAgAAAAIAAAAEAAAAAgACAAIAAAAFAAAAAgAAAAIAAAAGAAAAAgADAAIAAAAHAAAAAgAHAAIAAAAIAAAAAgAAAAIAAAAJAAAAAgAAAAIAAAAKAAAAAgAEAAIAAAALAAAAAgAFAAIAAAAMAAAAAgAGAAIAAAARAAAAAgAEAAIAAAASAAAAAgAFAAIAAAATAAAAAgAGAAIAAAA=")
 tile_set = SubResource("TileSet_o6a2j")
 
-[node name="Npc" parent="." unique_id=1305116040 instance=ExtResource("24_1m0s5")]
+[node name="Npc" parent="." unique_id=1305116040 instance=ExtResource("24_yxfal")]
 position = Vector2(947, -23)
 npc_type = "ketua_tim"
 
-[node name="Player" parent="." unique_id=1027270447 instance=ExtResource("3_0vmb1")]
+[node name="Player" parent="." unique_id=1027270447 instance=ExtResource("25_7a6ym")]
 position = Vector2(41, -26)
 
 [node name="Camera2D2" type="Camera2D" parent="Player" unique_id=1285762505]
@@ -428,7 +428,7 @@ tile_map_data = PackedByteArray("AAD2/wIAAAAIAAkAAAD2/wEAAAAIAAkAAAAgAAIAAAAIAAk
 tile_set = SubResource("TileSet_o6a2j")
 
 [node name="perahu" type="Area2D" parent="." unique_id=231479849]
-script = ExtResource("27_dqd3n")
+script = ExtResource("26_qs4ro")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="perahu" unique_id=805379533]
 position = Vector2(1061, 6)
@@ -437,5 +437,5 @@ shape = SubResource("RectangleShape2D_w6eue")
 [node name="Boa" type="Sprite2D" parent="perahu" unique_id=253416706]
 position = Vector2(1064, -16)
 scale = Vector2(0.7270408, 0.7395834)
-texture = ExtResource("26_w6eue")
+texture = ExtResource("27_5iyn4")
 flip_h = true

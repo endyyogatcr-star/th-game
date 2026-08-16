@@ -27,6 +27,7 @@ var rescue_score := 0
 var mission_started := false
 var talked_to_ani :=false
 var talked_to_budi :=false
+var talked_to_Darto = false
 var sd_result := ""
 
 func has_all_equipment() -> bool:

@@ -5,13 +5,12 @@ extends Node2D
 
 
 var cutscene_active := true
-var cutscene_duration := 5.0
+var cutscene_duration := 8.0
 var cutscene_timer := 0.0
 
 
 func _ready():
 
-	DialogueManager.start_dialogue("sd_finish")
 
 	start_arrival_cutscene()
 
@@ -21,7 +20,7 @@ func start_arrival_cutscene():
 	cutscene_active = true
 	cutscene_timer = cutscene_duration
 
-	print("Cutscene kedatangan SD dimulai.")
+	print("Cutscene kepergian dimulai.")
 
 	# Matikan kontrol player
 	player.can_control = false

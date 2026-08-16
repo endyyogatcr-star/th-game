@@ -5,13 +5,11 @@ extends Node2D
 
 
 var cutscene_active := true
-var cutscene_duration := 5.0
+var cutscene_duration := 3.0
 var cutscene_timer := 0.0
 
 
 func _ready():
-
-	DialogueManager.start_dialogue("sd_finish")
 
 	start_arrival_cutscene()
 
@@ -32,8 +30,8 @@ func _process(delta):
 	if not cutscene_active:
 		return
 
-	# Gerak otomatis ke kiri
-	player.velocity.x = -player.speed
+	# Gerak otomatis ke kanan
+	player.velocity.x = player.speed
 
 	player.move_and_slide()
 
@@ -50,7 +48,9 @@ func end_arrival_cutscene():
 	# Hentikan gerakan
 	player.velocity.x = 0
 
-	print("Kembali ke Disaster.")
+	# Kembalikan kontrol player
+	player.can_control = true
 
-	get_tree().change_scene_to_file(
-		"res://scenes/levels/disaster2.tscn")
+	print("Player tiba di SD.")
+
+	DialogueManager.start_dialogue("rt03_arrival")

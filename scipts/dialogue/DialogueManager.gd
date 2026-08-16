@@ -320,6 +320,145 @@ var dialogue_data := {
 			"Ayo kita kembali"
 		]
 	},
+	"rt03_arrival": {
+		"speaker": "Ketua Tim",
+		"portrait": "res://assets/char/portrait/ketua_tim.png",
+		"lines": [
+			"Kita sudah sampai di RT 03.",
+			"Airnya cukup dalam di sini, dan arus terlihat kuat.",
+			"Banyak warga yang mengungsi ke atap rumah.",
+			"Kita harus segera mengevakuasi mereka sebelum air bertambah tinggi."
+		]
+	},
+	"rt03_warga_01": {
+		"speaker": "Warga RT03",
+		"portrait": "res://assets/char/portrait/slamet.png",
+		"lines": [
+			"Tolong! Air sudah masuk ke dalam rumah kami!",
+			"Cepat, kami butuh bantuan!",
+			"Beberapa dari kami sudah aman di rumah tetangga yang lebih tinggi.",
+			"Tapi masih ada tiga orang yang terjebak di sebelah sana!"
+		]
+	},
+	"rt03_rescue_decision": {
+		"speaker": "Ketua Tim",
+		"portrait": "res://assets/char/portrait/ketua_tim.png",
+		"lines": [
+			"Kondisinya cukup darurat.",
+			"Kita harus menentukan cara untuk mengevakuasi mereka."
+		],
+		"choices":[
+			"Gunakan 1 pelampung",
+			"Gunakan tali Carmantel",
+			"Evakuasi tanpa resource"
+		]
+	},
+	"rt03_use_lifebuoy": {
+		"speaker": "Ketua Tim",
+		"portrait": "res://assets/char/portrait/ketua_tim.png",
+		"lines": [
+			"Gunakan pelampung.",
+			"Kita prioritaskan warga yang tidak bisa berenang dan anak-anak."
+		]
+	},
+	"rt03_use_rope": {
+		"speaker": "Ketua Tim",
+		"portrait": "res://assets/char/portrait/ketua_tim.png",
+		"lines": [
+			"Kita gunakan tali Carmantel.",
+			"Buat jalur evakuasi yang aman ke tempat yang lebih tinggi."
+		]
+	},
+	"rt03_no_resource": {
+		"speaker": "Ketua Tim",
+		"portrait": "res://assets/char/portrait/ketua_tim.png",
+		"lines": [
+			"Kita coba lakukan tanpa menggunakan perlengkapan.",
+			"Berpegangan dengan kuat dan hati-hati dengan arus air!"
+		]
+	},
+	"rt03_empty": {
+		"speaker": "Ketua Tim",
+		"portrait": "res://assets/char/portrait/ketua_tim.png",
+		"lines": [
+			"Perlengkapan kita sudah habis"
+		]
+	},
+	"rt03_finish":{
+		"speaker": "Ketua Tim",
+		"portrait": "res://assets/char/portrait/ketua_tim.png",
+		"lines": [
+			"Ayo kita kembali"
+		]
+	},
+	"darto_arrival": {
+		"speaker": "Ketua Tim",
+		"portrait": "res://assets/char/portrait/ketua_tim.png",
+		"lines": [
+			"Kita sudah tiba di lokasi rumah Pak Darto.",
+			"Jalurnya tertutup longsoran seperti yang dikatakan warga.",
+			"Kita harus memastikan apakah Mbah Karto dan Pak Darto masih ada di dalam."
+		]
+	},
+	"darto_warga_01": {
+		"speaker": "Pak Darto",
+		"portrait": "res://assets/char/portrait/yanto.png",
+		"lines": [
+			"Tolong... kami ada di dalam!",
+			"Mbah Karto tidak bisa berjalan, jalurnya tertutup!"
+		]
+	},
+	"darto_rescue_decision": {
+		"speaker": "Ketua Tim",
+		"portrait": "res://assets/char/portrait/ketua_tim.png",
+		"lines": [
+			"Mereka terjebak reruntuhan dan tidak bisa keluar.",
+			"Bagaimana kita akan melakukan evakuasi ini?"
+		],
+		"choices":[
+			"Gunakan 1 pelampung",
+			"Gunakan tali Carmantel",
+			"Evakuasi tanpa resource"
+		]
+	},
+	"darto_use_lifebuoy": {
+		"speaker": "Ketua Tim",
+		"portrait": "res://assets/char/portrait/ketua_tim.png",
+		"lines": [
+			"Gunakan pelampung? Rasanya ini bukan alat yang tepat untuk tanah longsor...",
+			"Tapi kita bisa coba gunakan sebagai bantalan."
+		]
+	},
+	"darto_use_rope": {
+		"speaker": "Ketua Tim",
+		"portrait": "res://assets/char/portrait/ketua_tim.png",
+		"lines": [
+			"Kita gunakan tali Carmantel.",
+			"Ikat reruntuhan dan tarik untuk membuka jalur aman bagi mereka."
+		]
+	},
+	"darto_no_resource": {
+		"speaker": "Ketua Tim",
+		"portrait": "res://assets/char/portrait/ketua_tim.png",
+		"lines": [
+			"Kita coba singkirkan reruntuhan perlahan tanpa alat.",
+			"Harus ekstra hati-hati agar tidak terjadi longsor susulan!"
+		]
+	},
+	"darto_empty": {
+		"speaker": "Ketua Tim",
+		"portrait": "res://assets/char/portrait/ketua_tim.png",
+		"lines": [
+			"Perlengkapan kita sudah habis"
+		]
+	},
+	"darto_finish":{
+		"speaker": "Ketua Tim",
+		"portrait": "res://assets/char/portrait/ketua_tim.png",
+		"lines": [
+			"Ayo kita kembali"
+		]
+	},
 }
 
 func register_dialogue_ui(ui: CanvasLayer):
@@ -431,16 +570,38 @@ func _on_dialogue_finished():
 	if current_dialogue_id == "budi_01":
 		GameManager.talked_to_budi = true
 	
-	if current_dialogue_id == ("sd_empty"):
+	if current_dialogue_id == "sd_empty":
 		start_dialogue("sd_rescue_decision")
 	
-	if current_dialogue_id == "sd_rescue_decision":
+	if current_dialogue_id == "sd_rescue_decision" or current_dialogue_id == "sd_use_lifebuoy" or current_dialogue_id == "sd_use_rope" or current_dialogue_id == "sd_no_resource":
 		GameManager.completed_sd = true
 		print("SD selesai ", GameManager.completed_sd)
 		get_tree().change_scene_to_file(
 		"res://scenes/levels/MissionSDafter.tscn")
 		return
+
+	if current_dialogue_id == "rt03_empty":
+		start_dialogue("rt03_rescue_decision")
 	
+	if current_dialogue_id == "rt03_rescue_decision" or current_dialogue_id == "rt03_use_lifebuoy" or current_dialogue_id == "rt03_use_rope" or current_dialogue_id == "rt03_no_resource":
+		GameManager.completed_rt03 = true
+		print("RT03 selesai ", GameManager.completed_rt03)
+		get_tree().change_scene_to_file(
+		"res://scenes/levels/MissionRT03after.tscn")
+		return
+
+	if current_dialogue_id == "darto_empty":
+		start_dialogue("darto_rescue_decision")
+	
+	if current_dialogue_id == "darto_rescue_decision" or current_dialogue_id == "darto_use_lifebuoy" or current_dialogue_id == "darto_use_rope" or current_dialogue_id == "darto_no_resource":
+		GameManager.completed_pak_darto = true
+		print("Pak Darto selesai ", GameManager.completed_pak_darto)
+		get_tree().change_scene_to_file(
+		"res://scenes/levels/MissionPakDartoafter.tscn")
+		return
+	
+	if current_dialogue_id == "darto_warga_01":
+		GameManager.talked_to_Darto = true
 	
 	call_deferred("_clear_interaction_lock")
 
@@ -478,6 +639,42 @@ func _on_choice_selected(index, text):
 			2:
 				print("Player memilih evakuasi tanpa resource.")
 				start_dialogue("sd_no_resource")
+
+	elif current_dialogue_id == "rt03_rescue_decision":
+		match index:
+			0:
+				if GameManager.use_lifebuoy():
+					start_dialogue("rt03_use_lifebuoy")
+				else:
+					start_dialogue("rt03_empty")
+					print("Pelampung sudah habis.")
+			1:
+				if GameManager.use_carmantel_rope():
+					start_dialogue("rt03_use_rope")
+				else:
+					start_dialogue("rt03_empty")
+					print("Tali Carmantel sudah habis.")
+			2:
+				print("Player memilih evakuasi tanpa resource.")
+				start_dialogue("rt03_no_resource")
+
+	elif current_dialogue_id == "darto_rescue_decision":
+		match index:
+			0:
+				if GameManager.use_lifebuoy():
+					start_dialogue("darto_use_lifebuoy")
+				else:
+					start_dialogue("darto_empty")
+					print("Pelampung sudah habis.")
+			1:
+				if GameManager.use_carmantel_rope():
+					start_dialogue("darto_use_rope")
+				else:
+					start_dialogue("darto_empty")
+					print("Tali Carmantel sudah habis.")
+			2:
+				print("Player memilih evakuasi tanpa resource.")
+				start_dialogue("darto_no_resource")
 		
 func _handle_pilihan_siap():
 	GameManager.departure_ready = true

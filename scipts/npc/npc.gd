@@ -53,6 +53,11 @@ func get_dialogue_id() -> String:
 				return "budi_01"
 			if GameManager.talked_to_ani and GameManager.talked_to_budi:
 				return "sd_rescue_decision"
+		"darto":
+			if not GameManager.talked_to_Darto:
+				return "darto_warga_01"
+			if GameManager.talked_to_Darto:
+				return "darto_rescue_decision"
 
 
 	return dialogue_id

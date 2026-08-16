@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cujvhhms616lr"]
+
+[ext_resource type="Script" uid="uid://dfr73re4ifnxp" path="res://scipts/player/player.gd" id="1_p5id2"]
+[ext_resource type="Texture2D" uid="uid://cpmrqg5aqne3f" path="res://assets/char/playerBoatafter2.png" id="2_p5id2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kxt1r"]
+size = Vector2(13, 85)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_68buy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_p5id2")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_p5id2")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 8.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=1027270447]
+script = ExtResource("1_p5id2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1076196613]
+position = Vector2(66.5, 18.5)
+shape = SubResource("RectangleShape2D_kxt1r")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1271634000]
+position = Vector2(5, -8)
+scale = Vector2(0.75, 0.75)
+sprite_frames = SubResource("SpriteFrames_68buy")
+animation = &"idle"
+flip_h = true

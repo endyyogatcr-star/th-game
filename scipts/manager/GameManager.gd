@@ -2,12 +2,12 @@ extends Node
 
 
 var talked_to_kades := false
-var interviewed_painah := true
-var interviewed_slamet := true
-var interviewed_wati := true
-var interviewed_ujang := true
-var interviewed_surti := true
-var interviewed_yanto := true
+var interviewed_painah := false
+var interviewed_slamet := false
+var interviewed_wati := false
+var interviewed_ujang := false
+var interviewed_surti := false
+var interviewed_yanto := false
 var report_ready := false
 var first_talk_asisten :=false
 var first_talk_ketua :=false

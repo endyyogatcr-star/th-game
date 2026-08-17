@@ -1331,12 +1331,13 @@ position = Vector2(353, 110)
 shape = SubResource("RectangleShape2D_68buy")
 
 [node name="ExitTent" type="Area2D" parent="." unique_id=1053191041]
+position = Vector2(77, -42)
 script = ExtResource("16_cqo8i")
 target_scene = "uid://bfikmr0kpv3la"
 spawn_point_name = "BaseSpawnFromTent"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitTent" unique_id=884046648]
-position = Vector2(77.5, -47.5)
+position = Vector2(2, -7)
 shape = SubResource("RectangleShape2D_f5ypv")
 
 [node name="Npc2" parent="." unique_id=1305116040 instance=ExtResource("17_y88pf")]
@@ -1352,6 +1353,7 @@ dialogue_id = "wati_01"
 [node name="Npc3" parent="." unique_id=729070067 instance=ExtResource("19_6d2p0")]
 position = Vector2(491.00003, -36)
 scale = Vector2(1.5, 1.5)
+npc_type = ""
 dialogue_id = "doctor_surti_01"
 
 [node name="Player" parent="." unique_id=1027270447 instance=ExtResource("20_iq80p")]
@@ -1367,4 +1369,4 @@ limit_right = 700
 limit_bottom = 446
 
 [node name="TentSpawnFromBase" type="Marker2D" parent="." unique_id=1244612536]
-position = Vector2(73, -2)
+position = Vector2(80, -1)

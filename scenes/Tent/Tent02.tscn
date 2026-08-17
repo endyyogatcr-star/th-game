@@ -1327,7 +1327,6 @@ shape = SubResource("RectangleShape2D_68buy")
 [node name="Npc3" parent="." unique_id=729070067 instance=ExtResource("20_di7xb")]
 position = Vector2(436.00003, -37)
 scale = Vector2(1.5, 1.5)
-dialogue_id = "doctor_surti_01"
 
 [node name="Player" parent="." unique_id=1027270447 instance=ExtResource("2_4ijx4")]
 position = Vector2(104.00001, -39.000004)

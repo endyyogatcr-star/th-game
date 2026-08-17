@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://dausddsflld6" path="res://scenes/player/playerBoat.tscn" id="24_2qfi0"]
 [ext_resource type="PackedScene" uid="uid://dmfh8oisun0f4" path="res://scenes/ui/dialogue_ui.tscn" id="25_2qfi0"]
 [ext_resource type="PackedScene" uid="uid://dkdf1fq35dswu" path="res://scenes/npc/asisten.tscn" id="25_w6eue"]
-[ext_resource type="Script" path="res://scipts/manager/disaster2.gd" id="99_ds2gd"]
+[ext_resource type="Script" uid="uid://23hdyqxjog13" path="res://scipts/manager/disaster2.gd" id="99_ds2gd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w6eue"]
 texture = ExtResource("2_acylg")

@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://cln175ig7g60x" path="res://scenes/npc/painah.tscn" id="25_mhiu8"]
 [ext_resource type="PackedScene" uid="uid://dwnewn0yu0dj" path="res://scenes/npc/slamet.tscn" id="26_lswbx"]
 [ext_resource type="PackedScene" uid="uid://cbwmshdd1p6fk" path="res://scenes/npc/yanto.tscn" id="28_3t34l"]
+[ext_resource type="PackedScene" uid="uid://ci1uid" path="res://scenes/ui/control_instructions.tscn" id="99_control"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qy4h0"]
 texture = ExtResource("1_m802k")
@@ -300,7 +301,7 @@ tile_set = SubResource("TileSet_f5ypv")
 
 [node name="Player" parent="." unique_id=1027270447 instance=ExtResource("2_i2aat")]
 z_index = 10
-position = Vector2(214, 310)
+position = Vector2(69, 310)
 
 [node name="Camera2D2" type="Camera2D" parent="Player" unique_id=1869083562]
 offset = Vector2(0, -64)
@@ -451,12 +452,13 @@ z_index = 20
 [node name="DialogueUI" parent="." unique_id=356329378 instance=ExtResource("23_1b0o8")]
 
 [node name="TentEntrance" type="Area2D" parent="." unique_id=430221447]
+position = Vector2(281, 314)
 script = ExtResource("24_w4kkx")
-target_scene = "uid://dnkhp20027paa"
+target_scene = "uid://cuwfyvv54rg47"
 spawn_point_name = "TentSpawnFromBase"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TentEntrance" unique_id=1760205765]
-position = Vector2(283, 312)
+position = Vector2(2, -1)
 shape = SubResource("RectangleShape2D_68buy")
 
 [node name="BaseSpawnFromTent" type="Marker2D" parent="." unique_id=1106486286]
@@ -467,10 +469,12 @@ position = Vector2(493, 313)
 dialogue_id = "slamet_01"
 
 [node name="Npc2" parent="." unique_id=1757284128 instance=ExtResource("28_3t34l")]
-position = Vector2(145, 314)
+position = Vector2(205, 314)
 dialogue_id = "yanto_01"
 
 [node name="tileBanjir" type="TileMapLayer" parent="." unique_id=1719183435]
 z_index = 20
 tile_map_data = PackedByteArray("AAD2/wIAAAAIAAkAAAD2/wEAAAAIAAkAAAAgAAIAAAAIAAkAAAAgAAEAAAAIAAkAAAD1/wYAAAAIAAkAAAD0/wYAAAAIAAkAAAD0/wUAAAAIAAkAAAD0/wQAAAAIAAkAAAAXAAYAAAAIAAkAAAAXAAUAAAAIAAkAAAAAAAYAAAAIAAkAAAAAAAUAAAAIAAkAAAAOAAcAAgADAAMAAAAPAAcAAgAFAAMAAAAQAAcAAgAFAAMAAAARAAcAAgAEAAMAAAASAAcAAgABAAMAAAATAAcAAgABAAMAAAAUAAcAAgACAAMAAAAVAAcAAgAIAAMAAAA=")
 tile_set = SubResource("TileSet_f5ypv")
+
+[node name="ControlInstructions" parent="." unique_id=200014424 instance=ExtResource("99_control")]

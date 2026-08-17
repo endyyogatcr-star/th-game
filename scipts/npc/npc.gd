@@ -5,16 +5,27 @@ extends CharacterBody2D
 @export var dialogue_id: String = ""
 
 var player_nearby := false
+var interact_icon: Sprite2D
 
+func _ready() -> void:
+	interact_icon = Sprite2D.new()
+	interact_icon.texture = load("res://assets/ui/interact.png")
+	interact_icon.visible = false
+	interact_icon.position = Vector2(0, -70)
+	interact_icon.z_index = 10
+	add_child(interact_icon)
 
 func _on_interaction_area_body_entered(body):
 	if body.name == "Player":
 		player_nearby = true
-
+		if interact_icon:
+			interact_icon.visible = true
 
 func _on_interaction_area_body_exited(body):
 	if body.name == "Player":
 		player_nearby = false
+		if interact_icon:
+			interact_icon.visible = false
 
 
 func get_dialogue_id() -> String:

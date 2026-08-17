@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://hcp0p6q4n5l1" path="res://scenes/player/player.tscn" id="25_7a6ym"]
 [ext_resource type="Script" uid="uid://ct7bbying84w8" path="res://scipts/interactables/boat.gd" id="26_qs4ro"]
 [ext_resource type="Texture2D" uid="uid://bqb1gei3qox53" path="res://assets/environment/boa.png" id="27_5iyn4"]
+[ext_resource type="PackedScene" uid="uid://dkdf1fq35dswu" path="res://scenes/npc/asisten.tscn" id="27_yugle"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w6eue"]
 texture = ExtResource("21_r3alf")
@@ -411,6 +412,10 @@ tile_set = SubResource("TileSet_o6a2j")
 [node name="Npc" parent="." unique_id=1305116040 instance=ExtResource("24_yxfal")]
 position = Vector2(947, -23)
 npc_type = "ketua_tim"
+
+[node name="asisten" parent="." unique_id=1320310552 instance=ExtResource("27_yugle")]
+position = Vector2(125, -22)
+dialogue_id = "asisten_disaster"
 
 [node name="Player" parent="." unique_id=1027270447 instance=ExtResource("25_7a6ym")]
 position = Vector2(41, -26)

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ci1uid"]
+
+[ext_resource type="Script" uid="uid://d13au3nggdllf" path="res://scipts/ui/control_instructions.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://b70772u347rq0" path="res://assets/ui/control.png" id="2_texture"]
+
+[node name="ControlInstructions" type="CanvasLayer" unique_id=1553217042]
+layer = 100
+script = ExtResource("1_script")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=357964964]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1937362203]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 129.0
+offset_top = 37.0
+offset_right = -132.0
+offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_texture")
+expand_mode = 1
+stretch_mode = 5

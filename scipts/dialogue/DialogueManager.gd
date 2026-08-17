@@ -13,13 +13,18 @@ var dialogue_data := {
 		"portrait": "res://assets/char/portrait/asisten.png",
 		"lines": [
 			"Hei, Selamat pagi.",
-			"Kita baru saja menerima panggilan darurat dari 
-			sebuah desa di sebelah timur.",
-			"Menurut laporan awal, banjir cukup parah dan beberapa 
-			rumah warga mengalami kerusakan.",
-			"Sebelum kita berangkat, pastikan semua perlengkapan 
-			yang dibutuhkan sudah dibawa.",
+			"Kita baru saja menerima panggilan darurat dari \nsebuah desa di sebelah timur.",
+			"Menurut laporan awal, banjir cukup parah dan beberapa \nrumah warga mengalami kerusakan.",
+			"Sebelum kita berangkat, pastikan semua perlengkapan \nyang dibutuhkan sudah dibawa.",
 			"Setelah itu, temui Kepala Desa di seberang camp."
+		]
+	},
+	"asisten_disaster": {
+		"speaker": "Asisten",
+		"portrait": "res://assets/char/portrait/asisten.png",
+		"lines": [
+			"Ketua tim sudah menunggu di depan sana",
+			"Bicara dengannya dan sampaikan informasi yang kamu dapat"
 		]
 	},
 
@@ -42,7 +47,7 @@ var dialogue_data := {
 		"lines": [
 			"Ada anak-anak yang tadi masih di kelas belakang pas longsor...",
 			"Saya nggak yakin semua sempat keluar.",
-			"Saya sangat cemas dan merasa bersalah karena tidak sempat mengecek ulang."
+			"Saya sangat cemas dan merasa bersalah karena tidak sempat mengecek\nulang."
 		]
 	},
 
@@ -62,7 +67,7 @@ var dialogue_data := {
 		"lines": [
 			"Alat kita cuma satu tali carmantel sama dua pelampung,",
 			"sisanya di posko kecamatan yang aksesnya juga keputus.",
-			"Dipakai sekarang atau ditahan buat yang lebih parah, saya serahkan ke tim."
+			"Dipakai sekarang atau ditahan buat yang lebih parah, saya serahkan ke\ntim."
 		]
 	},
 
@@ -94,9 +99,9 @@ var dialogue_data := {
 		"lines": [
 			"Bapak Surti belum bisa diajak bicara.",
 			"Kondisinya masih cukup lemah setelah dievakuasi.",
-			"Tapi sebelum kondisinya memburuk, beliau sempat memberi saya informasi.",
-			"Dia bisa keluar, tapi Mbah Karto di sebelah rumahnya gak bisa jalan, masih di dalam.",
-			"Anak-anak kecil juga masih banyak yang digendong orang tuanya, susah gerak cepat."
+			"Tapi sebelum kondisinya memburuk, beliau sempat memberi saya\ninformasi.",
+			"Dia bisa keluar, tapi Mbah Karto di sebelah rumahnya gak bisa jalan,\nmasih di dalam.",
+			"Anak-anak kecil juga masih banyak yang digendong orang tuanya, susah\ngerak cepat."
 		]
 	},
 	
@@ -196,10 +201,10 @@ var dialogue_data := {
 			"Baik. Saya sudah mendengar laporan kalian.",
 			"Beberapa lokasi membutuhkan perhatian kita secara bersamaan.",
 			"Kita harus menentukan urutan prioritas dengan sangat hati-hati.",
-			"Waktu sangat berharga. Semakin lama korban menunggu, semakin buruk kondisi mereka.",
-			"Selain itu, gunakan alat keselamatan (Pelampung & Tali Carmantel) dengan tepat.",
-			"Kesalahan dalam penggunaan alat atau evakuasi tanpa alat akan membuat korban terluka.",
-			"Jika terlalu banyak yang terluka dan persediaan medis kita habis, korban bisa tidak terselamatkan."
+			"Waktu sangat berharga. Semakin lama korban menunggu, semakin buruk\nkondisi mereka.",
+			"Selain itu, gunakan alat keselamatan (Pelampung & Tali Carmantel)\ndengan tepat.",
+			"Kesalahan dalam penggunaan alat atau evakuasi tanpa alat akan membuat\nkorban terluka.",
+			"Jika terlalu banyak yang terluka dan persediaan medis kita habis,\nkorban bisa tidak terselamatkan."
 		],
 		"choices": [
 			"Prioritaskan SD Karang Anyar",
@@ -214,7 +219,7 @@ var dialogue_data := {
 		"lines": [
 			"Baik.",
 			"Kita prioritaskan SD Karang Anyar.",
-			"Menurut laporan Bu Painah, masih ada kemungkinan anak-anak berada di sekitar sekolah.",
+			"Menurut laporan Bu Painah, masih ada kemungkinan anak-anak berada di\nsekitar sekolah.",
 			"Tim bersiap menuju sekolah."
 		]
 	},
@@ -224,7 +229,7 @@ var dialogue_data := {
 		"lines": [
 			"Baik.",
 			"Kita prioritaskan RT 03.",
-			"Informasi mengenai jumlah warga memang masih berbeda, tetapi kondisi air terus memburuk.",
+			"Informasi mengenai jumlah warga memang masih berbeda, tetapi kondisi\nair terus memburuk.",
 			"Tim bersiap menuju RT 03."
 		]
 	},
@@ -234,7 +239,7 @@ var dialogue_data := {
 		"lines": [
 			"Baik.",
 			"Kita prioritaskan rumah Pak Darto.",
-			"Jalur menuju rumahnya tertutup longsor dan kita tidak tahu apakah masih ada orang di dalam.",
+			"Jalur menuju rumahnya tertutup longsor dan kita tidak tahu apakah\nmasih ada orang di dalam.",
 			"Tim bersiap menuju lokasi."
 		]
 	},
@@ -243,7 +248,7 @@ var dialogue_data := {
 		"portrait": "res://assets/char/portrait/ketua_tim.png",
 		"lines": [
 			"Akhirnya kita sampai di sekolah.",
-			"Menurut laporan warga, masih ada beberapa anak yang belum berhasil dievakuasi.",
+			"Menurut laporan warga, masih ada beberapa anak yang belum berhasil\ndievakuasi.",
 			"Kita harus menentukan tindakan dengan cepat.",
 			"Di sana! Ada dua anak di atas atap.",
 			"Sepertinya mereka belum berhasil dievakuasi.",
@@ -400,7 +405,7 @@ var dialogue_data := {
 		"lines": [
 			"Kita sudah tiba di lokasi rumah Pak Darto.",
 			"Jalurnya tertutup longsoran seperti yang dikatakan warga.",
-			"Kita harus memastikan apakah Mbah Karto dan Pak Darto masih ada di dalam."
+			"Kita harus memastikan apakah Mbah Karto dan Pak Darto masih ada di\ndalam."
 		]
 	},
 	"darto_warga_01": {
@@ -428,7 +433,7 @@ var dialogue_data := {
 		"speaker": "Ketua Tim",
 		"portrait": "res://assets/char/portrait/ketua_tim.png",
 		"lines": [
-			"Gunakan pelampung? Rasanya ini bukan alat yang tepat untuk tanah longsor...",
+			"Gunakan pelampung? Rasanya ini bukan alat yang tepat untuk tanah\nlongsor...",
 			"Tapi kita bisa coba gunakan sebagai bantalan."
 		]
 	},
@@ -623,11 +628,11 @@ func _on_dialogue_finished():
 
 func _get_rescue_narration(dialogue_id: String) -> String:
 	if "use_lifebuoy" in dialogue_id:
-		return "Tim penyelamat mengevakuasi korban menggunakan pelampung dengan aman..."
+		return "Tim penyelamat mengevakuasi korban menggunakan pelampung dengan\naman..."
 	elif "use_rope" in dialogue_id:
-		return "Tim penyelamat memasang tali Carmantel dan memandu warga ke tempat yang aman..."
+		return "Tim penyelamat memasang tali Carmantel dan memandu warga ke tempat\nyang aman..."
 	elif "no_resource" in dialogue_id or "rescue_decision" in dialogue_id:
-		return "Tim penyelamat memapah warga satu per satu melintasi reruntuhan dan arus air dengan penuh kehati-hatian..."
+		return "Tim penyelamat memapah warga satu per satu melintasi reruntuhan dan\narus air dengan penuh kehati-hatian..."
 	return "Tim penyelamat berhasil mengevakuasi korban..."
 
 func _go_to_disaster():
@@ -859,21 +864,21 @@ func _setup_doctor_evaluation():
 	
 	# Pak Darto injured if last
 	if GameManager.mission_order.size() >= 3 and GameManager.mission_order[2] == "pak_darto":
-		lines.append("Pak Darto diselamatkan terakhir. Kondisi MbahKarto kritis karena terlalu lama tertimbun longsor. Beliau butuh 1 Medical Supply.")
+		lines.append("Pak Darto diselamatkan terakhir. Kondisi MbahKarto kritis karena\nterlalu lama tertimbun longsor. Beliau butuh 1 Medical Supply.")
 		total_injured += 1
 		
 	# SD injured if no resource
 	if GameManager.sd_rescue_method == "sd_no_resource":
-		lines.append("Anak-anak dari SD terluka akibat proses evakuasi tanpa menggunakan alat yang aman. Mereka butuh 2 Medical Supply.")
+		lines.append("Anak-anak dari SD terluka akibat proses evakuasi tanpa menggunakan\nalat yang aman. Mereka butuh 2 Medical Supply.")
 		total_injured += 2
 		
 	# RT03 injured if wrong tool (not rope)
 	if GameManager.rt03_rescue_method != "rt03_use_rope":
-		lines.append("Warga RT 03 mengalami cedera karena alat evakuasi yang digunakan tidak sesuai. Ada 3 orang terluka dan butuh 3 Medical Supply.")
+		lines.append("Warga RT 03 mengalami cedera karena alat evakuasi yang digunakan\ntidak sesuai. Ada 3 orang terluka dan butuh 3 Medical Supply.")
 		total_injured += 3
 		
 	if total_injured == 0:
-		lines.append("Luar biasa! Tidak ada warga yang terluka parah berkat keputusan cepat dan penggunaan alat yang tepat.")
+		lines.append("Luar biasa! Tidak ada warga yang terluka parah berkat keputusan cepat\ndan penggunaan alat yang tepat.")
 	else:
 		lines.append("Total kebutuhan saat ini: " + str(total_injured) + " Medical Supply. Kita punya " + str(GameManager.medical_supply) + " persediaan.")
 		

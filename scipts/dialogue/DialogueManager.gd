@@ -65,7 +65,7 @@ var dialogue_data := {
 		"speaker": "Pak Yanto",
 		"portrait": "res://assets/char/portrait/yanto.png",
 		"lines": [
-			"Alat kita cuma satu tali carmantel sama dua pelampung,",
+			"Alat kita cuma satu tali carmantel sama satu pelampung,",
 			"sisanya di posko kecamatan yang aksesnya juga keputus.",
 			"Dipakai sekarang atau ditahan buat yang lebih parah, saya serahkan ke\ntim."
 		]
@@ -202,7 +202,7 @@ var dialogue_data := {
 			"Beberapa lokasi membutuhkan perhatian kita secara bersamaan.",
 			"Kita harus menentukan urutan prioritas dengan sangat hati-hati.",
 			"Waktu sangat berharga. Semakin lama korban menunggu, semakin buruk\nkondisi mereka.",
-			"Selain itu, gunakan alat keselamatan (Pelampung & Tali Carmantel)\ndengan tepat.",
+			"Selain itu, gunakan alat keselamatan Pelampung & Tali Carmantel\ndengan tepat.",
 			"Kesalahan dalam penggunaan alat atau evakuasi tanpa alat akan membuat\nkorban terluka.",
 			"Jika terlalu banyak yang terluka dan persediaan medis kita habis,\nkorban bisa tidak terselamatkan."
 		],
@@ -282,7 +282,7 @@ var dialogue_data := {
 			"Kita harus menentukan cara untuk mengevakuasi mereka."
 		],
 		"choices":[
-			"Gunakan 1 pelampung",
+			"Gunakan pelampung",
 			"Gunakan tali Carmantel",
 			"Evakuasi tanpa resource"
 		]
@@ -356,7 +356,7 @@ var dialogue_data := {
 			"Kita harus menentukan cara untuk mengevakuasi mereka."
 		],
 		"choices":[
-			"Gunakan 1 pelampung",
+			"Gunakan pelampung",
 			"Gunakan tali Carmantel",
 			"Evakuasi tanpa resource"
 		]
@@ -424,7 +424,7 @@ var dialogue_data := {
 			"Bagaimana kita akan melakukan evakuasi ini?"
 		],
 		"choices":[
-			"Gunakan 1 pelampung",
+			"Gunakan pelampung",
 			"Gunakan tali Carmantel",
 			"Evakuasi tanpa resource"
 		]
@@ -503,7 +503,15 @@ func start_dialogue(dialogue_id: String):
 	var speaker: String = data["speaker"]
 	var portrait_path: String = data["portrait"]
 	var lines: Array = data["lines"]
-	var choices: Array = data.get("choices", [])
+	var choices: Array = data.get("choices", []).duplicate()
+
+	if dialogue_id in ["sd_rescue_decision", "rt03_rescue_decision", "darto_rescue_decision"]:
+		choices.clear()
+		if GameManager.lifebuoy > 0:
+			choices.append("Gunakan pelampung")
+		if GameManager.carmantel_rope > 0:
+			choices.append("Gunakan tali Carmantel")
+		choices.append("Evakuasi tanpa resource")
 
 	if lines.is_empty():
 		print("Dialog ", dialogue_id, " tidak memiliki isi.")
@@ -667,66 +675,66 @@ func _on_choice_selected(index, text):
 
 	elif current_dialogue_id == "sd_rescue_decision":
 		interaction_lock = false
-		match index:
-			0:
+		match text:
+			"Gunakan pelampung":
 				if GameManager.use_lifebuoy():
 					GameManager.sd_rescue_method = "sd_use_lifebuoy"
 					start_dialogue("sd_use_lifebuoy")
 				else:
 					start_dialogue("sd_empty")
 					print("Pelampung sudah habis.")
-			1:
+			"Gunakan tali Carmantel":
 				if GameManager.use_carmantel_rope():
 					GameManager.sd_rescue_method = "sd_use_rope"
 					start_dialogue("sd_use_rope")
 				else:
 					start_dialogue("sd_empty")
 					print("Tali Carmantel sudah habis.")
-			2:
+			"Evakuasi tanpa resource":
 				print("Player memilih evakuasi tanpa resource.")
 				GameManager.sd_rescue_method = "sd_no_resource"
 				start_dialogue("sd_no_resource")
 
 	elif current_dialogue_id == "rt03_rescue_decision":
 		interaction_lock = false
-		match index:
-			0:
+		match text:
+			"Gunakan pelampung":
 				if GameManager.use_lifebuoy():
 					GameManager.rt03_rescue_method = "rt03_use_lifebuoy"
 					start_dialogue("rt03_use_lifebuoy")
 				else:
 					start_dialogue("rt03_empty")
 					print("Pelampung sudah habis.")
-			1:
+			"Gunakan tali Carmantel":
 				if GameManager.use_carmantel_rope():
 					GameManager.rt03_rescue_method = "rt03_use_rope"
 					start_dialogue("rt03_use_rope")
 				else:
 					start_dialogue("rt03_empty")
 					print("Tali Carmantel sudah habis.")
-			2:
+			"Evakuasi tanpa resource":
 				print("Player memilih evakuasi tanpa resource.")
 				GameManager.rt03_rescue_method = "rt03_no_resource"
 				start_dialogue("rt03_no_resource")
 
 	elif current_dialogue_id == "darto_rescue_decision":
 		interaction_lock = false
-		match index:
-			0:
+		match text:
+			"Gunakan pelampung":
 				if GameManager.use_lifebuoy():
 					GameManager.darto_rescue_method = "darto_use_lifebuoy"
 					start_dialogue("darto_use_lifebuoy")
 				else:
 					start_dialogue("darto_empty")
 					print("Pelampung sudah habis.")
-			1:
+			"Gunakan tali Carmantel":
 				if GameManager.use_carmantel_rope():
 					GameManager.darto_rescue_method = "darto_use_rope"
 					start_dialogue("darto_use_rope")
 				else:
 					start_dialogue("darto_empty")
 					print("Tali Carmantel sudah habis.")
-			2:
+			"Evakuasi tanpa resource":
 				print("Player memilih evakuasi tanpa resource.")
 				GameManager.darto_rescue_method = "darto_no_resource"
 				start_dialogue("darto_no_resource")

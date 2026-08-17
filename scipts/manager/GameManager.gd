@@ -22,7 +22,7 @@ var completed_rt03 := false
 var completed_pak_darto := false
 var medical_supply := 3
 var carmantel_rope := 1
-var lifebuoy := 2
+var lifebuoy := 1
 var rescue_score := 0
 var mission_started := false
 var talked_to_ani :=false
@@ -100,7 +100,7 @@ func get_report_summary() -> Array[String]:
 		report.append("Ada kelompok rentan, Mbah Karto yang tak bisa berjalan dan anak kecil \nyang sulit dievakuasi di RT 03.")
 
 	if interviewed_yanto:
-		report.append("Pak Yanto menginformasikan alat evakuasi sangat terbatas \nhanya 1 tali carmantel & 2 pelampung.")
+		report.append("Pak Yanto menginformasikan alat evakuasi sangat terbatas \nhanya 1 tali carmantel & 1 pelampung.")
 
 	return report
 
@@ -154,6 +154,7 @@ func _ready_audio():
 	
 	bgm_player = AudioStreamPlayer.new()
 	bgm_player.stream = bgm_music
+	bgm_player.volume_db = -3.1 # 70% volume
 	add_child(bgm_player)
 	bgm_player.finished.connect(func(): bgm_player.play())
 	bgm_player.play()

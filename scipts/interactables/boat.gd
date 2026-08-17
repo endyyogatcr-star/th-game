@@ -2,12 +2,20 @@ extends Area2D
 
 
 var player_inside := false
+var interact_icon: Sprite2D
 
 
 func _ready():
 
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
+	
+	interact_icon = Sprite2D.new()
+	interact_icon.texture = load("res://assets/ui/interact.png")
+	interact_icon.visible = false
+	interact_icon.position = Vector2(0, -70)
+	interact_icon.z_index = 10
+	add_child(interact_icon)
 
 
 func _on_body_entered(body):
@@ -25,7 +33,13 @@ func _on_body_exited(body):
 
 func _process(_delta):
 
+	if interact_icon:
+		interact_icon.visible = player_inside and GameManager.decision_made
+
 	if not player_inside:
+		return
+		
+	if not GameManager.decision_made:
 		return
 
 	if Input.is_action_just_pressed("interact"):

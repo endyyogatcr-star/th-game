@@ -20,7 +20,6 @@
 [ext_resource type="Texture2D" uid="uid://bsyvk52rlp1yy" path="res://assets/environment/ground tileset.png" id="18_5vewk"]
 [ext_resource type="Texture2D" uid="uid://cvm0eocp7dph2" path="res://assets/tileset/ground-1.png" id="19_oapye"]
 [ext_resource type="Texture2D" uid="uid://dke7sq5qrwc8v" path="res://assets/tileset/banjirtile.png" id="20_rflnq"]
-[ext_resource type="PackedScene" uid="uid://blol88g3hyop0" path="res://scenes/npc/wargaRT.tscn" id="21_s1408"]
 [ext_resource type="Texture2D" uid="uid://ds4xvkgghotob" path="res://assets/environment/genteng2.png" id="23_6bk4n"]
 [ext_resource type="Texture2D" uid="uid://cvejw700fe8ya" path="res://assets/environment/tiang1.png" id="24_mekv3"]
 [ext_resource type="PackedScene" uid="uid://cujvhhms616lr" path="res://scenes/player/playerBoatART.tscn" id="25_y85ci"]
@@ -429,10 +428,6 @@ texture = ExtResource("25_yxkev")
 [node name="Rumah3" type="Sprite2D" parent="depan" unique_id=1890716921]
 position = Vector2(395, 14)
 texture = ExtResource("15_i3fko")
-
-[node name="Npc2" parent="." unique_id=1305116040 instance=ExtResource("21_s1408")]
-position = Vector2(1032, -30)
-dialogue_id = "rt03_warga_01"
 
 [node name="Player" parent="." unique_id=1027270447 instance=ExtResource("25_y85ci")]
 position = Vector2(1590, -13)

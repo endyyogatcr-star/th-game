@@ -433,14 +433,15 @@ tile_map_data = PackedByteArray("AAD2/wIAAAAIAAkAAAD2/wEAAAAIAAkAAAAgAAIAAAAIAAk
 tile_set = SubResource("TileSet_o6a2j")
 
 [node name="perahu" type="Area2D" parent="." unique_id=231479849]
+position = Vector2(1017, -24)
 script = ExtResource("26_qs4ro")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="perahu" unique_id=805379533]
-position = Vector2(1061, 6)
+position = Vector2(14, 30)
 shape = SubResource("RectangleShape2D_w6eue")
 
 [node name="Boa" type="Sprite2D" parent="perahu" unique_id=253416706]
-position = Vector2(1064, -16)
+position = Vector2(28, 11.999996)
 scale = Vector2(0.7270408, 0.7395834)
 texture = ExtResource("27_5iyn4")
 flip_h = true

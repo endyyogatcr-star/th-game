@@ -883,11 +883,10 @@ func _setup_doctor_evaluation():
 		lines.append("Total kebutuhan saat ini: " + str(total_injured) + " Medical Supply. Kita punya " + str(GameManager.medical_supply) + " persediaan.")
 		
 		if GameManager.medical_supply >= total_injured:
-			GameManager.medical_supply -= total_injured
+			GameManager.unsaved_civilians = 0
 			lines.append("Syukurlah persediaan kita cukup untuk merawat mereka semua.")
 		else:
 			GameManager.unsaved_civilians = total_injured - GameManager.medical_supply
-			GameManager.medical_supply = 0
 			lines.append("Persediaan kita tidak cukup... Ada " + str(GameManager.unsaved_civilians) + " warga yang terluka parah tidak bisa tertangani...")
 
 	dialogue_data["doctor_evaluation"] = {

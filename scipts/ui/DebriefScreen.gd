@@ -1,27 +1,38 @@
 extends CanvasLayer
 
+var is_transitioning = false
+
 func _ready():
-	var lines = []
+	var injured = false
 	
 	if GameManager.mission_order.size() >= 3 and GameManager.mission_order[2] == "pak_darto":
-		lines.append("Kamu memilih menyelamatkan pak Darto di prioritas terakhir yang mengakibatkan Mbah Karto yang bersama beliau terluka.")
+		injured = true
 		
 	if GameManager.sd_rescue_method == "sd_no_resource":
-		lines.append("Anak-anak dari SD terluka akibat proses evakuasi tanpa menggunakan alat yang aman.")
+		injured = true
 	
 	if GameManager.rt03_rescue_method != "rt03_use_rope":
-		lines.append("Warga RT 03 mengalami cedera karena alat evakuasi yang digunakan tidak sesuai.")
+		injured = true
 		
-	if lines.size() == 0:
-		lines.append("Luar biasa! Tidak ada warga yang terluka parah berkat keputusan cepat dan penggunaan alat yang tepat.")
-	else:
-		if GameManager.unsaved_civilians > 0:
-			lines.append("Ada " + str(GameManager.unsaved_civilians) + " warga yang terluka parah tidak bisa tertangani karena persediaan medis kurang.")
+	var ending_text = ""
 	
-	var text = ""
-	for i in range(lines.size()):
-		text += lines[i]
-		if i < lines.size() - 1:
-			text += "\n\n"
+	if not injured:
+		ending_text = "Best Ending\n\nSemua korban selamat dan tidak ada yang terluka."
+	elif GameManager.unsaved_civilians == 0:
+		ending_text = "Good Ending\n\nAda korban terluka akibat evakuasi, namun semuanya berhasil diobati."
+	elif GameManager.unsaved_civilians == 1:
+		ending_text = "Neutral Ending\n\nSebanyak " + str(GameManager.unsaved_civilians) + " orang tidak terselamatkan karena kekurangan persediaan medis."
+	else:
+		ending_text = "Bad Ending\n\nSebanyak " + str(GameManager.unsaved_civilians) + " orang tidak terselamatkan."
 		
-	$CenterContainer/Label.text = text
+	ending_text += "\n\n(Klik untuk melanjutkan)"
+		
+	$CenterContainer/Label.text = ending_text
+
+func _input(event):
+	if is_transitioning:
+		return
+		
+	if (event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT) or event.is_action_pressed("ui_accept"):
+		is_transitioning = true
+		GlobalTransition.change_scene("res://scenes/ui/main_menu.tscn", "Terimakasih telah memainkan demo dari game golden hour")

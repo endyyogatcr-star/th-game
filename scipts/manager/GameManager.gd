@@ -73,6 +73,7 @@ func go_to_disaster():
 	GlobalTransition.change_scene("res://scenes/levels/disaster01.tscn", "Menuju ke posko bencana...")
 	
 func _ready():
+	_ready_audio()
 	print("Interview progress: ", get_interview_count(), "/6")
 	print("=== RESCUE RESOURCE ===")
 	print("Medical Supply: ", GameManager.medical_supply)
@@ -138,3 +139,40 @@ func use_medical_supply() -> bool:
 	print("Sisa Medical Supply: ", medical_supply)
 
 	return true
+
+var arus_sfx = preload("res://assets/audio/arus.ogg")
+var arus_player: AudioStreamPlayer
+
+var bgm_music = preload("res://assets/audio/backsound music.mp3")
+var bgm_player: AudioStreamPlayer
+
+func _ready_audio():
+	arus_player = AudioStreamPlayer.new()
+	arus_player.stream = arus_sfx
+	arus_player.volume_db = -6.0 # 50% volume
+	add_child(arus_player)
+	
+	bgm_player = AudioStreamPlayer.new()
+	bgm_player.stream = bgm_music
+	add_child(bgm_player)
+	bgm_player.finished.connect(func(): bgm_player.play())
+	bgm_player.play()
+
+func update_bgm():
+	if arus_player == null:
+		return
+	var scene_path = get_tree().current_scene.scene_file_path if get_tree().current_scene else ""
+	var arus_scenes = ["MissionPakDarto", "MissionPakDartoafter", "MissionRT03", "MissionRT03after", "MissionSD", "MissionSDafter"]
+	
+	var is_arus = false
+	for s in arus_scenes:
+		if s in scene_path:
+			is_arus = true
+			break
+			
+	if is_arus:
+		if not arus_player.playing:
+			arus_player.play()
+	else:
+		if arus_player.playing:
+			arus_player.stop()

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://det1hhatt8ox0"
+path="res://.godot/imported/jalan biasa.ogg-debfe8fdee4dbf2bb464defa904df53a.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audio/jalan biasa.ogg"
+dest_files=["res://.godot/imported/jalan biasa.ogg-debfe8fdee4dbf2bb464defa904df53a.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

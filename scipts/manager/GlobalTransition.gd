@@ -2,6 +2,8 @@ extends CanvasLayer
 
 var color_rect: ColorRect
 var label: Label
+var penyelamatan_sfx = preload("res://assets/audio/penyelamatan.ogg")
+var penyelamatan_player: AudioStreamPlayer
 
 func _ready():
 	layer = 100
@@ -23,6 +25,10 @@ func _ready():
 	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	label.custom_minimum_size = Vector2(800, 0) # Allow wrapping
 	center_container.add_child(label)
+	
+	penyelamatan_player = AudioStreamPlayer.new()
+	penyelamatan_player.stream = penyelamatan_sfx
+	add_child(penyelamatan_player)
 
 func change_scene(path: String, text: String = ""):
 	label.text = text
@@ -30,6 +36,9 @@ func change_scene(path: String, text: String = ""):
 	var tween = create_tween()
 	tween.tween_property(color_rect, "modulate:a", 1.0, 0.5)
 	await tween.finished
+	
+	if "after.tscn" in path.to_lower():
+		penyelamatan_player.play()
 	
 	if text != "":
 		# Wait a bit so player can read the text
@@ -39,6 +48,11 @@ func change_scene(path: String, text: String = ""):
 	
 	get_tree().change_scene_to_file(path)
 	
+	await get_tree().process_frame
+	if GameManager.has_method("update_bgm"):
+		GameManager.update_bgm()
+	
 	var tween_out = create_tween()
 	tween_out.tween_property(color_rect, "modulate:a", 0.0, 0.5)
 	await tween_out.finished
+
